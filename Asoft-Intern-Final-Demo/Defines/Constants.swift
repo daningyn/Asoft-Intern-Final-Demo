@@ -11,4 +11,6 @@ import Foundation
 
 class Constants {
     static let _IDENTIFIER_MARKETING_VC = "MarketingVC"
+    static let _IDENTIFIER_MARKETING_COLLECTION_CELL = "MarketingCollectionCell"
+    static let _IDENTIFIER_SIGN_IN_COLLECTION_CELL = "SignInCollectionCell"
 }

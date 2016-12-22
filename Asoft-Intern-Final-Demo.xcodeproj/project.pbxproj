@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44926E2E1E0BB9020030DA00 /* MarketingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44926E2C1E0BB9020030DA00 /* MarketingCollectionViewCell.swift */; };
+		44926E2F1E0BB9020030DA00 /* MarketingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44926E2D1E0BB9020030DA00 /* MarketingCollectionViewCell.xib */; };
+		44926E331E0BCABB0030DA00 /* SignInCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44926E311E0BCABB0030DA00 /* SignInCollectionViewCell.swift */; };
+		44926E341E0BCABB0030DA00 /* SignInCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44926E321E0BCABB0030DA00 /* SignInCollectionViewCell.xib */; };
 		449371571E0AE39700B68046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449371561E0AE39700B68046 /* AppDelegate.swift */; };
 		4493715C1E0AE39700B68046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4493715A1E0AE39700B68046 /* Main.storyboard */; };
 		4493715E1E0AE39700B68046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493715D1E0AE39700B68046 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44926E2C1E0BB9020030DA00 /* MarketingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketingCollectionViewCell.swift; path = View/CustomViews/MarketingCollectionCell/MarketingCollectionViewCell.swift; sourceTree = "<group>"; };
+		44926E2D1E0BB9020030DA00 /* MarketingCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MarketingCollectionViewCell.xib; path = View/CustomViews/MarketingCollectionCell/MarketingCollectionViewCell.xib; sourceTree = "<group>"; };
+		44926E311E0BCABB0030DA00 /* SignInCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInCollectionViewCell.swift; path = View/CustomViews/SignInCollectionCell/SignInCollectionViewCell.swift; sourceTree = "<group>"; };
+		44926E321E0BCABB0030DA00 /* SignInCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInCollectionViewCell.xib; path = View/CustomViews/SignInCollectionCell/SignInCollectionViewCell.xib; sourceTree = "<group>"; };
 		449371531E0AE39700B68046 /* Asoft-Intern-Final-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asoft-Intern-Final-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		449371561E0AE39700B68046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4493715B1E0AE39700B68046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +86,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44926E2A1E0BB6CE0030DA00 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				44926E301E0BCA600030DA00 /* SignInCollectionCell */,
+				44926E2B1E0BB8C70030DA00 /* MarketingCollectionCell */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		44926E2B1E0BB8C70030DA00 /* MarketingCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				44926E2C1E0BB9020030DA00 /* MarketingCollectionViewCell.swift */,
+				44926E2D1E0BB9020030DA00 /* MarketingCollectionViewCell.xib */,
+			);
+			name = MarketingCollectionCell;
+			sourceTree = "<group>";
+		};
+		44926E301E0BCA600030DA00 /* SignInCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				44926E311E0BCABB0030DA00 /* SignInCollectionViewCell.swift */,
+				44926E321E0BCABB0030DA00 /* SignInCollectionViewCell.xib */,
+			);
+			name = SignInCollectionCell;
+			sourceTree = "<group>";
+		};
 		4493714A1E0AE39700B68046 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +179,7 @@
 		44D9250F1E0AEA980064FC3E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				44926E2A1E0BB6CE0030DA00 /* CustomViews */,
 				44D925171E0AED610064FC3E /* LoadingVC.swift */,
 				44D925191E0AF49F0064FC3E /* MarketingViewController.swift */,
 			);
@@ -314,7 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				449371611E0AE39700B68046 /* LaunchScreen.storyboard in Resources */,
+				44926E2F1E0BB9020030DA00 /* MarketingCollectionViewCell.xib in Resources */,
 				4493715E1E0AE39700B68046 /* Assets.xcassets in Resources */,
+				44926E341E0BCABB0030DA00 /* SignInCollectionViewCell.xib in Resources */,
 				4493715C1E0AE39700B68046 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,8 +380,10 @@
 			files = (
 				449371571E0AE39700B68046 /* AppDelegate.swift in Sources */,
 				44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */,
+				44926E331E0BCABB0030DA00 /* SignInCollectionViewCell.swift in Sources */,
 				44D925181E0AED610064FC3E /* LoadingVC.swift in Sources */,
 				44D9251C1E0AF5BF0064FC3E /* Constants.swift in Sources */,
+				44926E2E1E0BB9020030DA00 /* MarketingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
