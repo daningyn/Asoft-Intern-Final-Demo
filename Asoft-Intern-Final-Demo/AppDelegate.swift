@@ -12,10 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    class var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         return true
     }
 
@@ -43,4 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+extension AppDelegate {
+    
+    func changeRootToStartCollectionView() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let marketingVC = mainStoryboard.instantiateViewController(withIdentifier: Constants._IDENTIFIER_MARKETING_VC) as! MarketingViewController
+        self.window?.rootViewController = marketingVC
+    }
+    
+}
+
+
+
+
+
+
+
 
