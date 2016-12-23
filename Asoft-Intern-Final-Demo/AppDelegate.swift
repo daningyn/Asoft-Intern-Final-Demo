@@ -49,11 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     
-    func changeRootToStartCollectionView() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let marketingVC = mainStoryboard.instantiateViewController(withIdentifier: Constants._IDENTIFIER_MARKETING_VC) as! MarketingViewController
-        self.window?.rootViewController = marketingVC
-    }
+    
     
 }
 

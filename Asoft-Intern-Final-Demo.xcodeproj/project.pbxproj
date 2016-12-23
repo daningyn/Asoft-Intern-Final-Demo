@@ -17,7 +17,6 @@
 		449371611E0AE39700B68046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4493715F1E0AE39700B68046 /* LaunchScreen.storyboard */; };
 		4493716C1E0AE39700B68046 /* Asoft_Intern_Final_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493716B1E0AE39700B68046 /* Asoft_Intern_Final_DemoTests.swift */; };
 		449371771E0AE39700B68046 /* Asoft_Intern_Final_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449371761E0AE39700B68046 /* Asoft_Intern_Final_DemoUITests.swift */; };
-		44D925181E0AED610064FC3E /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D925171E0AED610064FC3E /* LoadingVC.swift */; };
 		44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D925191E0AF49F0064FC3E /* MarketingViewController.swift */; };
 		44D9251C1E0AF5BF0064FC3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9251B1E0AF5BF0064FC3E /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		449371721E0AE39700B68046 /* Asoft-Intern-Final-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Asoft-Intern-Final-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		449371761E0AE39700B68046 /* Asoft_Intern_Final_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asoft_Intern_Final_DemoUITests.swift; sourceTree = "<group>"; };
 		449371781E0AE39700B68046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44D925171E0AED610064FC3E /* LoadingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingVC.swift; path = View/LoadingVC.swift; sourceTree = "<group>"; };
 		44D925191E0AF49F0064FC3E /* MarketingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketingViewController.swift; path = View/MarketingViewController.swift; sourceTree = "<group>"; };
 		44D9251B1E0AF5BF0064FC3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Defines/Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				44926E2A1E0BB6CE0030DA00 /* CustomViews */,
-				44D925171E0AED610064FC3E /* LoadingVC.swift */,
 				44D925191E0AF49F0064FC3E /* MarketingViewController.swift */,
 			);
 			name = View;
@@ -381,7 +378,6 @@
 				449371571E0AE39700B68046 /* AppDelegate.swift in Sources */,
 				44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */,
 				44926E331E0BCABB0030DA00 /* SignInCollectionViewCell.swift in Sources */,
-				44D925181E0AED610064FC3E /* LoadingVC.swift in Sources */,
 				44D9251C1E0AF5BF0064FC3E /* Constants.swift in Sources */,
 				44926E2E1E0BB9020030DA00 /* MarketingCollectionViewCell.swift in Sources */,
 			);

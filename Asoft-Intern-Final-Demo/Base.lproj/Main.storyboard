@@ -1,64 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LB1-DZ-ya8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p7a-OR-Z8l">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LoadingVC-->
-        <scene sceneID="9Cz-cp-i5m">
-            <objects>
-                <viewController id="LB1-DZ-ya8" customClass="LoadingVC" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8DC-pJ-CVm"/>
-                        <viewControllerLayoutGuide type="bottom" id="d5f-NO-ELw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6o8-F7-kUQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load-image" translatesAutoresizingMaskIntoConstraints="NO" id="Rr7-nR-Euo">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1357" translatesAutoresizingMaskIntoConstraints="NO" id="NM2-Kf-8Hu">
-                                <rect key="frame" x="37.5" y="81" width="245" height="122.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="NM2-Kf-8Hu" secondAttribute="height" multiplier="2" id="bna-9A-vTi"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipes-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Wmp-nq-efr">
-                                <rect key="frame" x="80" y="203.5" width="160" height="53.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Wmp-nq-efr" secondAttribute="height" multiplier="3" id="KIe-rc-LlR"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Rr7-nR-Euo" secondAttribute="trailing" id="4rG-Xm-W4c"/>
-                            <constraint firstItem="Wmp-nq-efr" firstAttribute="top" secondItem="NM2-Kf-8Hu" secondAttribute="bottom" id="56P-pG-lH5"/>
-                            <constraint firstItem="Wmp-nq-efr" firstAttribute="width" secondItem="6o8-F7-kUQ" secondAttribute="width" multiplier="1.5:3" id="7K0-cL-l9n"/>
-                            <constraint firstItem="Wmp-nq-efr" firstAttribute="centerX" secondItem="6o8-F7-kUQ" secondAttribute="centerX" id="8cF-bi-akC"/>
-                            <constraint firstItem="Rr7-nR-Euo" firstAttribute="leading" secondItem="6o8-F7-kUQ" secondAttribute="leading" id="C0u-zy-A9L"/>
-                            <constraint firstItem="NM2-Kf-8Hu" firstAttribute="centerX" secondItem="6o8-F7-kUQ" secondAttribute="centerX" id="KQ7-iD-oei"/>
-                            <constraint firstItem="d5f-NO-ELw" firstAttribute="top" secondItem="Rr7-nR-Euo" secondAttribute="bottom" id="Oub-Sm-ed9"/>
-                            <constraint firstItem="NM2-Kf-8Hu" firstAttribute="centerY" secondItem="6o8-F7-kUQ" secondAttribute="centerY" multiplier="2:4" id="XzS-Fj-QSE"/>
-                            <constraint firstItem="NM2-Kf-8Hu" firstAttribute="width" secondItem="6o8-F7-kUQ" secondAttribute="width" multiplier="2.3:3" id="dUT-08-oLC"/>
-                            <constraint firstItem="Rr7-nR-Euo" firstAttribute="top" secondItem="6o8-F7-kUQ" secondAttribute="top" id="lWz-dw-qZU"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Op-wy-DKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="169" y="91"/>
-        </scene>
         <!--Marketing View Controller-->
         <scene sceneID="H5G-1R-I0z">
             <objects>
@@ -82,7 +33,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="aa" id="MJx-IP-oia">
-                                        <rect key="frame" x="53.5" y="0.0" width="213" height="311"/>
+                                        <rect key="frame" x="54" y="0.0" width="213" height="311"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="213" height="311"/>
@@ -117,9 +68,4 @@
             <point key="canvasLocation" x="1117.5" y="90.845070422535215"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="1357" width="651" height="247"/>
-        <image name="load-image" width="750" height="1334"/>
-        <image name="recipes-icon" width="413" height="120"/>
-    </resources>
 </document>
