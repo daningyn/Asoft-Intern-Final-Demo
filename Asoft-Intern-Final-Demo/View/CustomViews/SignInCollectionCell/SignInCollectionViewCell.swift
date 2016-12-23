@@ -24,7 +24,7 @@ class SignInCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func doTouchSignIn(_ sender: Any) {
-        
+        AppDelegate.shared.changeRootViewToHomeVC()
     }
     
     @IBAction func doTouchCreateAccount(_ sender: Any) {

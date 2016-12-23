@@ -13,4 +13,6 @@ class Constants {
     static let _IDENTIFIER_MARKETING_VC = "MarketingVC"
     static let _IDENTIFIER_MARKETING_COLLECTION_CELL = "MarketingCollectionCell"
     static let _IDENTIFIER_SIGN_IN_COLLECTION_CELL = "SignInCollectionCell"
+    static let _IDENTIFIER_HOME_NAVIGATION_CONTROLLER = "HomeNavigationController"
+    static let _IDENTIFIER_HOME_TABLE_VIEW_CELL = "HomeTableViewCell"
 }

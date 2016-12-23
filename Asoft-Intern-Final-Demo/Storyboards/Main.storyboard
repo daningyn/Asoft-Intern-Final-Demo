@@ -1,7 +1,110 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="4Cq-yL-4pk">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationController" id="L5Q-OD-I8e" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t4y-Kj-Hwl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6On-hD-o7L" kind="relationship" relationship="rootViewController" id="go3-ym-rtv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0F-Hb-7nc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79" y="-132"/>
+        </scene>
+        <!--Recipes-->
+        <scene sceneID="BXo-A4-2Jc">
+            <objects>
+                <viewController id="6On-hD-o7L" customClass="HomeRootViewController" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rrZ-Mf-Pcn"/>
+                        <viewControllerLayoutGuide type="bottom" id="mhx-f0-7og"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NV7-Ut-bo2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-z1-fXw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTableViewCell" rowHeight="83" id="iOm-gM-ioz">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOm-gM-ioz" id="kZt-N0-dUD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbC-cO-GnE">
+                                                    <rect key="frame" x="28" y="13" width="319" height="41.5"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.32941176470588235" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="79" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyZ-Bz-Wza">
+                                                    <rect key="frame" x="175" y="54.5" width="24" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vyZ-Bz-Wza" firstAttribute="centerX" secondItem="kZt-N0-dUD" secondAttribute="centerX" id="RdZ-QE-RoF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZbC-cO-GnE" secondAttribute="trailing" constant="20" id="cSP-ZW-CvV"/>
+                                                <constraint firstItem="vyZ-Bz-Wza" firstAttribute="top" secondItem="ZbC-cO-GnE" secondAttribute="bottom" id="ddR-v8-gC0"/>
+                                                <constraint firstItem="ZbC-cO-GnE" firstAttribute="leading" secondItem="kZt-N0-dUD" secondAttribute="leadingMargin" constant="20" id="odk-Mz-sbh"/>
+                                                <constraint firstItem="ZbC-cO-GnE" firstAttribute="height" secondItem="kZt-N0-dUD" secondAttribute="height" multiplier="1:2" id="tPP-J7-S00"/>
+                                                <constraint firstItem="ZbC-cO-GnE" firstAttribute="top" secondItem="kZt-N0-dUD" secondAttribute="topMargin" constant="5" id="tiX-RZ-beo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mhx-f0-7og" firstAttribute="top" secondItem="xpm-z1-fXw" secondAttribute="bottom" id="GiL-4m-YY3"/>
+                            <constraint firstItem="xpm-z1-fXw" firstAttribute="top" secondItem="NV7-Ut-bo2" secondAttribute="top" id="caj-0n-W7a"/>
+                            <constraint firstItem="xpm-z1-fXw" firstAttribute="leading" secondItem="NV7-Ut-bo2" secondAttribute="leading" id="kL2-yn-drH"/>
+                            <constraint firstAttribute="trailing" secondItem="xpm-z1-fXw" secondAttribute="trailing" id="ob2-aV-amZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipes" id="biP-0d-orA">
+                        <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Kbc-9H-raY">
+                            <inset key="imageInsets" minX="0.0" minY="10" maxX="15" maxY="5"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="search-icon" id="uYh-Ev-Ubf">
+                            <inset key="imageInsets" minX="15" minY="10" maxX="0.0" maxY="5"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="xpm-z1-fXw" id="hBG-aL-hFd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ip-24-RsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.79999999999995" y="-133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu-icon" width="36" height="24"/>
+        <image name="search-icon" width="35" height="35"/>
+    </resources>
 </document>
