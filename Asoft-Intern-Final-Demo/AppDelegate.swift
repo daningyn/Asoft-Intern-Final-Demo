@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var leftBarButtonItem: UIBarButtonItem?
     
     class var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate

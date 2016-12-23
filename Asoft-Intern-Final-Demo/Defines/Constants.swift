@@ -15,4 +15,5 @@ class Constants {
     static let _IDENTIFIER_SIGN_IN_COLLECTION_CELL = "SignInCollectionCell"
     static let _IDENTIFIER_HOME_NAVIGATION_CONTROLLER = "HomeNavigationController"
     static let _IDENTIFIER_HOME_TABLE_VIEW_CELL = "HomeTableViewCell"
+    static let _IDENTIFIER_MENU_TABLE_VIEW_CELL = "MenuTableViewCell"
 }
