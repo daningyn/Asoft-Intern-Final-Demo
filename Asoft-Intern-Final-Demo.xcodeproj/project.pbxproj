@@ -12,7 +12,7 @@
 		44926E331E0BCABB0030DA00 /* SignInCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44926E311E0BCABB0030DA00 /* SignInCollectionViewCell.swift */; };
 		44926E341E0BCABB0030DA00 /* SignInCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44926E321E0BCABB0030DA00 /* SignInCollectionViewCell.xib */; };
 		449371571E0AE39700B68046 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449371561E0AE39700B68046 /* AppDelegate.swift */; };
-		4493715C1E0AE39700B68046 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4493715A1E0AE39700B68046 /* Main.storyboard */; };
+		4493715C1E0AE39700B68046 /* Marketing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4493715A1E0AE39700B68046 /* Marketing.storyboard */; };
 		4493715E1E0AE39700B68046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4493715D1E0AE39700B68046 /* Assets.xcassets */; };
 		449371611E0AE39700B68046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4493715F1E0AE39700B68046 /* LaunchScreen.storyboard */; };
 		4493716C1E0AE39700B68046 /* Asoft_Intern_Final_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493716B1E0AE39700B68046 /* Asoft_Intern_Final_DemoTests.swift */; };
@@ -45,7 +45,7 @@
 		44926E321E0BCABB0030DA00 /* SignInCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignInCollectionViewCell.xib; path = View/CustomViews/SignInCollectionCell/SignInCollectionViewCell.xib; sourceTree = "<group>"; };
 		449371531E0AE39700B68046 /* Asoft-Intern-Final-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asoft-Intern-Final-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		449371561E0AE39700B68046 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4493715B1E0AE39700B68046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4493715B1E0AE39700B68046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Marketing.storyboard; sourceTree = "<group>"; };
 		4493715D1E0AE39700B68046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449371601E0AE39700B68046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449371621E0AE39700B68046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				4493715F1E0AE39700B68046 /* LaunchScreen.storyboard */,
-				4493715A1E0AE39700B68046 /* Main.storyboard */,
+				4493715A1E0AE39700B68046 /* Marketing.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 				44926E2F1E0BB9020030DA00 /* MarketingCollectionViewCell.xib in Resources */,
 				4493715E1E0AE39700B68046 /* Assets.xcassets in Resources */,
 				44926E341E0BCABB0030DA00 /* SignInCollectionViewCell.xib in Resources */,
-				4493715C1E0AE39700B68046 /* Main.storyboard in Resources */,
+				4493715C1E0AE39700B68046 /* Marketing.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,12 +415,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4493715A1E0AE39700B68046 /* Main.storyboard */ = {
+		4493715A1E0AE39700B68046 /* Marketing.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4493715B1E0AE39700B68046 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Marketing.storyboard;
 			sourceTree = "<group>";
 		};
 		4493715F1E0AE39700B68046 /* LaunchScreen.storyboard */ = {
