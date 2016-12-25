@@ -6,7 +6,8 @@ target 'Asoft-Intern-Final-Demo' do
   use_frameworks!
 
   # Pods for Asoft-Intern-Final-Demo
-  pod 'PageMenu'
+
+
 
   target 'Asoft-Intern-Final-DemoTests' do
     inherit! :search_paths
