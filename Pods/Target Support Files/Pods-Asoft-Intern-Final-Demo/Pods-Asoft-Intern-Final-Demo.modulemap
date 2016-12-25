@@ -1,0 +1,6 @@
+framework module Pods_Asoft_Intern_Final_Demo {
+  umbrella header "Pods-Asoft-Intern-Final-Demo-umbrella.h"
+
+  export *
+  module * { export * }
+}
