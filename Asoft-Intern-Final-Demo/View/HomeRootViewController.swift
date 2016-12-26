@@ -19,6 +19,9 @@ class HomeRootViewController: UIViewController {
     let listFoodArray = ["Meat", "Fish", "Garnishes", "Salads", "Soups", "Bakery", "Deserts"]
     let listNumberFoodArray = ["79", "118", "417", "51", "352", "49", "291"]
     let menuArray = ["Home", "Favorites", "Combine", "Profile", "Community", "Settings"]
+    var navigationTitle = "Recipes"
+    
+    var combineView: CombineView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +31,12 @@ class HomeRootViewController: UIViewController {
         self.tblMenuView.delegate = self
         
         self.navigationController?.navigationBar.hideBottomHairline()
-        AppDelegate.shared.leftBarButtonItem = self.navigationItem.leftBarButtonItem
+        AppDelegate.shared.menuBarButtonItem = self.navigationItem.leftBarButtonItem
+        AppDelegate.shared.searchBarButtonItem = self.navigationItem.rightBarButtonItem
+        AppDelegate.shared.nextBarButtonItem = UIBarButtonItem(image: UIImage(named: "next-icon"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.didTouchNextButtonBarItem))
+        AppDelegate.shared.nextBarButtonItem?.tintColor = UIColor.black
         
+        self.defineCombineView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,19 +44,55 @@ class HomeRootViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func defineCombineView() {
+        self.combineView = self.loadViewFromNib(nibName: "CombineView", frame: self.tableView.bounds)
+        self.combineView.menuCollectionView.register(UINib(nibName: "MenuCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_COMBINE_MENU_VIEW_CELL)
+        self.combineView.detailCollectionView.register(UINib(nibName: "ImageCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_IMAGE_COLLECTION_VIEW_CELL)
+        self.combineView.detailCollectionView.register(UINib(nibName: "NameCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_NAME_COLLECTION_VIEW_CELL)
+        self.combineView.menuCollectionView.dataSource = self.combineView
+        self.combineView.menuCollectionView.delegate = self.combineView
+        self.combineView.detailCollectionView.dataSource = self.combineView
+        self.combineView.detailCollectionView.delegate = self.combineView
+        self.mainView.addSubview(self.combineView)
+        self.combineView.frame.origin.x = self.tableView.frame.origin.x
+        self.combineView.isHidden = true
+    }
+    
+    private func loadViewFromNib(nibName: String, frame: CGRect) -> CombineView {
+        let nib = UINib(nibName: nibName, bundle: nil)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        view.frame = frame
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return view as! CombineView
+    }
+    
+    func didTouchNextButtonBarItem() {
+        self.navigationItem.title = self.navigationTitle
+        if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+            self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        }
+        if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
+            self.navigationItem.rightBarButtonItem = searchBarButtonItem
+        }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+        })
+    }
+    
     @IBAction func didTouchMenuButton(_ sender: Any) {
+        self.navigationTitle = self.navigationItem.title!
         self.navigationItem.title = "Menu"
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.rightBarButtonItem = AppDelegate.shared.nextBarButtonItem
         UIView.animate(withDuration: 0.3, animations: {
             self.mainView.frame.origin.x = 0
         }, completion: {(_) in
-            self.navigationItem.leftBarButtonItem = nil
+            
         })
     }
     
     @IBAction func didTouchRightBarButtonItem(_ sender: Any) {
-        if let leftBarButton = AppDelegate.shared.leftBarButtonItem {
-            self.navigationItem.leftBarButtonItem = leftBarButton
-        }
+        
     }
 
 }
@@ -117,23 +160,37 @@ extension HomeRootViewController: UITableViewDelegate {
         switch tableView {
         case self.tableView:
             let cell = tableView.cellForRow(at: indexPath)
-            let tag1Color = (cell?.viewWithTag(1) as! UILabel).textColor
             let tag2Color = (cell?.viewWithTag(2) as! UILabel).textColor
             (cell?.viewWithTag(1) as! UILabel).textColor = UIColor.darkGray
             (cell?.viewWithTag(2) as! UILabel).textColor = UIColor.darkGray
             _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (_) in
-                (cell?.viewWithTag(1) as! UILabel).textColor = tag1Color
+                if let color = AppDelegate.shared.mainColor {
+                    (cell?.viewWithTag(1) as! UILabel).textColor = color
+                }
                 (cell?.viewWithTag(2) as! UILabel).textColor = tag2Color
             })
             tableView.deselectRow(at: indexPath, animated: true)
         case self.tblMenuView:
             let cell = tableView.cellForRow(at: indexPath)
-            let tag1Color = (cell?.viewWithTag(1) as! UILabel).textColor
             (cell?.viewWithTag(1) as! UILabel).textColor = UIColor.darkGray
             _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (_) in
-                (cell?.viewWithTag(1) as! UILabel).textColor = tag1Color
+                if let color = AppDelegate.shared.mainColor {
+                    (cell?.viewWithTag(1) as! UILabel).textColor = color
+                }
             })
             tableView.deselectRow(at: indexPath, animated: true)
+            switch indexPath.row {
+            case 0:
+                self.combineView.isHidden = true
+                self.didTouchNextButtonBarItem()
+            case 1:
+                break
+            case 2:
+                self.combineView.isHidden = false
+                self.didTouchNextButtonBarItem()
+            default:
+                break
+            }
         default:
             break
         }

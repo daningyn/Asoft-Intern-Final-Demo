@@ -10,6 +10,8 @@ import UIKit
 
 class MenuCollectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var textLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
