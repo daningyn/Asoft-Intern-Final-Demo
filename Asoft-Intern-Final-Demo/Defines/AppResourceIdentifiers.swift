@@ -12,5 +12,6 @@ class AppResourceIdentifiers {
     
     static let kCombineImageCellArray = ["combine-food-image1", "combine-food-image2", "combine-food-image3"]
     static let kCombineNumberRowInSection = [6, 27, 10]
+    static let kCombineHeaderInSection = ["Meat", "Fish", "Ride"]
     
 }

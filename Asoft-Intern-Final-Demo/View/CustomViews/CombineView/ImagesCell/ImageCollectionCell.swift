@@ -46,7 +46,8 @@ extension ImageCollectionCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = self.mainCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.kIdentifierHeaderImageCombineCell, for: indexPath)
         
-        
+        (headerView.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kCombineHeaderInSection[indexPath.section]
+        (headerView.viewWithTag(2) as! UILabel).text = "\(AppResourceIdentifiers.kCombineNumberRowInSection[indexPath.section])"
         
         return headerView
     }
@@ -78,7 +79,7 @@ extension ImageCollectionCell: UICollectionViewDelegateFlowLayout {
 //    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 45)
+        return CGSize(width: collectionView.bounds.width, height: 35)
     }
     
 }
