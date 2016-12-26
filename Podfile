@@ -7,8 +7,6 @@ target 'Asoft-Intern-Final-Demo' do
 
   # Pods for Asoft-Intern-Final-Demo
 
-
-
   target 'Asoft-Intern-Final-DemoTests' do
     inherit! :search_paths
     # Pods for testing
