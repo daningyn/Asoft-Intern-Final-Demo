@@ -83,6 +83,9 @@ extension CombineView: UICollectionViewDelegate {
         case menuCollectionView:
             self.selectedCell = indexPath.row
             self.menuCollectionView.reloadData()
+            UIView.animate(withDuration: 0.3, animations: {
+                self.detailCollectionView.contentOffset.x = self.detailCollectionView.bounds.width*CGFloat(self.selectedCell)
+            })
         default:
             break
         }
@@ -91,7 +94,7 @@ extension CombineView: UICollectionViewDelegate {
 }
 
 
-//#MARK: UICollectionView Delegate FlowLayout
+//#MARK: - UICollectionView Delegate FlowLayout
 extension CombineView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -114,6 +117,22 @@ extension CombineView: UICollectionViewDelegateFlowLayout {
 }
 
 
+//#MARK: - Scroll View Delegate
+extension CombineView {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if self.detailCollectionView.isTracking {
+//            self.footerMenu.frame.origin.x = self.detailCollectionView.contentOffset.x
+//        }
+        self.footerMenu.frame.origin.x = self.detailCollectionView.contentOffset.x/2
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.selectedCell = Int(scrollView.contentOffset.x / self.detailCollectionView.bounds.width)
+        self.menuCollectionView.reloadData()
+    }
+    
+}
 
 
 

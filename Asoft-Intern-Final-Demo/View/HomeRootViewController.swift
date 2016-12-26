@@ -20,6 +20,7 @@ class HomeRootViewController: UIViewController {
     let listNumberFoodArray = ["79", "118", "417", "51", "352", "49", "291"]
     let menuArray = ["Home", "Favorites", "Combine", "Profile", "Community", "Settings"]
     var navigationTitle = "Recipes"
+    var checkInit = true
     
     var combineView: CombineView!
     
@@ -36,7 +37,6 @@ class HomeRootViewController: UIViewController {
         AppDelegate.shared.nextBarButtonItem = UIBarButtonItem(image: UIImage(named: "next-icon"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.didTouchNextButtonBarItem))
         AppDelegate.shared.nextBarButtonItem?.tintColor = UIColor.black
         
-        self.defineCombineView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,8 +44,16 @@ class HomeRootViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.checkInit {
+            self.checkInit = false
+            self.defineCombineView()
+        }
+    }
+    
     func defineCombineView() {
-        self.combineView = self.loadViewFromNib(nibName: "CombineView", frame: self.tableView.bounds)
+        self.combineView = self.loadViewFromNib(nibName: "CombineView", frame: self.tblMenuView.bounds)
         self.combineView.menuCollectionView.register(UINib(nibName: "MenuCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierCombineMenuViewCell)
         self.combineView.detailCollectionView.register(UINib(nibName: "ImageCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierImageCollectionViewCell)
         self.combineView.detailCollectionView.register(UINib(nibName: "NameCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierNameCollectionViewCell)
@@ -55,7 +63,7 @@ class HomeRootViewController: UIViewController {
         self.combineView.detailCollectionView.delegate = self.combineView
         self.mainView.addSubview(self.combineView)
         self.combineView.isHidden = true
-        self.combineView.frame.origin.x = self.tblMenuView.bounds.width
+        self.combineView.frame.origin.x = UIScreen.main.bounds.width
         self.combineView.frame.origin.y = 64
     }
     
@@ -203,6 +211,12 @@ extension HomeRootViewController: UITableViewDelegate {
 }
 
 
+//#MARK: - Scroll View Delegate
+extension HomeRootViewController {
+    
+
+    
+}
 
 
 
