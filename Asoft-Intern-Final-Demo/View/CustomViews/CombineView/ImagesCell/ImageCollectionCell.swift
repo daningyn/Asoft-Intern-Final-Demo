@@ -16,8 +16,9 @@ class ImageCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         self.mainCollectionView.dataSource = self
         self.mainCollectionView.delegate = self
-        self.mainCollectionView.register(UINib(nibName: "DetailOfImageCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_DETAIL_IMAGE_CELL)
-//        self.mainCollectionView.register(UINib(nibName: "HeaderImageCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_HEADER_IMAGE_CELL)
+        self.mainCollectionView.register(UINib(nibName: "DetailOfImageCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierDetailImageCell)
+        self.mainCollectionView.register(UINib(nibName: "HeaderImageCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierHeaderImageCombineCell)
+        self.mainCollectionView.register(UINib(nibName: "HeaderImageCell", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Constants.kIdentifierHeaderImageCombineCell)
     }
 
 }
@@ -35,20 +36,20 @@ extension ImageCollectionCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants._IDENTIFIER_DETAIL_IMAGE_CELL, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierDetailImageCell, for: indexPath)
         
         (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kCombineImageCellArray[indexPath.row % 3])
         
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants._IDENTIFIER_HEADER_IMAGE_CELL, for: indexPath)
-//        
-//        
-//        
-//        return headerView
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = self.mainCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.kIdentifierHeaderImageCombineCell, for: indexPath)
+        
+        
+        
+        return headerView
+    }
     
 }
 

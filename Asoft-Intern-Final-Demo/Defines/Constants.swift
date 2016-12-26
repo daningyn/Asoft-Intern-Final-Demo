@@ -10,19 +10,22 @@ import Foundation
 
 
 class Constants {
-    
+    //#MARK: - Marketing View
     static let kIdentifierMarketingVC = "MarketingVC"
     static let kIdentifierMarketingCollectionCell = "MarketingCollectionCell"
     static let kIdentifierMarketingLabelCollectionCell = "MarketingLabelCollectionViewCell"
     static let kIdentifierMarketingLabelSignInCollectionCell = "MarketingLabelSignInCollectionViewCell"
     static let kIdentifierMarketingImageSignInCollectionCell = "MarketingImageSignInCollectionCell"
     
+    //#MARK: - CombineView
+    static let kIdentifierHeaderImageCombineCell = "HeaderImageCell"
+    static let kIdentifierCombineMenuViewCell = "MenuCollectionViewCell"
+    static let kIdentifierImageCollectionViewCell = "ImageCollectionViewCell"
+    static let kIdentifierNameCollectionViewCell = "NameCollectionViewCell"
+    static let kIdentifierDetailImageCell = "DetailOfImageCell"
+    
     static let _IDENTIFIER_HOME_NAVIGATION_CONTROLLER = "HomeNavigationController"
     static let _IDENTIFIER_HOME_TABLE_VIEW_CELL = "HomeTableViewCell"
     static let _IDENTIFIER_MENU_TABLE_VIEW_CELL = "MenuTableViewCell"
-    static let _IDENTIFIER_COMBINE_MENU_VIEW_CELL = "MenuCollectionViewCell"
-    static let _IDENTIFIER_DETAIL_IMAGE_CELL = "DetailOfImageCell"
-    static let _IDENTIFIER_IMAGE_COLLECTION_VIEW_CELL = "ImageCollectionViewCell"
-    static let _IDENTIFIER_NAME_COLLECTION_VIEW_CELL = "NameCollectionViewCell"
-    static let _IDENTIFIER_HEADER_IMAGE_CELL = "HeaderImageCell"
+    
 }

@@ -46,16 +46,17 @@ class HomeRootViewController: UIViewController {
     
     func defineCombineView() {
         self.combineView = self.loadViewFromNib(nibName: "CombineView", frame: self.tableView.bounds)
-        self.combineView.menuCollectionView.register(UINib(nibName: "MenuCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_COMBINE_MENU_VIEW_CELL)
-        self.combineView.detailCollectionView.register(UINib(nibName: "ImageCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_IMAGE_COLLECTION_VIEW_CELL)
-        self.combineView.detailCollectionView.register(UINib(nibName: "NameCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants._IDENTIFIER_NAME_COLLECTION_VIEW_CELL)
+        self.combineView.menuCollectionView.register(UINib(nibName: "MenuCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierCombineMenuViewCell)
+        self.combineView.detailCollectionView.register(UINib(nibName: "ImageCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierImageCollectionViewCell)
+        self.combineView.detailCollectionView.register(UINib(nibName: "NameCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierNameCollectionViewCell)
         self.combineView.menuCollectionView.dataSource = self.combineView
         self.combineView.menuCollectionView.delegate = self.combineView
         self.combineView.detailCollectionView.dataSource = self.combineView
         self.combineView.detailCollectionView.delegate = self.combineView
         self.mainView.addSubview(self.combineView)
-        self.combineView.frame.origin.x = self.tableView.frame.origin.x
         self.combineView.isHidden = true
+        self.combineView.frame.origin.x = self.tblMenuView.bounds.width
+        self.combineView.frame.origin.y = 64
     }
     
     private func loadViewFromNib(nibName: String, frame: CGRect) -> CombineView {
@@ -182,10 +183,12 @@ extension HomeRootViewController: UITableViewDelegate {
             switch indexPath.row {
             case 0:
                 self.combineView.isHidden = true
+                self.tableView.isHidden = false
                 self.didTouchNextButtonBarItem()
             case 1:
                 break
             case 2:
+                self.tableView.isHidden = true
                 self.combineView.isHidden = false
                 self.didTouchNextButtonBarItem()
             default:

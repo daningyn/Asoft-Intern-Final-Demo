@@ -40,7 +40,7 @@ extension CombineView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case menuCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants._IDENTIFIER_COMBINE_MENU_VIEW_CELL, for: indexPath) as! MenuCollectionCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCombineMenuViewCell, for: indexPath) as! MenuCollectionCell
             
             if indexPath.row == selectedCell {
                 cell.textLabel.textColor = UIColor.black
@@ -58,12 +58,12 @@ extension CombineView: UICollectionViewDataSource {
         default:
             switch indexPath.row {
             case 0:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants._IDENTIFIER_IMAGE_COLLECTION_VIEW_CELL, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierImageCollectionViewCell, for: indexPath)
                 
                 
                 return cell
             default:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants._IDENTIFIER_NAME_COLLECTION_VIEW_CELL, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierNameCollectionViewCell, for: indexPath)
                 
                 
                 return cell
