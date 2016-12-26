@@ -148,9 +148,9 @@ extension HomeRootViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch tableView {
         case self.tableView:
-            return (tableView.bounds.height - 64) / 7 - 5
+            return (tableView.bounds.height - 64) / 6 - 5
         case self.tblMenuView:
-            return (tableView.bounds.height - 64) / 7
+            return (tableView.bounds.height - 64) / 8
         default:
             return 0
         }
