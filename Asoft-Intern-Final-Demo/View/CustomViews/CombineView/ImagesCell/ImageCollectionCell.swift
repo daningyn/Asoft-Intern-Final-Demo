@@ -39,6 +39,10 @@ extension ImageCollectionCell: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierDetailImageCell, for: indexPath)
         
         (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kCombineImageCellArray[indexPath.row % 3])
+        (cell.viewWithTag(1) as! UIImageView).layer.borderWidth = 0.2
+        (cell.viewWithTag(1) as! UIImageView).layer.borderColor = UIColor.untCoralPink.cgColor
+        (cell.viewWithTag(1) as! UIImageView).layer.cornerRadius = 5.0
+        (cell.viewWithTag(1) as! UIImageView).clipsToBounds = true
         
         return cell
     }

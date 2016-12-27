@@ -55,6 +55,16 @@ extension UIView {
     }
 }
 
+extension UIColor {
+    class var untWatermelon: UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 58.0 / 255.0, blue: 106.0 / 255.0, alpha: 1.0)
+    }
+    
+    class var untCoralPink: UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 84.0 / 255.0, blue: 105.0 / 255.0, alpha: 1.0)
+    }
+}
+
 
 
 

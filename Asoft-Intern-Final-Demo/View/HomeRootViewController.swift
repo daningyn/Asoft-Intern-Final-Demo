@@ -65,6 +65,8 @@ class HomeRootViewController: UIViewController {
         self.combineView.isHidden = true
         self.combineView.frame.origin.x = UIScreen.main.bounds.width
         self.combineView.frame.origin.y = 64
+        self.combineView.frame.size.width = UIScreen.main.bounds.width
+        self.combineView.frame.size.height = UIScreen.main.bounds.height - 64
     }
     
     private func loadViewFromNib(nibName: String, frame: CGRect) -> CombineView {
