@@ -81,21 +81,44 @@ class HomeRootViewController: UIViewController {
     }
     
     func didTouchNextButtonBarItem() {
-        self.navigationItem.title = self.navigationTitle
-        if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
-            self.navigationItem.leftBarButtonItem = leftBarButtonItem
-        }
-        if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
-            self.navigationItem.rightBarButtonItem = searchBarButtonItem
-        }
         UIView.animate(withDuration: 0.3, animations: {
             self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
         })
+        var indexPath = IndexPath(row: 0, section: 0)
+        if self.tableView.isHidden == false {
+            indexPath = IndexPath(row: 0, section: 0)
+        } else if self.combineView.isHidden == false {
+            indexPath = IndexPath(row: 2, section: 0)
+        }
+        switch indexPath.row {
+        case 0:
+            self.combineView.isHidden = true
+            self.tableView.isHidden = false
+            if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
+                self.navigationItem.rightBarButtonItem = searchBarButtonItem
+            }
+            self.navigationItem.title = AppNavigationTitle.kHomeNavigation
+            if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                self.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
+        case 1:
+            break
+        case 2:
+            self.tableView.isHidden = true
+            self.combineView.isHidden = false
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.title = AppNavigationTitle.kCombineNavigation
+            if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                self.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
+        default:
+            break
+        }
     }
     
     @IBAction func didTouchMenuButton(_ sender: Any) {
         self.navigationTitle = self.navigationItem.title!
-        self.navigationItem.title = "Menu"
+        self.navigationItem.title = AppNavigationTitle.kMenuNavigation
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = AppDelegate.shared.nextBarButtonItem
         UIView.animate(withDuration: 0.3, animations: {
@@ -197,13 +220,29 @@ extension HomeRootViewController: UITableViewDelegate {
             case 0:
                 self.combineView.isHidden = true
                 self.tableView.isHidden = false
-                self.didTouchNextButtonBarItem()
+                if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
+                    self.navigationItem.rightBarButtonItem = searchBarButtonItem
+                }
+                self.navigationItem.title = AppNavigationTitle.kHomeNavigation
+                if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                    self.navigationItem.leftBarButtonItem = leftBarButtonItem
+                }
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+                })
             case 1:
                 break
             case 2:
                 self.tableView.isHidden = true
                 self.combineView.isHidden = false
-                self.didTouchNextButtonBarItem()
+                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.title = AppNavigationTitle.kCombineNavigation
+                if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                    self.navigationItem.leftBarButtonItem = leftBarButtonItem
+                }
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+                })
             default:
                 break
             }

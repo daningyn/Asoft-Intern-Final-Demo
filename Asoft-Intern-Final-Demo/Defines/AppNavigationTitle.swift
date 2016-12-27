@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class AppNavigationTitle {
+    
+    static let kHomeNavigation = "Repices"
+    static let kMenuNavigation = "Menu"
+    static let kCombineNavigation = "Combine"
+    
+}
