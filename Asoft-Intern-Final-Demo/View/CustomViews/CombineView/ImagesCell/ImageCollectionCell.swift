@@ -8,16 +8,31 @@
 
 import UIKit
 
+protocol ScrollDetailCollectionViewDelegate {
+    func getContentOffsetYCombineTopView() -> CGFloat
+    func getHeightCombineTopView() -> CGFloat
+    func subtractionView(value: CGFloat)
+    func plusHeightForBotView(value: CGFloat)
+    func setHeightForDetailCollectionView()
+    func setContentOffsetYToTopForBotView()
+    func setContentOffsetYToTopForTopView()
+    func plusContentForView(value: CGFloat)
+    func reloadCollectionViewData()
+}
+
 class ImageCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    
+    var animationDelegate: ScrollDetailCollectionViewDelegate?
+    
+    lazy internal var myContentOffsetY: CGFloat = 0.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.mainCollectionView.dataSource = self
         self.mainCollectionView.delegate = self
         self.mainCollectionView.register(UINib(nibName: "DetailOfImageCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierDetailImageCell)
-        self.mainCollectionView.register(UINib(nibName: "HeaderImageCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierHeaderImageCombineCell)
         self.mainCollectionView.register(UINib(nibName: "HeaderImageCell", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Constants.kIdentifierHeaderImageCombineCell)
     }
 
@@ -74,20 +89,49 @@ extension ImageCollectionCell: UICollectionViewDelegateFlowLayout {
         return CGSize(width: (collectionView.bounds.width-28)/3, height: (collectionView.bounds.width-20)/3)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 5
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 5
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 35)
     }
     
 }
 
+
+//#MARK: - UIScrollView Delegate
+extension ImageCollectionCell {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 && scrollView.contentOffset.y < scrollView.contentSize.height -  scrollView.frame.size.height {
+            if scrollView.contentOffset.y > self.myContentOffsetY {
+                if let animationDelegate = self.animationDelegate {
+                    if animationDelegate.getContentOffsetYCombineTopView() > 1 - animationDelegate.getHeightCombineTopView() {
+                        animationDelegate.subtractionView(value: scrollView.contentOffset.y - self.myContentOffsetY)
+                        animationDelegate.plusHeightForBotView(value: scrollView.contentOffset.y - self.myContentOffsetY)
+                        animationDelegate.setHeightForDetailCollectionView()
+                    } else {
+                        animationDelegate.setContentOffsetYToTopForBotView()
+                    }
+                    self.myContentOffsetY = scrollView.contentOffset.y
+                }
+            } else {
+                if let animationDelegate = self.animationDelegate {
+                    if animationDelegate.getContentOffsetYCombineTopView() >= 0 {
+                        animationDelegate.setContentOffsetYToTopForTopView()
+                    } else {
+                        animationDelegate.plusContentForView(value: self.myContentOffsetY - scrollView.contentOffset.y)
+                        animationDelegate.plusHeightForBotView(value: scrollView.contentOffset.y - self.myContentOffsetY)
+                        animationDelegate.setHeightForDetailCollectionView()
+                    }
+                    self.myContentOffsetY = scrollView.contentOffset.y
+                }
+            }
+        } else {
+            if let animationDelegate = self.animationDelegate {
+                animationDelegate.reloadCollectionViewData()
+            }
+        }
+    }
+    
+}
 
 
 

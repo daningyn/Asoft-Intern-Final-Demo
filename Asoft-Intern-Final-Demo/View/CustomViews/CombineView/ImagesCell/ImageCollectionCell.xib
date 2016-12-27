@@ -30,6 +30,7 @@
                     </collectionView>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="5Vu-dn-haO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HLn-F5-JTS"/>
                 <constraint firstAttribute="bottom" secondItem="5Vu-dn-haO" secondAttribute="bottom" id="HjK-bC-ari"/>

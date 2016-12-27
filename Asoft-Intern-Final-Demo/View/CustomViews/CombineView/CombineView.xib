@@ -76,9 +76,9 @@
                                 <constraint firstAttribute="height" constant="3" id="fjr-tJ-nW6"/>
                             </constraints>
                         </view>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-LL-Gqg">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-LL-Gqg">
                             <rect key="frame" x="0.0" y="50" width="320" height="328"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="hFg-q4-khD">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -96,7 +96,7 @@
                         <constraint firstAttribute="trailing" secondItem="RjN-7u-Lbz" secondAttribute="trailing" id="Ueu-kk-7Ml"/>
                         <constraint firstItem="RjN-7u-Lbz" firstAttribute="top" secondItem="zFz-n8-ZbJ" secondAttribute="top" id="ZoV-oq-p3J"/>
                         <constraint firstItem="dMb-4C-5z1" firstAttribute="width" secondItem="RjN-7u-Lbz" secondAttribute="width" multiplier="1:2" id="hAe-iC-djE"/>
-                        <constraint firstAttribute="bottom" secondItem="hjQ-LL-Gqg" secondAttribute="bottom" id="u8n-KL-bUr"/>
+                        <constraint firstAttribute="bottom" secondItem="hjQ-LL-Gqg" secondAttribute="bottom" id="w51-sL-vka"/>
                         <constraint firstAttribute="trailing" secondItem="hjQ-LL-Gqg" secondAttribute="trailing" id="xws-8k-knN"/>
                         <constraint firstItem="hjQ-LL-Gqg" firstAttribute="leading" secondItem="zFz-n8-ZbJ" secondAttribute="leading" id="zbE-Dh-P12"/>
                     </constraints>
@@ -114,9 +114,11 @@
                 <constraint firstAttribute="trailing" secondItem="ysU-74-RQd" secondAttribute="trailing" id="zcE-XX-7Np"/>
             </constraints>
             <connections>
+                <outlet property="botView" destination="zFz-n8-ZbJ" id="N2d-Dl-C3H"/>
                 <outlet property="detailCollectionView" destination="hjQ-LL-Gqg" id="Yd3-Pw-dOW"/>
                 <outlet property="footerMenu" destination="dMb-4C-5z1" id="gT2-ag-FGv"/>
                 <outlet property="menuCollectionView" destination="RjN-7u-Lbz" id="5LK-TG-MZh"/>
+                <outlet property="topView" destination="ysU-74-RQd" id="XCk-92-g53"/>
             </connections>
         </view>
     </objects>

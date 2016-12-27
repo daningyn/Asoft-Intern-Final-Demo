@@ -67,6 +67,8 @@ class HomeRootViewController: UIViewController {
         self.combineView.frame.origin.y = 64
         self.combineView.frame.size.width = UIScreen.main.bounds.width
         self.combineView.frame.size.height = UIScreen.main.bounds.height - 64
+        self.combineView.detailCollectionView.translatesAutoresizingMaskIntoConstraints = true
+        self.combineView.menuCollectionView.translatesAutoresizingMaskIntoConstraints = true
     }
     
     private func loadViewFromNib(nibName: String, frame: CGRect) -> CombineView {

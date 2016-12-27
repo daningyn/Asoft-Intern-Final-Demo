@@ -13,24 +13,81 @@ class CombineView: UIView {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var footerMenu: UIView!
     @IBOutlet weak var detailCollectionView: UICollectionView!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var botView: UIView!
     
     var selectedCell: Int = 0
     var menu = ["IMAGES", "NAMES"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
     }
-    
-   
 
 }
 
 
-//#MARK: UICollectionView DataSource
+//#MARK: - ScrollDetailCollectionViewDelegate
+extension CombineView: ScrollDetailCollectionViewDelegate {
+    
+    func getContentOffsetYCombineTopView() -> CGFloat {
+        return self.topView.frame.origin.y
+    }
+    
+    func getHeightCombineTopView() -> CGFloat {
+        return self.topView.frame.size.height
+    }
+    
+    func subtractionView(value: CGFloat) {
+        self.topView.frame.origin.y -= value
+        self.botView.frame.origin.y -= value
+    }
+    
+    func plusHeightForBotView(value: CGFloat) {
+        self.botView.frame.size.height += value
+    }
+    
+    func setHeightForDetailCollectionView() {
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.detailCollectionView.reloadData()
+    }
+    
+    func setContentOffsetYToTopForBotView() {
+        self.topView.frame.origin.y = 1 - self.topView.frame.size.height
+        self.botView.frame.origin.y = self.topView.frame.origin.y + self.topView.frame.size.height
+        self.botView.frame.size.height = self.frame.size.height - 1
+        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.detailCollectionView.reloadData()
+    }
+    
+    func setContentOffsetYToTopForTopView() {
+        self.topView.frame.origin.y = 0
+        self.botView.frame.origin.y = self.topView.frame.origin.y + self.topView.frame.size.height
+        self.botView.frame.size.height = self.frame.size.height - self.topView.frame.size.height
+        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.detailCollectionView.reloadData()
+    }
+    
+    func plusContentForView(value: CGFloat) {
+        self.topView.frame.origin.y += value
+        self.botView.frame.origin.y += value
+    }
+    
+    func reloadCollectionViewData() {
+        self.detailCollectionView.reloadData()
+    }
+    
+}
+
+
+//#MARK: - UICollectionView DataSource
 extension CombineView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,8 +115,9 @@ extension CombineView: UICollectionViewDataSource {
         default:
             switch indexPath.row {
             case 0:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierImageCollectionViewCell, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierImageCollectionViewCell, for: indexPath) as! ImageCollectionCell
                 
+                cell.animationDelegate = self
                 
                 return cell
             default:
@@ -121,9 +179,6 @@ extension CombineView: UICollectionViewDelegateFlowLayout {
 extension CombineView {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if self.detailCollectionView.isTracking {
-//            self.footerMenu.frame.origin.x = self.detailCollectionView.contentOffset.x
-//        }
         self.footerMenu.frame.origin.x = self.detailCollectionView.contentOffset.x/2
     }
     
