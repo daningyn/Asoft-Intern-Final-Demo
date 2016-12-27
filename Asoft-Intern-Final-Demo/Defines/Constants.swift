@@ -23,6 +23,7 @@ class Constants {
     static let kIdentifierImageCollectionViewCell = "ImageCollectionViewCell"
     static let kIdentifierNameCollectionViewCell = "NameCollectionViewCell"
     static let kIdentifierDetailImageCell = "DetailOfImageCell"
+    static let kIdentifierDetailNamesCell = "DetailOfNamesCell"
     
     static let _IDENTIFIER_HOME_NAVIGATION_CONTROLLER = "HomeNavigationController"
     static let _IDENTIFIER_HOME_TABLE_VIEW_CELL = "HomeTableViewCell"

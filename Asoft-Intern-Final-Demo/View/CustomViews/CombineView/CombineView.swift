@@ -54,6 +54,7 @@ extension CombineView: ScrollDetailCollectionViewDelegate {
     
     func setHeightForDetailCollectionView() {
         self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.footerMenu.frame.origin.x = CGFloat(CGFloat(selectedCell)*(self.menuCollectionView.bounds.width/2))
         self.detailCollectionView.reloadData()
     }
     
@@ -121,8 +122,9 @@ extension CombineView: UICollectionViewDataSource {
                 
                 return cell
             default:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierNameCollectionViewCell, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierNameCollectionViewCell, for: indexPath) as! NameCollectionCell
                 
+                cell.animationDelegate = self
                 
                 return cell
             }
