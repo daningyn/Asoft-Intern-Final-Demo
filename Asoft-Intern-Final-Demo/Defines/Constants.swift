@@ -25,8 +25,9 @@ class Constants {
     static let kIdentifierDetailImageCell = "DetailOfImageCell"
     static let kIdentifierDetailNamesCell = "DetailOfNamesCell"
     
-    static let _IDENTIFIER_HOME_NAVIGATION_CONTROLLER = "HomeNavigationController"
-    static let _IDENTIFIER_HOME_TABLE_VIEW_CELL = "HomeTableViewCell"
-    static let _IDENTIFIER_MENU_TABLE_VIEW_CELL = "MenuTableViewCell"
+    //#MARK: - Main Home StoryBoard
+    static let kIdentifierHomeNavigationController = "HomeNavigationController"
+    static let kIdentifierHomeTableViewCell = "HomeTableViewCell"
+    static let kIdentifierMenuTableViewCell = "MenuTableViewCell"
     
 }

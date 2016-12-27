@@ -55,7 +55,7 @@ extension AppDelegate {
     
     func changeRootViewToHomeVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: Constants._IDENTIFIER_HOME_NAVIGATION_CONTROLLER)
+        let homeVC = storyboard.instantiateViewController(withIdentifier: Constants.kIdentifierHomeNavigationController)
         self.window?.rootViewController = homeVC
     }
     

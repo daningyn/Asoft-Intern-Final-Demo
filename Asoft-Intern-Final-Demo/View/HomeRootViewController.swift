@@ -130,7 +130,7 @@ extension HomeRootViewController: UITableViewDataSource {
         
         switch tableView {
         case self.tableView:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants._IDENTIFIER_HOME_TABLE_VIEW_CELL, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierHomeTableViewCell, for: indexPath)
             
             (cell.viewWithTag(1) as! UILabel).text = listFoodArray[indexPath.row]
             (cell.viewWithTag(1) as! UILabel).font = UIFont.systemFont(ofSize: cell.bounds.height/2 + 10)
@@ -139,7 +139,7 @@ extension HomeRootViewController: UITableViewDataSource {
             
             return cell
         case self.tblMenuView:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants._IDENTIFIER_MENU_TABLE_VIEW_CELL, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierMenuTableViewCell, for: indexPath)
             
             (cell.viewWithTag(1) as! UILabel).text = self.menuArray[indexPath.row]
             (cell.viewWithTag(1) as! UILabel).font = UIFont.systemFont(ofSize: cell.bounds.height/2 + 10)
