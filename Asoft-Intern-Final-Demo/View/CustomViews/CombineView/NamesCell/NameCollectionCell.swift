@@ -10,9 +10,40 @@ import UIKit
 
 class NameCollectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var mainCollectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.mainCollectionView.dataSource = self
+        self.mainCollectionView.delegate = self
     }
 
 }
+
+
+//#MARK: - UICollectionView DataSource
+extension NameCollectionCell: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return AppResourceIdentifiers.kCombineNumberRowInSection.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+    }
+    
+}
+
+
+//#MARK: - UICollectionView Delegate
+extension NameCollectionCell: UICollectionViewDelegate {
+    
+    
+    
+}
+
+
+
+
+
+
