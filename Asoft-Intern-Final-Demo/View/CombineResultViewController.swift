@@ -29,6 +29,7 @@ class CombineResultViewController: UIViewController {
         AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
         AppDelegate.shared.homeNavigation.navigationItem.leftBarButtonItem = nil
         AppDelegate.shared.homeNavigation.navigationBar.topItem!.title = AppNavigationTitle.kCombineResultNavigation
+        self.navigationController!.navigationBar.backItem!.title = ""
     }
 
 }

@@ -36,7 +36,7 @@ class HomeRootViewController: UIViewController {
         self.navigationController?.navigationBar.hideBottomHairline()
         AppDelegate.shared.menuBarButtonItem = self.navigationItem.leftBarButtonItem
         AppDelegate.shared.searchBarButtonItem = self.navigationItem.rightBarButtonItem
-        AppDelegate.shared.nextBarButtonItem = UIBarButtonItem(image: UIImage(named: "next-icon"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.didTouchNextButtonBarItem))
+        AppDelegate.shared.nextBarButtonItem = UIBarButtonItem(image: UIImage(named: AppResourceIdentifiers.kIdentifierIconNext), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.didTouchNextButtonBarItem))
         AppDelegate.shared.nextBarButtonItem?.tintColor = UIColor.black
         
     }

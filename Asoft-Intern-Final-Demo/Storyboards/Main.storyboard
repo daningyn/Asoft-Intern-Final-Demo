@@ -16,7 +16,7 @@
         <scene sceneID="4Cq-yL-4pk">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" id="L5Q-OD-I8e" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t4y-Kj-Hwl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="icon_back" backIndicatorTransitionMaskImage="icon_back" id="t4y-Kj-Hwl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,6 +264,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_back" width="15" height="24"/>
         <image name="menu-icon" width="36" height="24"/>
         <image name="search-icon" width="35" height="35"/>
     </resources>
