@@ -22,6 +22,9 @@ class MarketingViewController: UIViewController {
     lazy var isTrackingImage = false
     lazy var isInSignUpView = false
     
+    lazy var cellOnScreen = 0
+    lazy var nextCellOnScreen = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageCollectionView.delegate = self
@@ -89,9 +92,9 @@ class MarketingViewController: UIViewController {
             }
         }
         
-        if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) > 2.5 {
-            self.lineView.isHidden = false
-        }
+//        if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) > 2.5 {
+//            self.lineView.isHidden = false
+//        }
         
     }
     
@@ -102,36 +105,63 @@ class MarketingViewController: UIViewController {
                 self.labelCollectionView.reloadData()
             }
         }
+        self.cellOnScreen = Int(scrollView.contentOffset.x / self.imageCollectionView.bounds.width)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if scrollView.contentOffset.x <= 0 {
             scrollView.contentOffset.x = 0
+            self.labelCollectionView.contentOffset.x = 0
+            self.imageCollectionView.contentOffset.x = 0
         } else if scrollView.contentOffset.x >= self.imageCollectionView.bounds.width*3 {
             scrollView.contentOffset.x = self.imageCollectionView.bounds.width*3
+            self.labelCollectionView.contentOffset.x = self.imageCollectionView.bounds.width*3
+            self.imageCollectionView.contentOffset.x = self.imageCollectionView.bounds.width*3
+        } else {
+        
+            if self.imageCollectionView.isTracking == true {
+                self.isTrackingImage = true
+                self.labelCollectionView.contentOffset.x = self.imageCollectionView.contentOffset.x
+            } else if self.labelCollectionView.isTracking == true {
+                self.isTrackingImage = false
+                self.imageCollectionView.contentOffset.x = self.labelCollectionView.contentOffset.x
+            }
+            if self.isTrackingImage {
+                self.labelCollectionView.contentOffset.x = self.imageCollectionView.contentOffset.x
+            } else {
+                self.imageCollectionView.contentOffset.x = self.labelCollectionView.contentOffset.x
+            }
+            
+            if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) > 2.5 {
+                self.pageControl.numberOfPages = 0
+                self.lineView.isHidden = true
+            } else {
+                self.lineView.isHidden = false
+                self.pageControl.numberOfPages = 4
+                self.pageControl.currentPage = Int(scrollView.contentOffset.x / self.imageCollectionView.bounds.width)
+            }
+        
         }
         
-        if self.imageCollectionView.isTracking == true {
-            self.isTrackingImage = true
-            self.labelCollectionView.contentOffset.x = self.imageCollectionView.contentOffset.x
-        } else if self.labelCollectionView.isTracking == true {
-            self.isTrackingImage = false
-            self.imageCollectionView.contentOffset.x = self.labelCollectionView.contentOffset.x
-        }
-        if self.isTrackingImage {
-            self.labelCollectionView.contentOffset.x = self.imageCollectionView.contentOffset.x
-        } else {
-            self.imageCollectionView.contentOffset.x = self.labelCollectionView.contentOffset.x
-        }
-        
-        if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) > 2.5 {
-            self.pageControl.numberOfPages = 0
-            self.lineView.isHidden = true
-        } else {
-            self.lineView.isHidden = false
-            self.pageControl.numberOfPages = 4
-            self.pageControl.currentPage = Int(scrollView.contentOffset.x / self.imageCollectionView.bounds.width)
+        if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) > CGFloat(self.cellOnScreen) {
+            self.nextCellOnScreen = self.cellOnScreen + 1
+            
+            self.imageCollectionView.cellForItem(at: IndexPath(item: self.nextCellOnScreen, section: 0))?.alpha = CGFloat((scrollView.contentOffset.x - (CGFloat(self.cellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+            self.imageCollectionView.cellForItem(at: IndexPath(item: self.cellOnScreen, section: 0))?.alpha = 1 - CGFloat((scrollView.contentOffset.x - (CGFloat(self.cellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+            
+            self.labelCollectionView.cellForItem(at: IndexPath(item: self.nextCellOnScreen, section: 0))?.alpha = CGFloat((scrollView.contentOffset.x - (CGFloat(self.cellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+            self.labelCollectionView.cellForItem(at: IndexPath(item: self.cellOnScreen, section: 0))?.alpha = 1 - CGFloat((scrollView.contentOffset.x - (CGFloat(self.cellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+            
+        } else if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) < CGFloat(self.cellOnScreen) {
+            self.nextCellOnScreen = self.cellOnScreen - 1
+            
+            self.imageCollectionView.cellForItem(at: IndexPath(item: self.cellOnScreen, section: 0))?.alpha = CGFloat((scrollView.contentOffset.x - (CGFloat(self.nextCellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+            self.imageCollectionView.cellForItem(at: IndexPath(item: self.nextCellOnScreen, section: 0))?.alpha = 1 - CGFloat((scrollView.contentOffset.x - (CGFloat(self.nextCellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+            
+            self.labelCollectionView.cellForItem(at: IndexPath(item: self.cellOnScreen, section: 0))?.alpha = CGFloat((scrollView.contentOffset.x - (CGFloat(self.nextCellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+            self.labelCollectionView.cellForItem(at: IndexPath(item: self.nextCellOnScreen, section: 0))?.alpha = 1 - CGFloat((scrollView.contentOffset.x - (CGFloat(self.nextCellOnScreen)*self.imageCollectionView.bounds.width))) / self.imageCollectionView.bounds.width
+
         }
         
     }
