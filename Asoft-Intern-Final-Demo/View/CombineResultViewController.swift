@@ -23,6 +23,13 @@ class CombineResultViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
+        AppDelegate.shared.homeNavigation.navigationItem.leftBarButtonItem = nil
+        AppDelegate.shared.homeNavigation.navigationBar.topItem!.title = AppNavigationTitle.kCombineResultNavigation
+    }
 
 }
 

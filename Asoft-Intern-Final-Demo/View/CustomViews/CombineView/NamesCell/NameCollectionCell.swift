@@ -71,9 +71,6 @@ extension NameCollectionCell: UICollectionViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let combineResultVC = storyboard.instantiateViewController(withIdentifier: Constants.kIdentifierCombineResultVC) as! CombineResultViewController
         AppDelegate.shared.homeNavigation.pushViewController(combineResultVC, animated: true)
-        AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
-        AppDelegate.shared.homeNavigation.navigationItem.leftBarButtonItem = nil
-        AppDelegate.shared.homeNavigation.navigationBar.topItem?.title = AppNavigationTitle.kCombineResultNavigation
     }
     
 }
