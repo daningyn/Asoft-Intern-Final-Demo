@@ -18,6 +18,8 @@
 		449371611E0AE39700B68046 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4493715F1E0AE39700B68046 /* LaunchScreen.storyboard */; };
 		4493716C1E0AE39700B68046 /* Asoft_Intern_Final_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493716B1E0AE39700B68046 /* Asoft_Intern_Final_DemoTests.swift */; };
 		449371771E0AE39700B68046 /* Asoft_Intern_Final_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449371761E0AE39700B68046 /* Asoft_Intern_Final_DemoUITests.swift */; };
+		44B1C3081E13ABB00098EEBE /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B1C3071E13ABB00098EEBE /* CommunityView.swift */; };
+		44B1C30A1E13ABC60098EEBE /* CommunityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B1C3091E13ABC60098EEBE /* CommunityView.xib */; };
 		44B55B161E1259D800A8B3A4 /* DetailOfNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B55B141E1259D800A8B3A4 /* DetailOfNameCell.xib */; };
 		44B55B181E126AC300A8B3A4 /* AppNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B55B171E126AC300A8B3A4 /* AppNavigationTitle.swift */; };
 		44B55B1D1E12715700A8B3A4 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B55B1C1E12715700A8B3A4 /* ProfileView.xib */; };
@@ -76,6 +78,8 @@
 		449371721E0AE39700B68046 /* Asoft-Intern-Final-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Asoft-Intern-Final-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		449371761E0AE39700B68046 /* Asoft_Intern_Final_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asoft_Intern_Final_DemoUITests.swift; sourceTree = "<group>"; };
 		449371781E0AE39700B68046 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44B1C3071E13ABB00098EEBE /* CommunityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommunityView.swift; path = View/CustomViews/CommunityView/CommunityView.swift; sourceTree = "<group>"; };
+		44B1C3091E13ABC60098EEBE /* CommunityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommunityView.xib; path = View/CustomViews/CommunityView/CommunityView.xib; sourceTree = "<group>"; };
 		44B55B141E1259D800A8B3A4 /* DetailOfNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailOfNameCell.xib; path = View/CustomViews/CombineView/NamesCell/DetailOfNameCell.xib; sourceTree = "<group>"; };
 		44B55B171E126AC300A8B3A4 /* AppNavigationTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNavigationTitle.swift; path = Defines/AppNavigationTitle.swift; sourceTree = "<group>"; };
 		44B55B1C1E12715700A8B3A4 /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileView.xib; path = View/CustomViews/ProfileView/ProfileView.xib; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 		44926E2A1E0BB6CE0030DA00 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				44B1C3061E13AB5E0098EEBE /* CommunityView */,
 				44B55B191E1270E200A8B3A4 /* ProfileView */,
 				443A87721E0E52D9006FCAE0 /* CombineView */,
 			);
@@ -212,6 +217,15 @@
 				449371781E0AE39700B68046 /* Info.plist */,
 			);
 			path = "Asoft-Intern-Final-DemoUITests";
+			sourceTree = "<group>";
+		};
+		44B1C3061E13AB5E0098EEBE /* CommunityView */ = {
+			isa = PBXGroup;
+			children = (
+				44B1C3071E13ABB00098EEBE /* CommunityView.swift */,
+				44B1C3091E13ABC60098EEBE /* CommunityView.xib */,
+			);
+			name = CommunityView;
 			sourceTree = "<group>";
 		};
 		44B55B191E1270E200A8B3A4 /* ProfileView */ = {
@@ -467,6 +481,7 @@
 				44E2BEC01E10B954003ABFBB /* HeaderImageCell.xib in Resources */,
 				4493715E1E0AE39700B68046 /* Assets.xcassets in Resources */,
 				44E2BEB61E10A882003ABFBB /* NameCollectionCell.xib in Resources */,
+				44B1C30A1E13ABC60098EEBE /* CommunityView.xib in Resources */,
 				44C051731E0CC50D00381976 /* Main.storyboard in Resources */,
 				443A87781E0E5392006FCAE0 /* CombineView.xib in Resources */,
 				44B55B1D1E12715700A8B3A4 /* ProfileView.xib in Resources */,
@@ -641,6 +656,7 @@
 				44B55B181E126AC300A8B3A4 /* AppNavigationTitle.swift in Sources */,
 				44E2BEB01E10A792003ABFBB /* ImageCollectionCell.swift in Sources */,
 				44FE7C0C1E134C1500FC762D /* CombineResultViewController.swift in Sources */,
+				44B1C3081E13ABB00098EEBE /* CommunityView.swift in Sources */,
 				445605F51E1120D2009E6149 /* AppResourceIdentifiers.swift in Sources */,
 				44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */,
 				443A87741E0E5315006FCAE0 /* CombineView.swift in Sources */,
