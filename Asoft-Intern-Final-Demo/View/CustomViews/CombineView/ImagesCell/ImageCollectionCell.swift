@@ -77,7 +77,14 @@ extension ImageCollectionCell: UICollectionViewDataSource {
 //#MARK: - UICollectionView Delegate 
 extension ImageCollectionCell: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let combineResultVC = storyboard.instantiateViewController(withIdentifier: Constants.kIdentifierCombineResultVC) as! CombineResultViewController
+        AppDelegate.shared.homeNavigation.pushViewController(combineResultVC, animated: true)
+        AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
+        AppDelegate.shared.homeNavigation.navigationItem.leftBarButtonItem = nil
+        AppDelegate.shared.homeNavigation.navigationBar.topItem?.title = AppNavigationTitle.kCombineResultNavigation
+    }
     
 }
 

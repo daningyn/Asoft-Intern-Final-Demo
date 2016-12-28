@@ -32,6 +32,7 @@
 		44E2BEB61E10A882003ABFBB /* NameCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44E2BEB41E10A882003ABFBB /* NameCollectionCell.xib */; };
 		44E2BEBC1E10ABB2003ABFBB /* DetailOfImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44E2BEBA1E10ABB2003ABFBB /* DetailOfImageCell.xib */; };
 		44E2BEC01E10B954003ABFBB /* HeaderImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44E2BEBE1E10B954003ABFBB /* HeaderImageCell.xib */; };
+		44FE7C0C1E134C1500FC762D /* CombineResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE7C0B1E134C1500FC762D /* CombineResultViewController.swift */; };
 		4D365DF886FEC392B4F4D72F /* Pods_Asoft_Intern_Final_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8E443D95165DB419F1AD52 /* Pods_Asoft_Intern_Final_Demo.framework */; };
 		673374FE80EF3753859A8743 /* Pods_Asoft_Intern_Final_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FB8B6E81D487C4AAAB7555 /* Pods_Asoft_Intern_Final_DemoTests.framework */; };
 		C55F04811E9F5F52A2DE00AF /* Pods_Asoft_Intern_Final_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F998263A891ADA7BDC46C2F3 /* Pods_Asoft_Intern_Final_DemoUITests.framework */; };
@@ -89,6 +90,7 @@
 		44E2BEB41E10A882003ABFBB /* NameCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NameCollectionCell.xib; path = View/CustomViews/CombineView/NamesCell/NameCollectionCell.xib; sourceTree = "<group>"; };
 		44E2BEBA1E10ABB2003ABFBB /* DetailOfImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailOfImageCell.xib; path = View/CustomViews/CombineView/ImagesCell/DetailOfImageCell.xib; sourceTree = "<group>"; };
 		44E2BEBE1E10B954003ABFBB /* HeaderImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderImageCell.xib; path = View/CustomViews/CombineView/ImagesCell/HeaderImageCell.xib; sourceTree = "<group>"; };
+		44FE7C0B1E134C1500FC762D /* CombineResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombineResultViewController.swift; path = View/CombineResultViewController.swift; sourceTree = "<group>"; };
 		65328A464DD5F33275442438 /* Pods-Asoft-Intern-Final-DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asoft-Intern-Final-DemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asoft-Intern-Final-DemoUITests/Pods-Asoft-Intern-Final-DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF8E443D95165DB419F1AD52 /* Pods_Asoft_Intern_Final_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asoft_Intern_Final_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC76CAD19CA9259FB6402BD /* Pods-Asoft-Intern-Final-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asoft-Intern-Final-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asoft-Intern-Final-DemoTests/Pods-Asoft-Intern-Final-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				44926E2A1E0BB6CE0030DA00 /* CustomViews */,
 				44D925191E0AF49F0064FC3E /* MarketingViewController.swift */,
 				44C051741E0CCE5F00381976 /* HomeRootViewController.swift */,
+				44FE7C0B1E134C1500FC762D /* CombineResultViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				44C051751E0CCE5F00381976 /* HomeRootViewController.swift in Sources */,
 				44B55B181E126AC300A8B3A4 /* AppNavigationTitle.swift in Sources */,
 				44E2BEB01E10A792003ABFBB /* ImageCollectionCell.swift in Sources */,
+				44FE7C0C1E134C1500FC762D /* CombineResultViewController.swift in Sources */,
 				445605F51E1120D2009E6149 /* AppResourceIdentifiers.swift in Sources */,
 				44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */,
 				443A87741E0E5315006FCAE0 /* CombineView.swift in Sources */,

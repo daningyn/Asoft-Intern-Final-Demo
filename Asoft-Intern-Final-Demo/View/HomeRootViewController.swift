@@ -52,6 +52,51 @@ class HomeRootViewController: UIViewController {
             self.defineCombineView()
             self.defineProfileView()
         }
+        
+        var indexPath = IndexPath(row: 0, section: 0)
+        if self.tableView.isHidden == false {
+            indexPath = IndexPath(row: 0, section: 0)
+        } else if self.combineView.isHidden == false {
+            indexPath = IndexPath(row: 2, section: 0)
+        } else if self.profileView.isHidden == false {
+            indexPath = IndexPath(row: 3, section: 0)
+        }
+        switch indexPath.row {
+        case 0:
+            self.combineView.isHidden = true
+            self.tableView.isHidden = false
+            self.profileView.isHidden = true
+            if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
+                self.navigationItem.rightBarButtonItem = searchBarButtonItem
+            }
+            self.navigationItem.title = AppNavigationTitle.kHomeNavigation
+            if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                self.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
+        case 1:
+            break
+        case 2:
+            self.tableView.isHidden = true
+            self.combineView.isHidden = false
+            self.profileView.isHidden = true
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.title = AppNavigationTitle.kCombineNavigation
+            if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                self.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
+        case 3:
+            self.tableView.isHidden = true
+            self.combineView.isHidden = true
+            self.profileView.isHidden = false
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.title = AppNavigationTitle.kProfileNavigation
+            if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                self.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
+        default:
+            break
+        }
+        
     }
     
     //#MARK: - Define Custom View

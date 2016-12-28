@@ -157,7 +157,7 @@
                         <outlet property="rightBarButtonItem" destination="uYh-Ev-Ubf" id="kDe-DX-ZJ8"/>
                         <outlet property="tableView" destination="xpm-z1-fXw" id="hBG-aL-hFd"/>
                         <outlet property="tblMenuView" destination="XRw-vB-1FW" id="VVx-gF-HnA"/>
-                        <segue destination="Hcd-Qc-ARl" kind="push" id="R3Y-Ye-Go0"/>
+                        <segue destination="Hcd-Qc-ARl" kind="show" id="drW-Xx-pGz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ip-24-RsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,13 +177,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's see what we have" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXx-Oy-UZr">
-                                <rect key="frame" x="58.5" y="84" width="258.5" height="30"/>
+                                <rect key="frame" x="58.5" y="74" width="258.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U6O-aL-YaH">
-                                <rect key="frame" x="0.0" y="134" width="375" height="256.5"/>
+                                <rect key="frame" x="0.0" y="124" width="375" height="256.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="U6O-aL-YaH" secondAttribute="height" multiplier="3:2" constant="-10" id="Z2J-tF-Eo5"/>
@@ -217,19 +217,19 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you found what you were looking for?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Af-wD-Ky6">
-                                <rect key="frame" x="62.5" y="411" width="250" height="57.5"/>
+                                <rect key="frame" x="62.5" y="401" width="250" height="57.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="if not" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kE7-me-1IB">
-                                <rect key="frame" x="159.5" y="498.5" width="56.5" height="30"/>
+                                <rect key="frame" x="159.5" y="488.5" width="56.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsr-Tb-nVh">
-                                <rect key="frame" x="99" y="548.5" width="176" height="98.5"/>
+                                <rect key="frame" x="99" y="538.5" width="176" height="108.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="TRY AGAIN">
                                     <color key="titleColor" red="1" green="0.22745098039215686" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
@@ -247,13 +247,16 @@
                             <constraint firstItem="kE7-me-1IB" firstAttribute="top" secondItem="8Af-wD-Ky6" secondAttribute="bottom" constant="30" id="YJX-0j-K8U"/>
                             <constraint firstItem="3SJ-Sb-rTy" firstAttribute="top" secondItem="Xsr-Tb-nVh" secondAttribute="bottom" constant="20" id="bJq-Z6-fzb"/>
                             <constraint firstItem="kE7-me-1IB" firstAttribute="centerX" secondItem="O88-pa-QBo" secondAttribute="centerX" id="cKK-t1-poP"/>
-                            <constraint firstItem="TXx-Oy-UZr" firstAttribute="top" secondItem="nsk-UJ-r1A" secondAttribute="bottom" constant="20" id="hwE-1p-nHs"/>
+                            <constraint firstItem="TXx-Oy-UZr" firstAttribute="top" secondItem="nsk-UJ-r1A" secondAttribute="bottom" constant="10" id="hwE-1p-nHs"/>
                             <constraint firstItem="Xsr-Tb-nVh" firstAttribute="centerX" secondItem="O88-pa-QBo" secondAttribute="centerX" id="mJq-Ed-fkh"/>
                             <constraint firstItem="8Af-wD-Ky6" firstAttribute="centerX" secondItem="O88-pa-QBo" secondAttribute="centerX" id="nBP-EF-Bvf"/>
                             <constraint firstAttribute="trailing" secondItem="U6O-aL-YaH" secondAttribute="trailing" id="xGo-Cz-3j9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zFc-NU-1py"/>
+                    <connections>
+                        <outlet property="resultCollectionView" destination="U6O-aL-YaH" id="d0D-TG-3wB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaH-rA-7Ld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

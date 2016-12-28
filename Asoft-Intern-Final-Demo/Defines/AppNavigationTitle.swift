@@ -14,5 +14,6 @@ class AppNavigationTitle {
     static let kMenuNavigation = "Menu"
     static let kCombineNavigation = "Combine"
     static let kProfileNavigation = "Profile"
+    static let kCombineResultNavigation = "Result"
     
 }

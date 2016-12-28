@@ -11,11 +11,15 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    //#MARK: - Define Properties
     var window: UIWindow?
     var menuBarButtonItem: UIBarButtonItem?
     var searchBarButtonItem: UIBarButtonItem?
     var nextBarButtonItem: UIBarButtonItem?
     var mainColor: UIColor?
+    
+    //#MARK: - HomeNavigation
+    var homeNavigation: UINavigationController!
     
     class var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
@@ -55,8 +59,8 @@ extension AppDelegate {
     
     func changeRootViewToHomeVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: Constants.kIdentifierHomeNavigationController)
-        self.window?.rootViewController = homeVC
+        homeNavigation = storyboard.instantiateViewController(withIdentifier: Constants.kIdentifierHomeNavigationController) as! UINavigationController
+        self.window?.rootViewController = homeNavigation
     }
     
 }
