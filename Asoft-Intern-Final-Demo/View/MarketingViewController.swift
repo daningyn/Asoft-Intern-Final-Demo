@@ -10,12 +10,14 @@ import UIKit
 
 class MarketingViewController: UIViewController {
 
+    //#MARK: - IBOutlet
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var labelCollectionView: UICollectionView!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var rectangleViewBelow: UIImageView!
     
+    //#MARK: - Define Properties
     let titleArray = ["Restaurants", "Bistro", "Home", "Sign in"]
     let detailArray = ["There are many ways food makes people happy and one of the worthiest is a tour that has been described as the \"food lover's dream.\"", "Everyone loves good, old fashioned charcoal grilling. It adds a raw, distinctive taste to your sausages, burgers, ribs, and other grilled items.", "Many people understand the concept of passive solar for heating a home. Fewer realize it can be used in to cook food and sterilize water.", ""]
     let imageArray = ["image-collection-cell-1", "image-collection-cell-2", "image-collection-cell-3", "load-image"]
@@ -25,6 +27,12 @@ class MarketingViewController: UIViewController {
     lazy var cellOnScreen = 0
     lazy var nextCellOnScreen = 1
     
+    var btnSignIn: UIButton!
+    var btnSignUp: UIButton!
+    
+    var oneCheck = true
+    
+    //#MARK: - Set up ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageCollectionView.delegate = self
@@ -35,28 +43,54 @@ class MarketingViewController: UIViewController {
         let scroll = UICollectionViewFlowLayout()
         scroll.scrollDirection = .horizontal
         self.imageCollectionView.collectionViewLayout = scroll
+        
+        AppDelegate.shared.mainColor = self.lineView.backgroundColor
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if self.oneCheck {
+            self.oneCheck = false
+            self.btnSignIn = UIButton(type: .custom)
+            self.view.addSubview(self.btnSignIn)
+            self.btnSignIn.frame = CGRect(x: self.view.bounds.width, y: self.view.bounds.height-50, width: self.view.bounds.width, height: 50)
+            self.btnSignIn.setTitle("Sign in", for: .normal)
+            self.btnSignIn.setTitleColor(UIColor.white, for: .normal)
+            self.btnSignIn.backgroundColor = UIColor.untCoralPink
+            self.btnSignIn.isHidden = false
+            self.btnSignIn.addTarget(self, action: #selector(self.didSignIn), for: .touchUpInside)
+            
+            self.btnSignUp = UIButton(type: .custom)
+            self.view.addSubview(self.btnSignUp)
+            self.btnSignUp.frame = CGRect(x: self.view.bounds.width, y: self.view.bounds.height-50, width: self.view.bounds.width, height: 50)
+            self.btnSignUp.setTitle("Create Account", for: .normal)
+            self.btnSignUp.setTitleColor(UIColor.white, for: .normal)
+            self.btnSignUp.backgroundColor = UIColor.untCoralPink
+            self.btnSignUp.isHidden = true
+        }
+    }
 
     
     //#MARK: - Did select Button In cell
     @IBAction func didTouchSignUpButton(_ sender: Any) {
         self.isInSignUpView = true
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.rectangleViewBelow.frame.size.height = self.labelCollectionView.bounds.height*1.34
             self.rectangleViewBelow.frame.origin.y = self.imageCollectionView.bounds.height*0.4
         }, completion: {(_) in
-            self.labelCollectionView.frame.origin.y = self.imageCollectionView.bounds.height*0.4
-            self.labelCollectionView.frame.size.height = self.labelCollectionView.bounds.height*1.34
+            self.labelCollectionView.frame = self.rectangleViewBelow.frame
             UIView.animate(withDuration: 0.3, animations: {
                 self.labelCollectionView.reloadData()
             }, completion: {(_) in
-                UIView.animate(withDuration: 0.2, animations: {
+                UIView.animate(withDuration: 0.3, animations: { 
                     (self.labelCollectionView.cellForItem(at: IndexPath(item: 3, section: 0))!.viewWithTag(1)! as UIView).frame.origin.x = -self.labelCollectionView.bounds.width
+                }, completion: {(_) in
+                    self.btnSignUp.isHidden = false
                 })
             })
             
@@ -72,13 +106,14 @@ class MarketingViewController: UIViewController {
         }, completion: {(_) in
             self.labelCollectionView.reloadData()
             UIView.animate(withDuration: 0.3, animations: {
-                self.rectangleViewBelow.frame.size.height = self.imageCollectionView.bounds.height*0.45
-                self.rectangleViewBelow.frame.origin.y = self.imageCollectionView.bounds.height*0.55
+                self.rectangleViewBelow.frame = self.labelCollectionView.frame
+            }, completion: {(_) in
+                self.btnSignUp.isHidden = true
             })
         })
     }
     
-    @IBAction func didSignIn(_ sender: Any) {
+    func didSignIn() {
         AppDelegate.shared.changeRootViewToHomeVC()
     }
     
@@ -89,6 +124,8 @@ class MarketingViewController: UIViewController {
             if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) < 2.5 {
                 self.isInSignUpView = false
                 self.labelCollectionView.reloadData()
+            } else {
+                
             }
         }
         
@@ -99,12 +136,19 @@ class MarketingViewController: UIViewController {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if self.isInSignUpView {
-            if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) < 2.5 {
+        if Int(scrollView.contentOffset.x / self.view.bounds.width) == 3 {
+            if self.isInSignUpView {
+                self.btnSignIn.isHidden = false
+                self.btnSignUp.isHidden = true
+                self.labelCollectionView.reloadData()
+            }
+        } else if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) < 2.5 {
+            if self.isInSignUpView {
                 self.isInSignUpView = false
                 self.labelCollectionView.reloadData()
             }
         }
+
         self.cellOnScreen = Int(scrollView.contentOffset.x / self.imageCollectionView.bounds.width)
     }
     
@@ -164,6 +208,15 @@ class MarketingViewController: UIViewController {
 
         }
         
+        if scrollView.contentOffset.x >= self.imageCollectionView.bounds.width*2 {
+            let temp = scrollView.contentOffset.x - self.imageCollectionView.bounds.width*2
+            self.btnSignIn.frame.origin.x = self.imageCollectionView.bounds.width - temp
+            self.btnSignUp.frame.origin.x = self.btnSignIn.frame.origin.x
+        } else {
+            self.btnSignIn.frame.origin.x = self.imageCollectionView.bounds.width
+            self.btnSignUp.frame.origin.x = self.btnSignIn.frame.origin.x
+        }
+        
     }
 
 }
@@ -201,8 +254,6 @@ extension MarketingViewController: UICollectionViewDataSource {
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierMarketingLabelSignInCollectionCell, for: indexPath)
-                
-                AppDelegate.shared.mainColor = (cell.viewWithTag(99) as! UIButton).backgroundColor
                 
               return cell
             }
