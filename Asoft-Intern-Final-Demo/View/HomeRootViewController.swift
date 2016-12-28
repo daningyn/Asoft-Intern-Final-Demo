@@ -24,6 +24,7 @@ class HomeRootViewController: UIViewController {
     
     var combineView: CombineView!
     var profileView: UIView!
+    var communityView: CommunityView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class HomeRootViewController: UIViewController {
             self.checkInit = false
             self.defineCombineView()
             self.defineProfileView()
+            self.defineCommunityView()
         }
         
         var indexPath = IndexPath(row: 0, section: 0)
@@ -132,6 +134,16 @@ class HomeRootViewController: UIViewController {
         self.profileView.frame.size.height = UIScreen.main.bounds.height - 64
     }
     
+    func defineCommunityView() {
+        self.communityView = self.loadViewFromNib(nibName: "CommunityView", frame: self.tblMenuView.bounds) as! CommunityView
+        self.mainView.addSubview(self.communityView)
+        self.communityView.isHidden = true
+        self.communityView.frame.origin.x = UIScreen.main.bounds.width
+        self.communityView.frame.origin.y = 64
+        self.communityView.frame.size.width = UIScreen.main.bounds.width
+        self.communityView.frame.size.height = UIScreen.main.bounds.height - 64
+    }
+    
     private func loadCombineViewFromNib(nibName: String, frame: CGRect) -> CombineView {
         let nib = UINib(nibName: nibName, bundle: nil)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
@@ -159,12 +171,15 @@ class HomeRootViewController: UIViewController {
             indexPath = IndexPath(row: 2, section: 0)
         } else if self.profileView.isHidden == false {
             indexPath = IndexPath(row: 3, section: 0)
+        } else if self.communityView.isHidden == false {
+            indexPath = IndexPath(row: 4, section: 0)
         }
         switch indexPath.row {
         case 0:
             self.combineView.isHidden = true
-            self.tableView.isHidden = false
             self.profileView.isHidden = true
+            self.communityView.isHidden = true
+            self.tableView.isHidden = false
             if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
                 self.navigationItem.rightBarButtonItem = searchBarButtonItem
             }
@@ -176,8 +191,9 @@ class HomeRootViewController: UIViewController {
             break
         case 2:
             self.tableView.isHidden = true
-            self.combineView.isHidden = false
             self.profileView.isHidden = true
+            self.communityView.isHidden = true
+            self.combineView.isHidden = false
             self.navigationItem.rightBarButtonItem = nil
             self.navigationItem.title = AppNavigationTitle.kCombineNavigation
             if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
@@ -186,9 +202,20 @@ class HomeRootViewController: UIViewController {
         case 3:
             self.tableView.isHidden = true
             self.combineView.isHidden = true
+            self.communityView.isHidden = true
             self.profileView.isHidden = false
             self.navigationItem.rightBarButtonItem = nil
             self.navigationItem.title = AppNavigationTitle.kProfileNavigation
+            if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                self.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
+        case 4:
+            self.tableView.isHidden = true
+            self.combineView.isHidden = true
+            self.profileView.isHidden = true
+            self.communityView.isHidden = false
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.title = AppNavigationTitle.kCommunityNavigation
             if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
                 self.navigationItem.leftBarButtonItem = leftBarButtonItem
             }
@@ -302,6 +329,7 @@ extension HomeRootViewController: UITableViewDelegate {
                 self.combineView.isHidden = true
                 self.tableView.isHidden = false
                 self.profileView.isHidden = true
+                self.communityView.isHidden = true
                 if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
                     self.navigationItem.rightBarButtonItem = searchBarButtonItem
                 }
@@ -318,6 +346,7 @@ extension HomeRootViewController: UITableViewDelegate {
                 self.tableView.isHidden = true
                 self.combineView.isHidden = false
                 self.profileView.isHidden = true
+                self.communityView.isHidden = true
                 self.navigationItem.rightBarButtonItem = nil
                 self.navigationItem.title = AppNavigationTitle.kCombineNavigation
                 if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
@@ -329,9 +358,23 @@ extension HomeRootViewController: UITableViewDelegate {
             case 3:
                 self.tableView.isHidden = true
                 self.combineView.isHidden = true
+                self.communityView.isHidden = true
                 self.profileView.isHidden = false
                 self.navigationItem.rightBarButtonItem = nil
                 self.navigationItem.title = AppNavigationTitle.kProfileNavigation
+                if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                    self.navigationItem.leftBarButtonItem = leftBarButtonItem
+                }
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+                })
+            case 4:
+                self.tableView.isHidden = true
+                self.combineView.isHidden = true
+                self.profileView.isHidden = true
+                self.communityView.isHidden = false
+                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.title = AppNavigationTitle.kCommunityNavigation
                 if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
                     self.navigationItem.leftBarButtonItem = leftBarButtonItem
                 }

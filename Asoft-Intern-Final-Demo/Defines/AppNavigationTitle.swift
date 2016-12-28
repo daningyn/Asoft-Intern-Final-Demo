@@ -15,5 +15,6 @@ class AppNavigationTitle {
     static let kCombineNavigation = "Combine"
     static let kProfileNavigation = "Profile"
     static let kCombineResultNavigation = "Result"
+    static let kCommunityNavigation = "Community"
     
 }
