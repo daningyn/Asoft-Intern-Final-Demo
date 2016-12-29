@@ -12,5 +12,9 @@ import Foundation
 class AppSegueIdentifiers {
     
     static let kIdentifierSegueToCombineResultVC = "ToCombineResultVC"
+    static let kIdentifierSegueToChefsVC = "ToChefsViewController"
+    static let kIdentifierSegueGordonToChefVideo = "GordonToChefVideo"
+    static let kIdentifierSegueMarcoToChefVideo = "MarcoToChefVideo"
+    static let kIdentifierSegueWolfgangToChefVideo = "WolfgangToChefVideo"
     
 }

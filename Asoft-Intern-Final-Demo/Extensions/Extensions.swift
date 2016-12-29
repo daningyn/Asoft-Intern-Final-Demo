@@ -63,6 +63,10 @@ extension UIColor {
     class var untCoralPink: UIColor {
         return UIColor(red: 255.0 / 255.0, green: 84.0 / 255.0, blue: 105.0 / 255.0, alpha: 1.0)
     }
+    
+    class var untDarkGreyBackground: UIColor {
+        return UIColor(red: 28.0 / 255.0, green: 29.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0)
+    }
 }
 
 

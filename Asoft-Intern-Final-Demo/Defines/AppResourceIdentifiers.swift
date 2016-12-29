@@ -20,5 +20,6 @@ class AppResourceIdentifiers {
     //#MARK: - Assets
     static let kIdentifierIconNext = "icon_next"
     static let kIdentifierIconBack = "icon_back"
+    static let kIdentifierRectangleNavigationBar = "rectangle-navigationbar"
     
 }

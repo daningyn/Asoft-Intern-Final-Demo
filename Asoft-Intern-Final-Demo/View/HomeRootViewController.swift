@@ -62,12 +62,15 @@ class HomeRootViewController: UIViewController {
             indexPath = IndexPath(row: 2, section: 0)
         } else if self.profileView.isHidden == false {
             indexPath = IndexPath(row: 3, section: 0)
+        } else if self.communityView.isHidden == false {
+            indexPath = IndexPath(row: 4, section: 0)
         }
         switch indexPath.row {
         case 0:
             self.combineView.isHidden = true
             self.tableView.isHidden = false
             self.profileView.isHidden = true
+            self.communityView.isHidden = true
             if let searchBarButtonItem = AppDelegate.shared.searchBarButtonItem {
                 self.navigationItem.rightBarButtonItem = searchBarButtonItem
             }
@@ -81,6 +84,7 @@ class HomeRootViewController: UIViewController {
             self.tableView.isHidden = true
             self.combineView.isHidden = false
             self.profileView.isHidden = true
+            self.communityView.isHidden = true
             self.navigationItem.rightBarButtonItem = nil
             self.navigationItem.title = AppNavigationTitle.kCombineNavigation
             if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
@@ -89,9 +93,20 @@ class HomeRootViewController: UIViewController {
         case 3:
             self.tableView.isHidden = true
             self.combineView.isHidden = true
+            self.communityView.isHidden = true
             self.profileView.isHidden = false
             self.navigationItem.rightBarButtonItem = nil
             self.navigationItem.title = AppNavigationTitle.kProfileNavigation
+            if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
+                self.navigationItem.leftBarButtonItem = leftBarButtonItem
+            }
+        case 4:
+            self.tableView.isHidden = true
+            self.combineView.isHidden = true
+            self.profileView.isHidden = true
+            self.communityView.isHidden = false
+            self.navigationItem.rightBarButtonItem = nil
+            self.navigationItem.title = AppNavigationTitle.kCommunityNavigation
             if let leftBarButtonItem = AppDelegate.shared.menuBarButtonItem {
                 self.navigationItem.leftBarButtonItem = leftBarButtonItem
             }

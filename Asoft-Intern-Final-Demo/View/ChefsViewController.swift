@@ -12,8 +12,10 @@ class ChefsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor.untDarkGreyBackground
+        self.navigationController?.navigationBar.isHidden = true
+        
     }
 
     override func didReceiveMemoryWarning() {
