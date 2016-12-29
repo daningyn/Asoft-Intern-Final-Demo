@@ -412,10 +412,10 @@
             </objects>
             <point key="canvasLocation" x="1936.8" y="-133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Chef Video View Controller-->
         <scene sceneID="RHz-f3-JXz">
             <objects>
-                <viewController id="MxT-RR-pz2" sceneMemberID="viewController">
+                <viewController id="MxT-RR-pz2" customClass="ChefVideoViewController" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6X8-F7-3VA"/>
                         <viewControllerLayoutGuide type="bottom" id="Ce3-uC-ZtI"/>
@@ -541,6 +541,6 @@
         <image name="search-icon" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EZL-CT-BUN"/>
+        <segue reference="9Sx-Sw-uWf"/>
     </inferredMetricsTieBreakers>
 </document>
