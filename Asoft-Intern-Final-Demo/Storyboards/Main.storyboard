@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="836" y="-133"/>
         </scene>
-        <!--View Controller-->
+        <!--Chefs View Controller-->
         <scene sceneID="JVs-6H-AEg">
             <objects>
-                <viewController id="zNK-Qd-MZC" sceneMemberID="viewController">
+                <viewController id="zNK-Qd-MZC" customClass="ChefsViewController" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mdT-uE-Hd4"/>
                         <viewControllerLayoutGuide type="bottom" id="gyU-ct-BKG"/>
