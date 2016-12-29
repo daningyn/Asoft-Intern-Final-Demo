@@ -28,6 +28,9 @@ class Constants {
     //#MARK: - CombineResultViewController
     static let kIdentifierCombineResultCollectionViewCell = "CombineResultColletionViewCell"
     
+    //#MARK: - ChefVideoViewController
+    static let kIdentifierChefVideoMenuCollectionCell = "ChefVideoMenuCollectionCell"
+    
     //#MARK: - Main Home StoryBoard
     static let kIdentifierHomeNavigationController = "HomeNavigationController"
     static let kIdentifierHomeTableViewCell = "HomeTableViewCell"
