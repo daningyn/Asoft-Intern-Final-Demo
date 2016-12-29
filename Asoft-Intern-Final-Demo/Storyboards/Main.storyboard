@@ -157,7 +157,7 @@
                         <outlet property="rightBarButtonItem" destination="uYh-Ev-Ubf" id="kDe-DX-ZJ8"/>
                         <outlet property="tableView" destination="xpm-z1-fXw" id="hBG-aL-hFd"/>
                         <outlet property="tblMenuView" destination="XRw-vB-1FW" id="VVx-gF-HnA"/>
-                        <segue destination="Hcd-Qc-ARl" kind="show" identifier="ToCombineResultVC" id="drW-Xx-pGz"/>
+                        <segue destination="Hcd-Qc-ARl" kind="push" identifier="ToCombineResultVC" id="drW-Xx-pGz"/>
                         <segue destination="zNK-Qd-MZC" kind="show" id="Lms-hk-AYJ"/>
                     </connections>
                 </viewController>

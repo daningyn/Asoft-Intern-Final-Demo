@@ -68,9 +68,7 @@ extension NameCollectionCell: UICollectionViewDataSource {
 extension NameCollectionCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let combineResultVC = storyboard.instantiateViewController(withIdentifier: Constants.kIdentifierCombineResultVC) as! CombineResultViewController
-        AppDelegate.shared.homeNavigation.pushViewController(combineResultVC, animated: true)
+        AppDelegate.shared.homeNavigation.viewControllers[0].performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueToCombineResultVC, sender: nil)
     }
     
 }
