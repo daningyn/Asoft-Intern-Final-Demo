@@ -30,6 +30,7 @@ class Constants {
     
     //#MARK: - ChefVideoViewController
     static let kIdentifierChefVideoMenuCollectionCell = "ChefVideoMenuCollectionCell"
+    static let kIdentifierChefVideoControlDetailCollectionCell = "ChefVideoControlDetailCollectionCell"
     
     //#MARK: - Main Home StoryBoard
     static let kIdentifierHomeNavigationController = "HomeNavigationController"

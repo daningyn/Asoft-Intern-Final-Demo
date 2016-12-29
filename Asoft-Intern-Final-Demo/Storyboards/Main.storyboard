@@ -507,20 +507,100 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hpn-9r-taQ">
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BRC-k5-DZg">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="BRC-k5-DZg">
                                     <size key="itemSize" width="375" height="553"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="u95-qb-b8o">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChefVideoControlDetailCollectionCell" id="u95-qb-b8o">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQF-Dm-MeB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dQF-Dm-MeB" secondAttribute="height" multiplier="9:8" id="7wt-kf-k5t"/>
+                                                    </constraints>
+                                                    <state key="normal" image="chef1"/>
+                                                </button>
+                                                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-fk-Upf" userLabel="Bot View">
+                                                    <rect key="frame" x="0.0" y="334" width="375" height="199"/>
+                                                    <subviews>
+                                                        <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.33000000000000002" minValue="0.0" maxValue="4.2000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="3WF-UT-ayS">
+                                                            <rect key="frame" x="61" y="40" width="254" height="31"/>
+                                                            <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="thumbTintColor" red="1" green="0.22745098039215686" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </slider>
+                                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGe-Zk-C69" userLabel="btnPause">
+                                                            <rect key="frame" x="162" y="120" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="YXt-Lf-h8G"/>
+                                                                <constraint firstAttribute="width" secondItem="IGe-Zk-C69" secondAttribute="height" id="dq4-iH-Jll"/>
+                                                            </constraints>
+                                                            <state key="normal" image="icon_pause"/>
+                                                            <connections>
+                                                                <action selector="didTouchUpPause:" destination="MxT-RR-pz2" eventType="touchUpInside" id="MPo-AI-JNo"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxV-hz-FUa" userLabel="btnPrevious">
+                                                            <rect key="frame" x="112" y="135" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="sxV-hz-FUa" secondAttribute="height" multiplier="1:1" id="LcQ-kB-zmU"/>
+                                                            </constraints>
+                                                            <state key="normal" image="icon_previous"/>
+                                                        </button>
+                                                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZ4-PX-doU" userLabel="btnForward">
+                                                            <rect key="frame" x="242" y="135" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="MZ4-PX-doU" secondAttribute="height" multiplier="1:1" id="qd8-aA-f8c"/>
+                                                            </constraints>
+                                                            <state key="normal" image="icon_forward"/>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR1-ge-mKb">
+                                                            <rect key="frame" x="253" y="70" width="60" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="62l-Cf-khd"/>
+                                                                <constraint firstAttribute="width" constant="60" id="VLe-Em-HOW"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="IGe-Zk-C69" firstAttribute="top" secondItem="sxV-hz-FUa" secondAttribute="top" constant="-15" id="3vf-fX-ohn"/>
+                                                        <constraint firstItem="IGe-Zk-C69" firstAttribute="centerX" secondItem="hCd-fk-Upf" secondAttribute="centerX" id="5LP-jT-gum"/>
+                                                        <constraint firstItem="ZR1-ge-mKb" firstAttribute="trailing" secondItem="3WF-UT-ayS" secondAttribute="trailing" id="7Ob-CL-IFj"/>
+                                                        <constraint firstItem="MZ4-PX-doU" firstAttribute="leading" secondItem="IGe-Zk-C69" secondAttribute="trailing" constant="30" id="EgR-pb-4Qe"/>
+                                                        <constraint firstItem="IGe-Zk-C69" firstAttribute="leading" secondItem="sxV-hz-FUa" secondAttribute="trailing" constant="30" id="Mnu-b0-74X"/>
+                                                        <constraint firstItem="MZ4-PX-doU" firstAttribute="bottom" secondItem="IGe-Zk-C69" secondAttribute="bottom" constant="-15" id="PZR-w2-KLg"/>
+                                                        <constraint firstItem="3WF-UT-ayS" firstAttribute="width" secondItem="hCd-fk-Upf" secondAttribute="width" multiplier="2:3" id="PbL-Ad-lyk"/>
+                                                        <constraint firstItem="3WF-UT-ayS" firstAttribute="top" secondItem="hCd-fk-Upf" secondAttribute="top" constant="40" id="Qjf-IN-YqW"/>
+                                                        <constraint firstItem="MZ4-PX-doU" firstAttribute="top" secondItem="IGe-Zk-C69" secondAttribute="top" constant="15" id="Zbl-zK-BdY"/>
+                                                        <constraint firstItem="IGe-Zk-C69" firstAttribute="top" secondItem="3WF-UT-ayS" secondAttribute="bottom" constant="50" id="b7v-v9-l9Y"/>
+                                                        <constraint firstItem="3WF-UT-ayS" firstAttribute="centerX" secondItem="hCd-fk-Upf" secondAttribute="centerX" id="gKB-7Q-aHL"/>
+                                                        <constraint firstItem="IGe-Zk-C69" firstAttribute="bottom" secondItem="sxV-hz-FUa" secondAttribute="bottom" constant="15" id="vzI-hK-DAJ"/>
+                                                        <constraint firstItem="ZR1-ge-mKb" firstAttribute="top" secondItem="3WF-UT-ayS" secondAttribute="bottom" id="yL7-E3-EaT"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dQF-Dm-MeB" secondAttribute="trailing" id="4NQ-nV-kFt"/>
+                                            <constraint firstItem="dQF-Dm-MeB" firstAttribute="leading" secondItem="u95-qb-b8o" secondAttribute="leading" id="HvB-ib-XQP"/>
+                                            <constraint firstItem="hCd-fk-Upf" firstAttribute="top" secondItem="dQF-Dm-MeB" secondAttribute="bottom" id="NHT-jS-hTF"/>
+                                            <constraint firstAttribute="trailing" secondItem="hCd-fk-Upf" secondAttribute="trailing" id="UzE-sk-W9O"/>
+                                            <constraint firstAttribute="bottom" secondItem="hCd-fk-Upf" secondAttribute="bottom" constant="20" id="iM6-Pg-L8G"/>
+                                            <constraint firstItem="dQF-Dm-MeB" firstAttribute="top" secondItem="u95-qb-b8o" secondAttribute="top" id="ngZ-RV-FTT"/>
+                                            <constraint firstItem="hCd-fk-Upf" firstAttribute="leading" secondItem="u95-qb-b8o" secondAttribute="leading" id="niC-4J-DNm"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -543,6 +623,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="detailCollectionView" destination="hpn-9r-taQ" id="uI0-Ki-Hqg"/>
+                        <outlet property="footerMenu" destination="9tb-AD-Znl" id="oyy-uU-mvf"/>
                         <outlet property="menuCollectionView" destination="Gox-1v-ByR" id="ghb-cz-RQU"/>
                         <outlet property="navigationTitle" destination="MZq-iQ-nJb" id="KQU-0J-vgf"/>
                     </connections>
@@ -656,7 +738,10 @@
         <image name="chef3" width="750" height="480"/>
         <image name="icon-flower" width="40" height="43"/>
         <image name="icon_back_white" width="15" height="24"/>
+        <image name="icon_forward" width="35" height="24"/>
+        <image name="icon_pause" width="80" height="80"/>
         <image name="icon_play" width="80" height="80"/>
+        <image name="icon_previous" width="35" height="24"/>
         <image name="menu-icon" width="36" height="24"/>
         <image name="rectangle-navigationbar" width="750" height="240"/>
         <image name="search-icon" width="35" height="35"/>

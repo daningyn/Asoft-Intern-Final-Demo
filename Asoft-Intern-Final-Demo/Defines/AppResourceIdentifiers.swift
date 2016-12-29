@@ -26,5 +26,8 @@ class AppResourceIdentifiers {
     static let kIdentifierIconNext = "icon_next"
     static let kIdentifierIconBack = "icon_back"
     static let kIdentifierRectangleNavigationBar = "rectangle-navigationbar"
+    static let kIdentifierIconThumb = "icon_thumb"
+    static let kIdentifierIconPause = "icon_pause"
+    static let kIdentifierIconPlay = "icon_play"
     
 }
