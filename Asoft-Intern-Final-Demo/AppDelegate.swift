@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var menuBarButtonItem: UIBarButtonItem?
     var searchBarButtonItem: UIBarButtonItem?
     var nextBarButtonItem: UIBarButtonItem?
+    var backBarButtonItem: UIBarButtonItem?
     var mainColor: UIColor?
     
     //#MARK: - HomeNavigation
@@ -27,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        self.backBarButtonItem = UIBarButtonItem(image: UIImage(named: AppResourceIdentifiers.kIdentifierIconBack), style: .plain, target: self, action: #selector(self.popViewController))
+        self.backBarButtonItem?.tintColor = UIColor.black
         return true
     }
 
@@ -61,6 +64,10 @@ extension AppDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeNavigation = storyboard.instantiateViewController(withIdentifier: Constants.kIdentifierHomeNavigationController) as! UINavigationController
         self.window?.rootViewController = homeNavigation
+    }
+    
+    func popViewController() {
+        AppDelegate.shared.homeNavigation.popViewController(animated: true)
     }
     
 }

@@ -122,6 +122,8 @@ class HomeRootViewController: UIViewController {
         self.combineView.footerMenu.translatesAutoresizingMaskIntoConstraints = true
         let heightForDetailCollectionView = UIScreen.main.bounds.height*2/3 - 50
         self.combineView.detailCollectionView.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.width, height: heightForDetailCollectionView)
+        self.combineView.menuCollectionView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
+        self.combineView.footerMenu.frame.size.width = self.combineView.menuCollectionView.frame.size.width/2
     }
     
     func defineProfileView() {

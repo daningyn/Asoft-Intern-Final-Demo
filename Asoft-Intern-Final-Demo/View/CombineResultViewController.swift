@@ -16,7 +16,14 @@ class CombineResultViewController: UIViewController {
         super.viewDidLoad()
         resultCollectionView.dataSource = self
         resultCollectionView.delegate = self
-        // Do any additional setup after loading the view.
+        
+        AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
+        AppDelegate.shared.homeNavigation.navigationItem.hidesBackButton = true
+        if let backButton = AppDelegate.shared.backBarButtonItem {
+            self.navigationItem.leftBarButtonItem = backButton
+        }
+        self.navigationItem.title = AppNavigationTitle.kCombineResultNavigation
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +33,6 @@ class CombineResultViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
-        AppDelegate.shared.homeNavigation.navigationItem.leftBarButtonItem = nil
-        AppDelegate.shared.homeNavigation.navigationBar.topItem!.title = AppNavigationTitle.kCombineResultNavigation
-        self.navigationController!.navigationBar.backItem!.title = ""
     }
 
 }

@@ -16,7 +16,7 @@
         <scene sceneID="4Cq-yL-4pk">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" id="L5Q-OD-I8e" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="icon_back" backIndicatorTransitionMaskImage="icon_back" id="t4y-Kj-Hwl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="icon_back" backIndicatorTransitionMaskImage="icon_back" id="t4y-Kj-Hwl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,12 +157,31 @@
                         <outlet property="rightBarButtonItem" destination="uYh-Ev-Ubf" id="kDe-DX-ZJ8"/>
                         <outlet property="tableView" destination="xpm-z1-fXw" id="hBG-aL-hFd"/>
                         <outlet property="tblMenuView" destination="XRw-vB-1FW" id="VVx-gF-HnA"/>
-                        <segue destination="Hcd-Qc-ARl" kind="show" id="drW-Xx-pGz"/>
+                        <segue destination="Hcd-Qc-ARl" kind="show" identifier="ToCombineResultVC" id="drW-Xx-pGz"/>
+                        <segue destination="zNK-Qd-MZC" kind="show" id="Lms-hk-AYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ip-24-RsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="836" y="-133"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JVs-6H-AEg">
+            <objects>
+                <viewController id="zNK-Qd-MZC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mdT-uE-Hd4"/>
+                        <viewControllerLayoutGuide type="bottom" id="gyU-ct-BKG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o3Y-Yz-jHZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbd-pi-mvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1937" y="-133"/>
         </scene>
         <!--Combine Result View Controller-->
         <scene sceneID="Odf-9q-Jf9">
@@ -260,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaH-rA-7Ld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797.5999999999999" y="-412.44377811094455"/>
+            <point key="canvasLocation" x="1938" y="-961"/>
         </scene>
     </scenes>
     <resources>
