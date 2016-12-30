@@ -443,7 +443,7 @@
                                             <action selector="didTouchUpBackButton:" destination="MxT-RR-pz2" eventType="touchUpInside" id="Cq1-Rg-WiG"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-iQ-nJb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZq-iQ-nJb">
                                         <rect key="frame" x="166" y="28" width="43" height="28"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -536,20 +536,23 @@
                                                                     <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql9-lC-Tk0" userLabel="Content View">
                                                                         <rect key="frame" x="4" y="4" width="368" height="147"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3H-9y-rSB">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="i3H-9y-rSB">
                                                                                 <rect key="frame" x="5" y="10" width="355" height="87"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C74-gm-Zto">
-                                                                                <rect key="frame" x="5" y="107" width="57" height="25"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="C74-gm-Zto">
+                                                                                <rect key="frame" x="5" y="107" width="285" height="25"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6n-Nu-XV3">
-                                                                                <rect key="frame" x="320" y="107" width="10" height="25"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y6n-Nu-XV3">
+                                                                                <rect key="frame" x="300" y="107" width="30" height="25"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="30" id="oZD-BY-dHk"/>
+                                                                                </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -572,6 +575,7 @@
                                                                             <constraint firstItem="C74-gm-Zto" firstAttribute="leading" secondItem="i3H-9y-rSB" secondAttribute="leading" id="Rwa-vr-wPk"/>
                                                                             <constraint firstAttribute="bottom" secondItem="C74-gm-Zto" secondAttribute="bottom" constant="15" id="T3u-wj-gph"/>
                                                                             <constraint firstItem="i3H-9y-rSB" firstAttribute="leading" secondItem="Ql9-lC-Tk0" secondAttribute="leading" constant="5" id="UfJ-1O-nfX"/>
+                                                                            <constraint firstItem="Y6n-Nu-XV3" firstAttribute="leading" secondItem="C74-gm-Zto" secondAttribute="trailing" constant="10" id="Wd7-b0-lru"/>
                                                                             <constraint firstItem="i3H-9y-rSB" firstAttribute="top" secondItem="Ql9-lC-Tk0" secondAttribute="top" constant="10" id="atf-pw-CMl"/>
                                                                             <constraint firstItem="C74-gm-Zto" firstAttribute="top" secondItem="i3H-9y-rSB" secondAttribute="bottom" constant="10" id="pQi-fK-69b"/>
                                                                             <constraint firstItem="GQD-Lx-VgV" firstAttribute="bottom" secondItem="C74-gm-Zto" secondAttribute="bottom" id="sba-qr-G1Y"/>

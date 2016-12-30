@@ -45,6 +45,8 @@ class ChefVideoViewController: UIViewController {
         
         self.footerMenu.translatesAutoresizingMaskIntoConstraints = true
         
+        self.footerMenu.frame.size.width = UIScreen.main.bounds.width/2
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +57,7 @@ class ChefVideoViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if self.initializer {
+            self.initializer = false
             let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0))!
             let trackRect = (cell.viewWithTag(2) as! UISlider).trackRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds)
             let thumbRect =  (cell.viewWithTag(2) as! UISlider).thumbRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds, trackRect: trackRect, value: (cell.viewWithTag(2) as! UISlider).value)
@@ -62,6 +65,7 @@ class ChefVideoViewController: UIViewController {
             self.valueThumbLabel.frame.origin.x = thumbRect.origin.x + (cell.viewWithTag(2) as! UISlider).frame.origin.x + 2
             self.valueThumbLabel.frame.origin.y = (cell.viewWithTag(4) as! UILabel).frame.origin.y
             self.valueThumbLabel.text = "\(Double((cell.viewWithTag(2) as! UISlider).value).roundTo(places: 2))"
+            self.menuCollectionView.reloadData()
         }
     }
     
@@ -204,7 +208,7 @@ extension ChefVideoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case self.menuCollectionView:
-            return CGSize(width: collectionView.bounds.width/2, height: 50)
+            return CGSize(width: UIScreen.main.bounds.width/2, height: 50)
         default:
             return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
         }
