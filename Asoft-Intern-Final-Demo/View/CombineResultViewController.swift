@@ -22,7 +22,7 @@ class CombineResultViewController: UIViewController {
         if let backButton = AppDelegate.shared.backBarButtonItem {
             self.navigationItem.leftBarButtonItem = backButton
         }
-        self.navigationItem.title = AppNavigationTitle.kCombineResultNavigation
+        self.navigationItem.title = AppNavigationTitle.kCombineResultNavigationTitle
         
     }
 

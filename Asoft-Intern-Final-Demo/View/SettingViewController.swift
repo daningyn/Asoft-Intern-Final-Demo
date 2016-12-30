@@ -13,7 +13,13 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
+        AppDelegate.shared.homeNavigation.navigationItem.hidesBackButton = true
+        if let backButton = AppDelegate.shared.backBarButtonItem {
+            self.navigationItem.leftBarButtonItem = backButton
+        }
+        self.navigationItem.title = AppNavigationTitle.kSettingNavigationTitle
+        
     }
 
     override func didReceiveMemoryWarning() {

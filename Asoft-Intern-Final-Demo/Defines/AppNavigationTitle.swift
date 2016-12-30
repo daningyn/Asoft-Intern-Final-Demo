@@ -10,11 +10,12 @@ import Foundation
 
 class AppNavigationTitle {
     
-    static let kHomeNavigation = "Repices"
-    static let kMenuNavigation = "Menu"
-    static let kCombineNavigation = "Combine"
-    static let kProfileNavigation = "Profile"
-    static let kCombineResultNavigation = "Result"
-    static let kCommunityNavigation = "Community"
+    static let kHomeNavigationTitle = "Repices"
+    static let kMenuNavigationTitle = "Menu"
+    static let kCombineNavigationTitle = "Combine"
+    static let kProfileNavigationTitle = "Profile"
+    static let kCombineResultNavigationTitle = "Result"
+    static let kCommunityNavigationTitle = "Community"
+    static let kSettingNavigationTitle = "Settings"
     
 }
