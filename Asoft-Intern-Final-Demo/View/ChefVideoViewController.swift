@@ -21,8 +21,12 @@ class ChefVideoViewController: UIViewController {
     var menuArray = ["VIDEO", "QUOTES"]
     var valueThumbLabel: UILabel = UILabel()
     var oneCheck = true
+    var initializer = true
     var isPlay = true
+    var selectedCell = 0
     
+    
+    //#MARK: - Set up
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,12 +50,24 @@ class ChefVideoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.initializer {
+            let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0))!
+            let trackRect = (cell.viewWithTag(2) as! UISlider).trackRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds)
+            let thumbRect =  (cell.viewWithTag(2) as! UISlider).thumbRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds, trackRect: trackRect, value: (cell.viewWithTag(2) as! UISlider).value)
+            (cell.viewWithTag(3)! as UIView).addSubview(self.valueThumbLabel)
+            self.valueThumbLabel.frame.origin.x = thumbRect.origin.x + (cell.viewWithTag(2) as! UISlider).frame.origin.x + 2
+            self.valueThumbLabel.frame.origin.y = (cell.viewWithTag(4) as! UILabel).frame.origin.y
+            self.valueThumbLabel.text = "\(Double((cell.viewWithTag(2) as! UISlider).value).roundTo(places: 2))"
+        }
+    }
+    
     //#MARK: - UISlider ValueChanged
     func valueChangedSlider() {
         let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0))!
         let trackRect = (cell.viewWithTag(2) as! UISlider).trackRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds)
         let thumbRect =  (cell.viewWithTag(2) as! UISlider).thumbRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds, trackRect: trackRect, value: (cell.viewWithTag(2) as! UISlider).value)
-        (cell.viewWithTag(3)! as UIView).addSubview(self.valueThumbLabel)
         self.valueThumbLabel.frame.origin.x = thumbRect.origin.x + (cell.viewWithTag(2) as! UISlider).frame.origin.x + 2
         self.valueThumbLabel.frame.origin.y = (cell.viewWithTag(4) as! UILabel).frame.origin.y
         self.valueThumbLabel.text = "\(Double((cell.viewWithTag(2) as! UISlider).value).roundTo(places: 2))"
@@ -105,29 +121,41 @@ extension ChefVideoViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChefVideoMenuCollectionCell, for: indexPath)
             
             (cell.viewWithTag(1) as! UILabel).text = self.menuArray[indexPath.row]
-            
-            return cell
-        default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChefVideoControlDetailCollectionCell, for: indexPath)
-            
-            (cell.viewWithTag(1) as! UIButton).imageView?.contentMode = .scaleAspectFill
-            (cell.viewWithTag(1) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kChefVideoImageChefArray[self.currentChefs]), for: .normal)
-            
-            if self.oneCheck {
-                self.oneCheck = false
-                let trackRect = (cell.viewWithTag(2) as! UISlider).trackRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds)
-                let thumbRect =  (cell.viewWithTag(2) as! UISlider).thumbRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds, trackRect: trackRect, value: (cell.viewWithTag(2) as! UISlider).value)
-                (cell.viewWithTag(3)! as UIView).addSubview(self.valueThumbLabel)
-                self.valueThumbLabel.frame.origin.x = thumbRect.origin.x + (cell.viewWithTag(2) as! UISlider).frame.origin.x + 2
-                self.valueThumbLabel.frame.origin.y = (cell.viewWithTag(4) as! UILabel).frame.origin.y
-                self.valueThumbLabel.frame.size = CGSize(width: 60, height: 20)
-                self.valueThumbLabel.font = UIFont(name: self.valueThumbLabel.font.fontName, size: 12)
-                self.valueThumbLabel.textColor = UIColor.init(netHex: 0x9B9B9B)
-                self.valueThumbLabel.text = "\(Double((cell.viewWithTag(2) as! UISlider).value).roundTo(places: 2))"
-                (cell.viewWithTag(2) as! UISlider).addTarget(self, action: #selector(self.valueChangedSlider), for: .valueChanged)
+            if self.selectedCell == indexPath.row {
+                (cell.viewWithTag(1) as! UILabel).textColor = UIColor.white
             }
             
             return cell
+        default:
+            
+            
+            switch indexPath.row{
+            case 0:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChefVideoControlDetailCollectionCell, for: indexPath)
+                
+                (cell.viewWithTag(1) as! UIButton).imageView?.contentMode = .scaleAspectFill
+                (cell.viewWithTag(1) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kChefVideoImageChefArray[self.currentChefs]), for: .normal)
+                
+                if self.oneCheck {
+                    self.oneCheck = false
+                    self.valueThumbLabel.frame.size = CGSize(width: 60, height: 20)
+                    self.valueThumbLabel.font = UIFont(name: self.valueThumbLabel.font.fontName, size: 12)
+                    self.valueThumbLabel.textColor = UIColor.init(netHex: 0x9B9B9B)
+                    
+                    (cell.viewWithTag(2) as! UISlider).addTarget(self, action: #selector(self.valueChangedSlider), for: .valueChanged)
+                }
+                
+                return cell
+            default:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChefVideoQuoteDetailCollectionCell, for: indexPath) as! ChefQuoteCollectionViewCell
+                
+                
+                
+                return cell
+            }
+            
+            
+            
         }
     }
     

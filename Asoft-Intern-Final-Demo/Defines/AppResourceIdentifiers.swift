@@ -22,6 +22,11 @@ class AppResourceIdentifiers {
     static let kChefVideoChefArray = ["Gordon James Ramsay", "Marco Pierre White", "Wolfgang Puck"]
     static let kChefVideoImageChefArray = ["chef1", "chef2", "chef3"]
     
+    //#MARK: - ChefQuoteCollectionViewCell
+    static let kChefQuoteDetailTextArray = ["I don't like looking back. I'm always constantly looking forward. I'm not the one to sort of sit and cry over spilt milk. I'm too busy looking for the next cow.", "Cooking is about passion, so it may look slightly temperamental in a way that it's too assertive to the naked eye.", "I cook, I create, I'm incredibly excited by what I do, I've still got a lot to achieve.", "There's a bond among a kitchen staff, I think. You spend more time with your chef in the kitchen than you do with your own family.", "Cooking is about passion, so it may look slightly temperamental in a way that it's too assertive to the naked eye.", "There's a bond among a kitchen staff, I think. You spend more time with your chef in the kitchen than you do with your own family.", "I don't like looking back. I'm always constantly looking forward. I'm not the one to sort of sit and cry over spilt milk. I'm too busy looking for the next cow."]
+    static let kChefQuoteAddressArray = ["Next, Forward, Busy", "Passion, Eye, Cooking", "Achieve, Create, Excited", "Family, Time, Chef", "Passion, Eye, Cooking", "Achieve, Create, Excited", "Next, Forward, Busy"]
+    static let kChefQuoteNumberHeart = [63, 91, 213, 26, 99, 111, 151]
+    
     //#MARK: - Assets
     static let kIdentifierIconNext = "icon_next"
     static let kIdentifierIconBack = "icon_back"
