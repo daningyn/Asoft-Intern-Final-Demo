@@ -43,6 +43,8 @@ class ChefVideoViewController: UIViewController {
         self.detailCollectionView.delegate = self
         self.detailCollectionView.dataSource = self
         
+        self.footerMenu.translatesAutoresizingMaskIntoConstraints = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,6 +110,21 @@ class ChefVideoViewController: UIViewController {
 }
 
 
+//#MARK: - UIScrollView Delegate
+extension ChefVideoViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.footerMenu.frame.origin.x = self.detailCollectionView.contentOffset.x/2
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.selectedCell = Int(scrollView.contentOffset.x / self.detailCollectionView.bounds.width)
+        self.menuCollectionView.reloadData()
+    }
+    
+}
+
+
 //#MARK: - UIColelctionView DataSource 
 extension ChefVideoViewController: UICollectionViewDataSource {
     
@@ -123,6 +140,8 @@ extension ChefVideoViewController: UICollectionViewDataSource {
             (cell.viewWithTag(1) as! UILabel).text = self.menuArray[indexPath.row]
             if self.selectedCell == indexPath.row {
                 (cell.viewWithTag(1) as! UILabel).textColor = UIColor.white
+            } else {
+                (cell.viewWithTag(1) as! UILabel).textColor = AppDelegate.shared.mainColor
             }
             
             return cell
@@ -165,7 +184,16 @@ extension ChefVideoViewController: UICollectionViewDataSource {
 //#MARK: - UICollectionView Delegate
 extension ChefVideoViewController: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case menuCollectionView:
+            self.selectedCell = indexPath.row
+            self.detailCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.menuCollectionView.reloadData()
+        default:
+            break
+        }
+    }
     
 }
 

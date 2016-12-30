@@ -142,10 +142,8 @@ extension CombineView: UICollectionViewDelegate {
         switch collectionView {
         case menuCollectionView:
             self.selectedCell = indexPath.row
+            self.detailCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             self.menuCollectionView.reloadData()
-            UIView.animate(withDuration: 0.3, animations: {
-                self.detailCollectionView.contentOffset.x = self.detailCollectionView.bounds.width*CGFloat(self.selectedCell)
-            })
         default:
             break
         }
