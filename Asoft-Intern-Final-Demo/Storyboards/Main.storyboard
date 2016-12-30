@@ -419,10 +419,10 @@
             </objects>
             <point key="canvasLocation" x="1936.8" y="-133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="EAm-U3-vna">
             <objects>
-                <viewController id="X8f-f0-yZS" sceneMemberID="viewController">
+                <viewController id="X8f-f0-yZS" customClass="SettingViewController" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZTf-Wv-6n6"/>
                         <viewControllerLayoutGuide type="bottom" id="QRh-sP-laf"/>
