@@ -11,7 +11,7 @@ import UIKit
 class CommunityView: UIView {
 
     @IBAction func didTouchIconPlay(_ sender: Any) {
-        AppDelegate.shared.homeNavigation.viewControllers[0].performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueToChefsVC, sender: nil)
+        AppDelegate.shared.homeNavigation.viewControllers[0].performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToChefsVC, sender: nil)
     }
     
 

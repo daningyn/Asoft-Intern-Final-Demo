@@ -11,8 +11,12 @@ import Foundation
 
 class AppSegueIdentifiers {
     
-    static let kIdentifierSegueToCombineResultVC = "ToCombineResultVC"
-    static let kIdentifierSegueToChefsVC = "ToChefsViewController"
+    //#MARK: - Segue in Home
+    static let kIdentifierSegueHomeToCombineResultVC = "HomeToCombineResultVC"
+    static let kIdentifierSegueHomeToChefsVC = "HomeToChefsViewController"
+    static let kIdentifierSegueHomeToSettingVC = "HomeToSettingViewController"
+    
+    //#MARK: - Segue in ChefsViewController
     static let kIdentifierSegueGordonToChefVideo = "GordonToChefVideo"
     static let kIdentifierSegueMarcoToChefVideo = "MarcoToChefVideo"
     static let kIdentifierSegueWolfgangToChefVideo = "WolfgangToChefVideo"

@@ -68,7 +68,7 @@ extension NameCollectionCell: UICollectionViewDataSource {
 extension NameCollectionCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        AppDelegate.shared.homeNavigation.viewControllers[0].performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueToCombineResultVC, sender: nil)
+        AppDelegate.shared.homeNavigation.viewControllers[0].performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToCombineResultVC, sender: nil)
     }
     
 }
