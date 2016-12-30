@@ -139,7 +139,7 @@ class HomeRootViewController: UIViewController {
         self.combineView.detailCollectionView.delegate = self.combineView
         self.mainView.addSubview(self.combineView)
         self.combineView.isHidden = true
-        self.combineView.frame.origin.x = UIScreen.main.bounds.width
+        self.combineView.frame.origin.x = UIScreen.main.bounds.width + 1
         self.combineView.frame.origin.y = 64
         self.combineView.frame.size.width = UIScreen.main.bounds.width
         self.combineView.frame.size.height = UIScreen.main.bounds.height - 64
@@ -156,7 +156,7 @@ class HomeRootViewController: UIViewController {
         self.profileView = self.loadViewFromNib(nibName: "ProfileView", frame: self.tblMenuView.bounds)
         self.mainView.addSubview(self.profileView)
         self.profileView.isHidden = true
-        self.profileView.frame.origin.x = UIScreen.main.bounds.width
+        self.profileView.frame.origin.x = UIScreen.main.bounds.width + 1
         self.profileView.frame.origin.y = 64
         self.profileView.frame.size.width = UIScreen.main.bounds.width
         self.profileView.frame.size.height = UIScreen.main.bounds.height - 64
@@ -166,7 +166,7 @@ class HomeRootViewController: UIViewController {
         self.communityView = self.loadViewFromNib(nibName: "CommunityView", frame: self.tblMenuView.bounds) as! CommunityView
         self.mainView.addSubview(self.communityView)
         self.communityView.isHidden = true
-        self.communityView.frame.origin.x = UIScreen.main.bounds.width
+        self.communityView.frame.origin.x = UIScreen.main.bounds.width + 1
         self.communityView.frame.origin.y = 64
         self.communityView.frame.size.width = UIScreen.main.bounds.width
         self.communityView.frame.size.height = UIScreen.main.bounds.height - 64
@@ -190,7 +190,7 @@ class HomeRootViewController: UIViewController {
     
     func didTouchNextButtonBarItem() {
         UIView.animate(withDuration: 0.3, animations: {
-            self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+            self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 2
         })
         var indexPath = IndexPath(row: 0, section: 0)
         if self.tableView.isHidden == false {
@@ -369,7 +369,7 @@ extension HomeRootViewController: UITableViewDelegate {
                     self.navigationItem.leftBarButtonItem = leftBarButtonItem
                 }
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 2
                 })
             case 1:
                 break
@@ -385,7 +385,7 @@ extension HomeRootViewController: UITableViewDelegate {
                     self.navigationItem.leftBarButtonItem = leftBarButtonItem
                 }
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 2
                 })
             case 4:
                 self.tableView.isHidden = true
@@ -399,7 +399,7 @@ extension HomeRootViewController: UITableViewDelegate {
                     self.navigationItem.leftBarButtonItem = leftBarButtonItem
                 }
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 2
                 })
             case 5:
                 self.tableView.isHidden = true
@@ -413,7 +413,7 @@ extension HomeRootViewController: UITableViewDelegate {
                     self.navigationItem.leftBarButtonItem = leftBarButtonItem
                 }
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width
+                    self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 2
                 })
             case 6:
                 self.notInHome = true

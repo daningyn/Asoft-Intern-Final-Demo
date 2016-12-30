@@ -34,6 +34,10 @@ class Constants {
     static let kIdentifierChefVideoQuoteDetailCollectionCell = "ChefVideoQuoteDetailCollectionCell"
     static let kIdentifierChefVideoQuoteDetailTableViewCell = "ChefVideoQuoteDetailTableViewCell"
     
+    //#MARK: - SettingViewController
+    static let kIdentifierSettingTableViewCellHaveSwitch = "SettingTableViewCellHaveSwitch"
+    static let kIdentifierSettingTableViewCellBasic = "SettingTableViewCellBasic"
+    
     //#MARK: - Main Home StoryBoard
     static let kIdentifierHomeNavigationController = "HomeNavigationController"
     static let kIdentifierHomeTableViewCell = "HomeTableViewCell"

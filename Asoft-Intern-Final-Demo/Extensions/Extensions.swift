@@ -67,6 +67,10 @@ extension UIColor {
     class var untDarkGreyBackground: UIColor {
         return UIColor(red: 28.0 / 255.0, green: 29.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0)
     }
+    
+    class var untGreyishBrownSwitch: UIColor {
+        return UIColor(white: 74.0 / 255.0, alpha: 1.0)
+    }
 }
 
 
