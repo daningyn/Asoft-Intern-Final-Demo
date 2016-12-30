@@ -38,6 +38,9 @@ class Constants {
     static let kIdentifierSettingTableViewCellHaveSwitch = "SettingTableViewCellHaveSwitch"
     static let kIdentifierSettingTableViewCellBasic = "SettingTableViewCellBasic"
     
+    //#MARK: - ChallengeViewController
+    static let kIdentifierChallengeCollectionViewCell = "ChallengeCollectionViewCell"
+    
     //#MARK: - Main Home StoryBoard
     static let kIdentifierHomeNavigationController = "HomeNavigationController"
     static let kIdentifierHomeTableViewCell = "HomeTableViewCell"

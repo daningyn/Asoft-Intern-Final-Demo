@@ -10,6 +10,8 @@ import UIKit
 
 class ChallengeViewController: UIViewController {
 
+    @IBOutlet weak var slideCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +22,11 @@ class ChallengeViewController: UIViewController {
         }
         self.navigationItem.title = AppNavigationTitle.kChallengeNavigationTitle
         
+        let layout = ChallengeCustomFlowLayout()
+        self.slideCollectionView.collectionViewLayout = layout
+        self.slideCollectionView.dataSource = self
+        self.slideCollectionView.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,3 +35,40 @@ class ChallengeViewController: UIViewController {
     }
 
 }
+
+
+//#MARK: - UICollectionView DataSource
+extension ChallengeViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChallengeCollectionViewCell, for: indexPath)
+        
+        (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kCombineImageCellArray[indexPath.row % 3])
+        
+        return cell
+    }
+    
+}
+
+
+//#MARK: - UICollectionView Delegate
+extension ChallengeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
