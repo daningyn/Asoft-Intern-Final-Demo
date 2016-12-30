@@ -387,6 +387,9 @@ extension HomeRootViewController: UITableViewDelegate {
                 UIView.animate(withDuration: 0.3, animations: {
                     self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 2
                 })
+            case 3:
+                self.notInHome = true
+                self.performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToChallengeVC, sender: nil)
             case 4:
                 self.tableView.isHidden = true
                 self.combineView.isHidden = true
