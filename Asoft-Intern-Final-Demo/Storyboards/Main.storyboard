@@ -162,6 +162,7 @@
                         <segue destination="zNK-Qd-MZC" kind="show" identifier="HomeToChefsViewController" id="Lms-hk-AYJ"/>
                         <segue destination="X8f-f0-yZS" kind="show" identifier="HomeToSettingViewController" id="vWQ-e3-bZB"/>
                         <segue destination="RWC-Mm-Heb" kind="show" identifier="HomeToChallengeViewController" id="g6y-68-xLL"/>
+                        <segue destination="2ma-21-hyP" kind="show" identifier="HomeToSearchViewController" id="bzt-Mg-k8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ip-24-RsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,6 +420,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbd-pi-mvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1936.8" y="-133.5832083958021"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Esx-UY-1qR">
+            <objects>
+                <viewController id="2ma-21-hyP" customClass="SearchViewController" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jjm-Uk-R2L"/>
+                        <viewControllerLayoutGuide type="bottom" id="DbC-8F-cWI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YO5-dD-lwI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj3-Vt-PMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="801"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="EAm-U3-vna">

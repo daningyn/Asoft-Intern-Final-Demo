@@ -16,6 +16,7 @@ class AppSegueIdentifiers {
     static let kIdentifierSegueHomeToChefsVC = "HomeToChefsViewController"
     static let kIdentifierSegueHomeToSettingVC = "HomeToSettingViewController"
     static let kIdentifierSegueHomeToChallengeVC = "HomeToChallengeViewController"
+    static let kIdentifierSegueHomeToSearchVC = "HomeToSearchViewController"
     
     //#MARK: - Segue in ChefsViewController
     static let kIdentifierSegueGordonToChefVideo = "GordonToChefVideo"

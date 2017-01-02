@@ -18,5 +18,6 @@ class AppNavigationTitle {
     static let kCommunityNavigationTitle = "Community"
     static let kSettingNavigationTitle = "Settings"
     static let kChallengeNavigationTitle = "Cooking"
+    static let kSearchNavigationTitle = "Search"
     
 }

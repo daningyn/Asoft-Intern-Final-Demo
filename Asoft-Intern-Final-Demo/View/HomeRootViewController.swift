@@ -10,12 +10,14 @@ import UIKit
 
 class HomeRootViewController: UIViewController {
 
+    //#MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tblMenuView: UITableView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
+    //#MARK: - Define properties
     let listFoodArray = ["Meat", "Fish", "Garnishes", "Salads", "Soups", "Bakery", "Deserts"]
     let listNumberFoodArray = ["79", "118", "417", "51", "352", "49", "291"]
     let menuArray = ["Home", "Favorites", "Combine", "Challenge", "Profile", "Community", "Settings"]
@@ -27,6 +29,7 @@ class HomeRootViewController: UIViewController {
     var profileView: UIView!
     var communityView: CommunityView!
     
+    //#MARK: - Set up
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -188,6 +191,7 @@ class HomeRootViewController: UIViewController {
         return view
     }
     
+    //#MARK: - Touch up in side button bar items
     func didTouchNextButtonBarItem() {
         UIView.animate(withDuration: 0.3, animations: {
             self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 6
@@ -265,7 +269,7 @@ class HomeRootViewController: UIViewController {
     }
     
     @IBAction func didTouchRightBarButtonItem(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToSearchVC, sender: nil)
     }
 
 }
