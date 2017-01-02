@@ -58,6 +58,7 @@ extension SettingViewController: UITableViewDataSource {
             } else {
                 (cell.viewWithTag(2) as! UISwitch).isOn = false
             }
+            cell.selectionStyle = .none
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierSettingTableViewCellBasic, for: indexPath)
