@@ -34,7 +34,15 @@ class AppResourceIdentifiers {
     static let kSettingOptionArray = ["Notifications", "Block Invites", "General", "Account", "Payments", "Sounds", "Privacy"]
     
     //#MARK: - ChallengeViewController
-    static let kDetailPlanningRecipes = ["Mix together all the spices in a bowl.", "Liberally rub the entire brisket with the spices.", "Wrap tightly in plastic wrap and refrigerate for at least 4 hours and up to 24 hours."] 
+    static let kDetailPlanningRecipes = ["Mix together all the spices in a bowl.", "Liberally rub the entire brisket with the spices.", "Wrap tightly in plastic wrap and refrigerate for at least 4 hours and up to 24 hours."]
+    
+    //#MARK: - Search ViewController
+    static let kIdentifierSearchImageArray = ["search-1", "search-2", "pizza-1", "pizza-2", "pizza-3"]
+    static let kIdentifierSearchNameArray = ["Steak with Cranberry Sauce", "Steak with Cranberry Sauce", "Suprim", "Marinara", "Margaritta"]
+    static let kSearchTimeArray = ["15 min", "20 min", "25 min", "10 min", "30 min"]
+    static let kIdentifierDidSearchImageArray = ["pizza-1", "pizza-2", "pizza-3"]
+    static let kIdentifierDidSearchNameArray = ["Suprim", "Marinara", "Margaritta"]
+    static let kDidSearchTimeArray = ["25 min", "10 min", "30 min"]
     
     
     //#MARK: - Assets

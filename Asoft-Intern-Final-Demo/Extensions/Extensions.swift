@@ -53,6 +53,35 @@ extension UIView {
             bundle: bundle
             ).instantiate(withOwner: nil, options: nil)[0] as? UIView
     }
+    
+    func addTopBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.cgColor
+        border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 1)
+        self.layer.addSublayer(border)
+    }
+    
+    func addRightBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.withAlphaComponent(0.2).cgColor
+        border.frame = CGRect(x: self.frame.size.width - width, y: 0, width: 1, height: self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
+    
+    func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.withAlphaComponent(0.2).cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
+        self.layer.addSublayer(border)
+    }
+    
+    func addLeftBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.withAlphaComponent(0.2).cgColor
+        border.frame = CGRect(x: 0, y: 0, width: 1, height: self.frame.size.height)
+        self.layer.addSublayer(border)
+    }
+    
 }
 
 extension UIColor {

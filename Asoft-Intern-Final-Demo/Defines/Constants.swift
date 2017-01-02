@@ -45,6 +45,9 @@ class Constants {
     //#MARK: - DetailChallengeCollectionViewCell
     static let kIdentifierDetailTableViewCellInChallengeCollectionViewCell = "ChallengeTableViewCell"
     
+    //#MARK: - Search ViewController
+    static let kIdentifierSearchTableViewCell = "SearchTableViewCell"
+    
     //#MARK: - Main Home StoryBoard
     static let kIdentifierHomeNavigationController = "HomeNavigationController"
     static let kIdentifierHomeTableViewCell = "HomeTableViewCell"
