@@ -50,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fv-RB-hUI">
-                                <rect key="frame" x="-377" y="0.0" width="752" height="667"/>
+                                <rect key="frame" x="-381" y="0.0" width="756" height="667"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XRw-vB-1FW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -79,7 +79,7 @@
                                         </prototypes>
                                     </tableView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xpm-z1-fXw">
-                                        <rect key="frame" x="377" y="64" width="375" height="603"/>
+                                        <rect key="frame" x="381" y="64" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTableViewCell" rowHeight="83" id="iOm-gM-ioz">
@@ -118,10 +118,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="XRw-vB-1FW" firstAttribute="top" secondItem="6Fv-RB-hUI" secondAttribute="top" id="Gsl-kB-RZi"/>
-                                    <constraint firstItem="xpm-z1-fXw" firstAttribute="width" secondItem="6Fv-RB-hUI" secondAttribute="width" multiplier="1:2" constant="-1" id="Jvc-7Z-H5r"/>
+                                    <constraint firstItem="xpm-z1-fXw" firstAttribute="width" secondItem="6Fv-RB-hUI" secondAttribute="width" multiplier="1:2" constant="-3" id="Jvc-7Z-H5r"/>
                                     <constraint firstItem="xpm-z1-fXw" firstAttribute="top" secondItem="6Fv-RB-hUI" secondAttribute="top" constant="64" id="KCh-p8-I5D"/>
                                     <constraint firstAttribute="trailing" secondItem="xpm-z1-fXw" secondAttribute="trailing" id="OEx-aE-eAl"/>
-                                    <constraint firstItem="XRw-vB-1FW" firstAttribute="width" secondItem="6Fv-RB-hUI" secondAttribute="width" multiplier="1:2" constant="-1" id="dt2-8z-tTZ"/>
+                                    <constraint firstItem="XRw-vB-1FW" firstAttribute="width" secondItem="6Fv-RB-hUI" secondAttribute="width" multiplier="1:2" constant="-3" id="dt2-8z-tTZ"/>
                                     <constraint firstItem="XRw-vB-1FW" firstAttribute="leading" secondItem="6Fv-RB-hUI" secondAttribute="leading" id="flx-At-4UM"/>
                                     <constraint firstAttribute="bottom" secondItem="XRw-vB-1FW" secondAttribute="bottom" id="iSS-KK-zIt"/>
                                     <constraint firstAttribute="bottom" secondItem="xpm-z1-fXw" secondAttribute="bottom" id="nxv-WB-S4w"/>
@@ -132,7 +132,7 @@
                         <constraints>
                             <constraint firstItem="mhx-f0-7og" firstAttribute="top" secondItem="6Fv-RB-hUI" secondAttribute="bottom" id="2bW-gQ-SRK"/>
                             <constraint firstAttribute="trailing" secondItem="6Fv-RB-hUI" secondAttribute="trailing" id="LVs-Ye-QmX"/>
-                            <constraint firstItem="6Fv-RB-hUI" firstAttribute="width" secondItem="NV7-Ut-bo2" secondAttribute="width" multiplier="2" constant="2" id="PDd-2u-L4G"/>
+                            <constraint firstItem="6Fv-RB-hUI" firstAttribute="width" secondItem="NV7-Ut-bo2" secondAttribute="width" multiplier="2" constant="6" id="PDd-2u-L4G"/>
                             <constraint firstItem="6Fv-RB-hUI" firstAttribute="top" secondItem="NV7-Ut-bo2" secondAttribute="top" id="xQ5-CE-QTg"/>
                         </constraints>
                     </view>
@@ -592,7 +592,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailChallengeCollectionViewCell" id="VGY-bo-Ha8" customClass="DetailChallengeCollectionViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-3" width="375" height="155"/>
+                                                <rect key="frame" x="0.0" y="-2.5" width="375" height="155"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
