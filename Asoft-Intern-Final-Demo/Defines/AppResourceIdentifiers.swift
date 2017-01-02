@@ -33,6 +33,9 @@ class AppResourceIdentifiers {
     //#MARK: - SettingViewController
     static let kSettingOptionArray = ["Notifications", "Block Invites", "General", "Account", "Payments", "Sounds", "Privacy"]
     
+    //#MARK: - ChallengeViewController
+    static let kDetailPlanningRecipes = ["Mix together all the spices in a bowl.", "Liberally rub the entire brisket with the spices.", "Wrap tightly in plastic wrap and refrigerate for at least 4 hours and up to 24 hours."] 
+    
     
     //#MARK: - Assets
     static let kIdentifierIconNext = "icon_next"

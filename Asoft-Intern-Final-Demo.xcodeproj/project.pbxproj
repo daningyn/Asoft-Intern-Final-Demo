@@ -27,6 +27,7 @@
 		44B55B161E1259D800A8B3A4 /* DetailOfNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B55B141E1259D800A8B3A4 /* DetailOfNameCell.xib */; };
 		44B55B181E126AC300A8B3A4 /* AppNavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B55B171E126AC300A8B3A4 /* AppNavigationTitle.swift */; };
 		44B55B1D1E12715700A8B3A4 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44B55B1C1E12715700A8B3A4 /* ProfileView.xib */; };
+		44C040BB1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C040BA1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift */; };
 		44C051731E0CC50D00381976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C051721E0CC50D00381976 /* Main.storyboard */; };
 		44C051751E0CCE5F00381976 /* HomeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C051741E0CCE5F00381976 /* HomeRootViewController.swift */; };
 		44C051771E0CDEAC00381976 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C051761E0CDEAC00381976 /* Extensions.swift */; };
@@ -94,6 +95,7 @@
 		44B55B141E1259D800A8B3A4 /* DetailOfNameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailOfNameCell.xib; path = View/CustomViews/CombineView/NamesCell/DetailOfNameCell.xib; sourceTree = "<group>"; };
 		44B55B171E126AC300A8B3A4 /* AppNavigationTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppNavigationTitle.swift; path = Defines/AppNavigationTitle.swift; sourceTree = "<group>"; };
 		44B55B1C1E12715700A8B3A4 /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileView.xib; path = View/CustomViews/ProfileView/ProfileView.xib; sourceTree = "<group>"; };
+		44C040BA1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailChallengeCollectionViewCell.swift; path = View/DetailChallengeCollectionViewCell.swift; sourceTree = "<group>"; };
 		44C051721E0CC50D00381976 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		44C051741E0CCE5F00381976 /* HomeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeRootViewController.swift; path = View/HomeRootViewController.swift; sourceTree = "<group>"; };
 		44C051761E0CDEAC00381976 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				44AE3DFF1E15F62B0016BAFA /* ChefQuoteCollectionViewCell.swift */,
 				44AE3E011E1613490016BAFA /* SettingViewController.swift */,
 				44AE3E031E164F710016BAFA /* ChallengeViewController.swift */,
+				44C040BA1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				44E2BEB01E10A792003ABFBB /* ImageCollectionCell.swift in Sources */,
 				449E3FFB1E166EE000C3651E /* ChallengeCustomFlowLayout.swift in Sources */,
 				44FE7C0C1E134C1500FC762D /* CombineResultViewController.swift in Sources */,
+				44C040BB1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift in Sources */,
 				44B1C3081E13ABB00098EEBE /* CommunityView.swift in Sources */,
 				44AE3E001E15F62B0016BAFA /* ChefQuoteCollectionViewCell.swift in Sources */,
 				445605F51E1120D2009E6149 /* AppResourceIdentifiers.swift in Sources */,
