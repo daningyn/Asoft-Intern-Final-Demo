@@ -32,6 +32,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         self.listTableView.dataSource = self
         self.listTableView.delegate = self
+        self.listTableView.tableFooterView = UIView(frame: CGRect.zero)
         
         self.txtfldSearch.delegate = self
         

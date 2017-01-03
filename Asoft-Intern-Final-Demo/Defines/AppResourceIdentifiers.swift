@@ -50,6 +50,12 @@ class AppResourceIdentifiers {
         }
     }
     
+    //#MARK: - Category ViewController
+    static let kCategoryMenuArray = ["GRILL", "FRY", "BOIL", "BAKE"]
+    static let kCategoryImageArray = ["category-food-1", "category-food-2", "category-food-3"]
+    static let kCategoryNameArray = ["Grilled Spicy Brisket", "Steak with Cranberry Sauce", "Grilled Pork & Potatos"]
+    static let kCategoryTimeArray = ["25 min", "10 min", "30 min"]
+    
     
     //#MARK: - Assets
     static let kIdentifierIconNext = "icon_next"
