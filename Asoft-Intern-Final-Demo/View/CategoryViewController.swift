@@ -16,6 +16,8 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var detailCollectionView: UICollectionView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var botView: UIView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var filterTableView: UITableView!
     
     //#MARK: - Define properties
     var btnBarFilter = UIBarButtonItem()
@@ -35,6 +37,7 @@ class CategoryViewController: UIViewController {
             self.navigationItem.leftBarButtonItem = backButton
         }
         self.navigationItem.title = AppNavigationTitle.kCategoryNavigationTitle
+        self.lblTitle.text = AppNavigationTitle.kCategoryNavigationTitle
         
         self.menuCollectionView.dataSource = self
         self.menuCollectionView.delegate = self
@@ -45,6 +48,9 @@ class CategoryViewController: UIViewController {
         self.footerView.translatesAutoresizingMaskIntoConstraints = true
         self.botView.translatesAutoresizingMaskIntoConstraints = true
         self.topView.translatesAutoresizingMaskIntoConstraints = true
+        
+        self.filterTableView.dataSource = self
+        self.filterTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +90,7 @@ extension CategoryViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCategoryDetailCollectionViewCell, for: indexPath) as! CategoryDetailCollectionViewCell
             
             cell.animationDelegate = self
+            cell.mainTableView.reloadData()
             
             return cell
         }
@@ -182,6 +189,39 @@ extension CategoryViewController: ScrollDetailCollectionViewDelegate {
     
     func reloadCollectionViewData() {
         self.detailCollectionView.reloadData()
+    }
+    
+}
+
+
+//#MARK: - UITableView DataSource
+extension CategoryViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return AppResourceIdentifiers.kCategoryFilterArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierCategoryFilterTableViewCell, for: indexPath)
+        
+        (cell.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kCategoryFilterArray[indexPath.row]
+        
+        return cell
+    }
+    
+}
+
+
+//#MARK: - UITableView Delegate
+extension CategoryViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0,5:
+            return 50
+        default:
+            return 30
+        }
     }
     
 }

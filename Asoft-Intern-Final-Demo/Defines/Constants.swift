@@ -52,6 +52,7 @@ class Constants {
     static let kIdentifierCategoryMenuCollectionViewCell = "CategoryMenuCollectionViewCell"
     static let kIdentifierCategoryDetailCollectionViewCell = "CategoryDetailCollectionViewCell"
     static let kIdentifierCategoryCustomDetailTableViewCell = "CustomDetailTableViewCell"
+    static let kIdentifierCategoryFilterTableViewCell = "CategoryFilterTableViewCell"
     
     //#MARK: - Main Home StoryBoard
     static let kIdentifierHomeNavigationController = "HomeNavigationController"

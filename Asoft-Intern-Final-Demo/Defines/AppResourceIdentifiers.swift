@@ -55,6 +55,7 @@ class AppResourceIdentifiers {
     static let kCategoryImageArray = ["category-food-1", "category-food-2", "category-food-3"]
     static let kCategoryNameArray = ["Grilled Spicy Brisket", "Steak with Cranberry Sauce", "Grilled Pork & Potatos"]
     static let kCategoryTimeArray = ["25 min", "10 min", "30 min"]
+    static let kCategoryFilterArray = ["", "Pork", "Beef", "Veal", "Chiken", "", "Gluten free", "Sugar free", "Salt Free", "Healthy", "Diet"]
     
     
     //#MARK: - Assets
@@ -65,5 +66,7 @@ class AppResourceIdentifiers {
     static let kIdentifierIconPause = "icon_pause"
     static let kIdentifierIconPlay = "icon_play"
     static let kIdentifierIconFilter = "icon_filter"
+    static let kIdentifierIconCheck = "icon_check"
+    static let kIdentifierIconNotCheck = "icon_notcheck"
     
 }

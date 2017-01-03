@@ -69,10 +69,10 @@ extension CategoryDetailCollectionViewCell: UITableViewDelegate {
 extension CategoryDetailCollectionViewCell {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.y)
         if scrollView.contentOffset.y > 0 && scrollView.contentOffset.y < scrollView.contentSize.height -  scrollView.frame.size.height {
             if scrollView.contentOffset.y > self.myContentOffsetY {
                 if let animationDelegate = self.animationDelegate {
-                    print(animationDelegate.getContentOffsetYCombineTopView() > 1 - animationDelegate.getHeightCombineTopView() + 64)
                     if animationDelegate.getContentOffsetYCombineTopView() > 1 - animationDelegate.getHeightCombineTopView() + 64 {
                         animationDelegate.subtractionView(value: scrollView.contentOffset.y - self.myContentOffsetY)
                         animationDelegate.plusHeightForBotView(value: scrollView.contentOffset.y - self.myContentOffsetY)
