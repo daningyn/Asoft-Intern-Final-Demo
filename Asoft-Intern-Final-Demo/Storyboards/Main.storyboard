@@ -163,6 +163,7 @@
                         <segue destination="X8f-f0-yZS" kind="show" identifier="HomeToSettingViewController" id="vWQ-e3-bZB"/>
                         <segue destination="RWC-Mm-Heb" kind="show" identifier="HomeToChallengeViewController" id="g6y-68-xLL"/>
                         <segue destination="2ma-21-hyP" kind="show" identifier="HomeToSearchViewController" id="bzt-Mg-k8G"/>
+                        <segue destination="u01-58-tPc" kind="show" identifier="HomeToCategoryViewController" id="M0n-9b-NVC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ip-24-RsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -594,7 +595,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj3-Vt-PMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="800.14992503748135"/>
+            <point key="canvasLocation" x="836" y="602"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="EAm-U3-vna">
@@ -1208,6 +1209,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzY-3D-4SX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2885.5999999999999" y="-133.5832083958021"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="8d7-IR-chg">
+            <objects>
+                <viewController id="u01-58-tPc" customClass="CategoryViewController" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dGl-21-UeW"/>
+                        <viewControllerLayoutGuide type="bottom" id="iwc-xL-pXo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9FQ-Si-2ba">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRP-lu-Z0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="-961"/>
         </scene>
         <!--Combine Result View Controller-->
         <scene sceneID="Odf-9q-Jf9">

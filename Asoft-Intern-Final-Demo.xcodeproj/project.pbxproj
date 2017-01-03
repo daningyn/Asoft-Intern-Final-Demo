@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441643371E1B3DAA00DC45DB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441643361E1B3DAA00DC45DB /* CategoryViewController.swift */; };
 		443A87741E0E5315006FCAE0 /* CombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A87731E0E5315006FCAE0 /* CombineView.swift */; };
 		443A87781E0E5392006FCAE0 /* CombineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 443A87771E0E5392006FCAE0 /* CombineView.xib */; };
 		444F039C1E0F7C6A00EFCD8B /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F039A1E0F7C6A00EFCD8B /* MenuCollectionCell.swift */; };
@@ -70,6 +71,7 @@
 		12FB8B6E81D487C4AAAB7555 /* Pods_Asoft_Intern_Final_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asoft_Intern_Final_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1984D11ABC874C5BB0D977D0 /* Pods-Asoft-Intern-Final-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asoft-Intern-Final-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asoft-Intern-Final-Demo/Pods-Asoft-Intern-Final-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		2F864419A79625887E909D3C /* Pods-Asoft-Intern-Final-DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asoft-Intern-Final-DemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asoft-Intern-Final-DemoUITests/Pods-Asoft-Intern-Final-DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		441643361E1B3DAA00DC45DB /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = View/CategoryViewController.swift; sourceTree = "<group>"; };
 		443A87731E0E5315006FCAE0 /* CombineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombineView.swift; path = View/CustomViews/CombineView/CombineView.swift; sourceTree = "<group>"; };
 		443A87771E0E5392006FCAE0 /* CombineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CombineView.xib; path = View/CustomViews/CombineView/CombineView.xib; sourceTree = "<group>"; };
 		444F039A1E0F7C6A00EFCD8B /* MenuCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCollectionCell.swift; path = View/CustomViews/CombineView/MenuCell/MenuCollectionCell.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				44AE3E031E164F710016BAFA /* ChallengeViewController.swift */,
 				44C040BA1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift */,
 				44F0B2DE1E1A9ABA00398AA4 /* SearchViewController.swift */,
+				441643361E1B3DAA00DC45DB /* CategoryViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				44AE3E021E1613490016BAFA /* SettingViewController.swift in Sources */,
 				44C051751E0CCE5F00381976 /* HomeRootViewController.swift in Sources */,
 				44AE3E041E164F710016BAFA /* ChallengeViewController.swift in Sources */,
+				441643371E1B3DAA00DC45DB /* CategoryViewController.swift in Sources */,
 				44B55B181E126AC300A8B3A4 /* AppNavigationTitle.swift in Sources */,
 				44E2BEB01E10A792003ABFBB /* ImageCollectionCell.swift in Sources */,
 				449E3FFB1E166EE000C3651E /* ChallengeCustomFlowLayout.swift in Sources */,

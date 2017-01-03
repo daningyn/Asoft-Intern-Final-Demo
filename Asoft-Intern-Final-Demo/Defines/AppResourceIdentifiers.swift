@@ -58,5 +58,6 @@ class AppResourceIdentifiers {
     static let kIdentifierIconThumb = "icon_thumb"
     static let kIdentifierIconPause = "icon_pause"
     static let kIdentifierIconPlay = "icon_play"
+    static let kIdentifierIconFilter = "icon_filter"
     
 }

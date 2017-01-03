@@ -347,6 +347,10 @@ extension HomeRootViewController: UITableViewDelegate {
                 (cell?.viewWithTag(2) as! UILabel).textColor = tag2Color
             })
             tableView.deselectRow(at: indexPath, animated: true)
+            
+            AppNavigationTitle.kCategoryNavigationTitle = (cell?.viewWithTag(1) as! UILabel).text!
+            self.performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToCategoryVC, sender: nil)
+            
         case self.tblMenuView:
             
             
