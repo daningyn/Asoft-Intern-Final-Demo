@@ -1222,11 +1222,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCd-q0-eSv" userLabel="Top View">
+                            <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCd-q0-eSv" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="156"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfj-Rx-aea" userLabel="Line">
+                                        <rect key="frame" x="47" y="154" width="281" height="1"/>
+                                        <color key="backgroundColor" red="1" green="0.3294117647" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="bjD-8l-Urv"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bfj-Rx-aea" firstAttribute="centerX" secondItem="vCd-q0-eSv" secondAttribute="centerX" id="FQz-Dg-fV0"/>
+                                    <constraint firstAttribute="bottom" secondItem="bfj-Rx-aea" secondAttribute="bottom" constant="1" id="GdN-32-FM1"/>
+                                    <constraint firstItem="bfj-Rx-aea" firstAttribute="width" secondItem="vCd-q0-eSv" secondAttribute="width" multiplier="3:4" id="XvB-EC-wK1"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bev-Jj-G7i" userLabel="Bot View">
+                            <view clipsSubviews="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bev-Jj-G7i" userLabel="Bot View">
                                 <rect key="frame" x="0.0" y="220" width="375" height="447"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VQC-3z-otz">
@@ -1273,7 +1287,7 @@
                                             <constraint firstAttribute="height" constant="3" id="fuU-ZW-XRC"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4EA-Pq-MRC">
+                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4EA-Pq-MRC">
                                         <rect key="frame" x="0.0" y="50" width="375" height="397"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="u67-1y-dpK">
@@ -1290,7 +1304,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="399"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-9D-qWZ">
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-9D-qWZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="399"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <prototypes>
@@ -1302,13 +1316,13 @@
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
                                                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9w-jQ-4oT" userLabel="ContentView">
-                                                                                <rect key="frame" x="3" y="3" width="369" height="173.5"/>
+                                                                                <rect key="frame" x="3" y="3" width="369" height="174"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="category-food-1" translatesAutoresizingMaskIntoConstraints="NO" id="dfG-2L-CwR">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="369" height="130"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="369" height="130.5"/>
                                                                                     </imageView>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLQ-UK-pyJ">
-                                                                                        <rect key="frame" x="0.0" y="130" width="369" height="44"/>
+                                                                                        <rect key="frame" x="0.0" y="130.5" width="369" height="44"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grilled Spicy Brisket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D28-ed-FwF">
                                                                                                 <rect key="frame" x="20" y="12" width="162.5" height="21.5"/>
@@ -1362,6 +1376,7 @@
                                                         </tableView>
                                                     </subviews>
                                                 </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="X9e-9D-qWZ" firstAttribute="leading" secondItem="Kk4-Ak-jzf" secondAttribute="leading" id="AZG-Nr-seq"/>
                                                     <constraint firstAttribute="trailing" secondItem="X9e-9D-qWZ" secondAttribute="trailing" id="BEn-Ss-PdM"/>
@@ -1403,9 +1418,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="botView" destination="bev-Jj-G7i" id="fNm-Gh-WOw"/>
                         <outlet property="detailCollectionView" destination="4EA-Pq-MRC" id="GRU-dV-14H"/>
                         <outlet property="footerView" destination="G1i-ot-9mU" id="0Ht-eQ-93N"/>
                         <outlet property="menuCollectionView" destination="VQC-3z-otz" id="9it-3u-3Uh"/>
+                        <outlet property="topView" destination="vCd-q0-eSv" id="mcH-Vz-mhM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRP-lu-Z0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>

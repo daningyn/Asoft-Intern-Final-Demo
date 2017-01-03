@@ -14,6 +14,8 @@ class CategoryDetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var mainTableView: UITableView!
     
     //#MARK: - Define properties
+    lazy internal var myContentOffsetY: CGFloat = 0.0
+    var animationDelegate: ScrollDetailCollectionViewDelegate?
     
     //#MARK: - Set up
     override func awakeFromNib() {
@@ -57,7 +59,46 @@ extension CategoryDetailCollectionViewCell: UITableViewDataSource {
 extension CategoryDetailCollectionViewCell: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.bounds.height / 2.5
+        return 180
+    }
+    
+}
+
+
+//#MARK: - UIScrollView Delegate
+extension CategoryDetailCollectionViewCell {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 && scrollView.contentOffset.y < scrollView.contentSize.height -  scrollView.frame.size.height {
+            if scrollView.contentOffset.y > self.myContentOffsetY {
+                if let animationDelegate = self.animationDelegate {
+                    print(animationDelegate.getContentOffsetYCombineTopView() > 1 - animationDelegate.getHeightCombineTopView() + 64)
+                    if animationDelegate.getContentOffsetYCombineTopView() > 1 - animationDelegate.getHeightCombineTopView() + 64 {
+                        animationDelegate.subtractionView(value: scrollView.contentOffset.y - self.myContentOffsetY)
+                        animationDelegate.plusHeightForBotView(value: scrollView.contentOffset.y - self.myContentOffsetY)
+                        animationDelegate.setHeightForDetailCollectionView()
+                    } else {
+                        animationDelegate.setContentOffsetYToTopForBotView()
+                    }
+                    self.myContentOffsetY = scrollView.contentOffset.y
+                }
+            } else {
+                if let animationDelegate = self.animationDelegate {
+                    if animationDelegate.getContentOffsetYCombineTopView() >= 64 {
+                        animationDelegate.setContentOffsetYToTopForTopView()
+                    } else {
+                        animationDelegate.plusContentForView(value: self.myContentOffsetY - scrollView.contentOffset.y)
+                        animationDelegate.plusHeightForBotView(value: scrollView.contentOffset.y - self.myContentOffsetY)
+                        animationDelegate.setHeightForDetailCollectionView()
+                    }
+                    self.myContentOffsetY = scrollView.contentOffset.y
+                }
+            }
+        } else {
+            if let animationDelegate = self.animationDelegate {
+                animationDelegate.reloadCollectionViewData()
+            }
+        }
     }
     
 }

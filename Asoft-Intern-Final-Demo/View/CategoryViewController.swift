@@ -14,6 +14,8 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var detailCollectionView: UICollectionView!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var botView: UIView!
     
     //#MARK: - Define properties
     var btnBarFilter = UIBarButtonItem()
@@ -39,6 +41,10 @@ class CategoryViewController: UIViewController {
         
         self.detailCollectionView.dataSource = self
         self.detailCollectionView.delegate = self
+        self.detailCollectionView.translatesAutoresizingMaskIntoConstraints = true
+        self.footerView.translatesAutoresizingMaskIntoConstraints = true
+        self.botView.translatesAutoresizingMaskIntoConstraints = true
+        self.topView.translatesAutoresizingMaskIntoConstraints = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,8 +81,9 @@ extension CategoryViewController: UICollectionViewDataSource {
             
             return cell
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCategoryDetailCollectionViewCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCategoryDetailCollectionViewCell, for: indexPath) as! CategoryDetailCollectionViewCell
             
+            cell.animationDelegate = self
             
             return cell
         }
@@ -123,6 +130,61 @@ extension CategoryViewController {
     }
 }
 
+
+//#MARK: - ScrollDetailCollectionViewDelegate
+extension CategoryViewController: ScrollDetailCollectionViewDelegate {
+    
+    func getContentOffsetYCombineTopView() -> CGFloat {
+        return self.topView.frame.origin.y
+    }
+    
+    func getHeightCombineTopView() -> CGFloat {
+        return self.topView.frame.size.height
+    }
+    
+    func subtractionView(value: CGFloat) {
+        self.topView.frame.origin.y -= value
+        self.botView.frame.origin.y -= value
+    }
+    
+    func plusHeightForBotView(value: CGFloat) {
+        self.botView.frame.size.height += value
+    }
+    
+    func setHeightForDetailCollectionView() {
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.footerView.frame.origin.x = CGFloat(CGFloat(selectedCell)*(self.menuCollectionView.bounds.width/4))
+        self.detailCollectionView.reloadData()
+    }
+    
+    func setContentOffsetYToTopForBotView() {
+        self.topView.frame.origin.y = 65 - self.topView.frame.size.height
+        self.botView.frame.origin.y = self.topView.frame.origin.y + self.topView.frame.size.height
+        self.botView.frame.size.height = self.view.frame.size.height - 65
+        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.detailCollectionView.reloadData()
+    }
+    
+    func setContentOffsetYToTopForTopView() {
+        self.topView.frame.origin.y = 64
+        self.botView.frame.origin.y = self.topView.frame.origin.y + self.topView.frame.size.height
+        self.botView.frame.size.height = self.view.frame.size.height - self.topView.frame.size.height - 64
+        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.detailCollectionView.reloadData()
+    }
+    
+    func plusContentForView(value: CGFloat) {
+        self.topView.frame.origin.y += value
+        self.botView.frame.origin.y += value
+    }
+    
+    func reloadCollectionViewData() {
+        self.detailCollectionView.reloadData()
+    }
+    
+}
 
 
 
