@@ -13,6 +13,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     //#MARK: - Outlet
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var txtfldSearch: UITextField!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var lblResult: UILabel!
     
     //#MARK: - Define properties
     var didSearch = false
@@ -50,11 +52,34 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if textField.text != "" {
             self.txtfldSearch.resignFirstResponder()
             self.didSearch = true
+            AppResourceIdentifiers.kResult = Int(arc4random_uniform(50))
+            if self.topView.frame.origin.y < 0 {
+                
+            } else {
+                UIView.animate(withDuration: 0.5) {
+                    self.topView.frame.origin.y = self.topView.frame.origin.y - self.topView.bounds.height/2
+                    self.listTableView.frame.origin.y = self.topView.frame.origin.y + self.topView.bounds.height
+                    self.listTableView.frame.size.height += self.topView.bounds.height/2
+                }
+            }
+            
+            UIView.animate(withDuration: 0.5) {
+                self.listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .middle, animated: true)
+            }
+            self.lblResult.text = AppResourceIdentifiers.kResultString
             self.listTableView.reloadData()
         } else {
             self.txtfldSearch.resignFirstResponder()
             self.didSearch = false
-            self.listTableView.reloadData()
+            UIView.animate(withDuration: 0.5, animations: {
+                self.topView.frame.origin.y = 0
+                self.listTableView.frame.origin.y = self.topView.bounds.height
+                self.listTableView.frame.size.height = self.listTableView.superview!.bounds.height - self.topView.bounds.height
+                self.listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .middle, animated: true)
+            }, completion: {(_) in
+                self.lblResult.text = "searches this week"
+                self.listTableView.reloadData()
+            })
         }
         return true
     }
@@ -73,7 +98,7 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.didSearch {
-            return 17
+            return AppResourceIdentifiers.kResult
         } else {
             return 10
         }

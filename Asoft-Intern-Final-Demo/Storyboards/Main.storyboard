@@ -434,7 +434,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYz-J2-9yw" userLabel="Search View">
-                                <rect key="frame" x="37.5" y="94" width="300" height="50"/>
+                                <rect key="frame" x="37.5" y="84" width="300" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What you are looking for?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMZ-J3-Kcu">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -462,20 +462,20 @@
                                     <constraint firstAttribute="bottom" secondItem="Ier-2y-jaj" secondAttribute="bottom" id="zpu-7F-0pb"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0b-h9-Gvl" userLabel="Main View">
-                                <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0b-h9-Gvl" userLabel="Main View">
+                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOf-nn-A6G">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w1-TB-MVI">
-                                                <rect key="frame" x="131.5" y="15" width="113" height="42"/>
+                                                <rect key="frame" x="131.5" y="15.5" width="113" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                 <color key="textColor" red="1" green="0.22745098039215686" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="searches this week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiA-YT-HpH">
-                                                <rect key="frame" x="69" y="62.5" width="237.5" height="33.5"/>
+                                                <rect key="frame" x="69" y="64" width="237.5" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -490,7 +490,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="193" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T4n-v1-g7l">
-                                        <rect key="frame" x="0.0" y="104.5" width="375" height="418.5"/>
+                                        <rect key="frame" x="0.0" y="106.5" width="375" height="426.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="193" id="p1p-na-nxD">
@@ -578,7 +578,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="m0b-h9-Gvl" secondAttribute="trailing" id="ECn-ky-lTU"/>
                             <constraint firstItem="DbC-8F-cWI" firstAttribute="top" secondItem="m0b-h9-Gvl" secondAttribute="bottom" id="FiC-Lb-Sik"/>
-                            <constraint firstItem="kYz-J2-9yw" firstAttribute="top" secondItem="Jjm-Uk-R2L" secondAttribute="bottom" constant="30" id="TCn-8r-wsO"/>
+                            <constraint firstItem="kYz-J2-9yw" firstAttribute="top" secondItem="Jjm-Uk-R2L" secondAttribute="bottom" constant="20" id="TCn-8r-wsO"/>
                             <constraint firstItem="m0b-h9-Gvl" firstAttribute="leading" secondItem="YO5-dD-lwI" secondAttribute="leading" id="V65-WG-jos"/>
                             <constraint firstItem="kYz-J2-9yw" firstAttribute="centerX" secondItem="YO5-dD-lwI" secondAttribute="centerX" id="ZyE-8G-ePd"/>
                             <constraint firstItem="kYz-J2-9yw" firstAttribute="width" secondItem="YO5-dD-lwI" secondAttribute="width" multiplier="4:5" id="wEO-QZ-bcr"/>
@@ -586,7 +586,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblResult" destination="UiA-YT-HpH" id="Xqr-oq-A8Z"/>
                         <outlet property="listTableView" destination="T4n-v1-g7l" id="HZk-5R-Fan"/>
+                        <outlet property="topView" destination="eOf-nn-A6G" id="HDY-qg-dH6"/>
                         <outlet property="txtfldSearch" destination="tMZ-J3-Kcu" id="WJF-Yi-Bei"/>
                     </connections>
                 </viewController>

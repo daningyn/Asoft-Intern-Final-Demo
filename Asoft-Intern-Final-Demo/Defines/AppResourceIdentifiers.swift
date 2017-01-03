@@ -43,6 +43,12 @@ class AppResourceIdentifiers {
     static let kIdentifierDidSearchImageArray = ["pizza-1", "pizza-2", "pizza-3"]
     static let kIdentifierDidSearchNameArray = ["Suprim", "Marinara", "Margaritta"]
     static let kDidSearchTimeArray = ["25 min", "10 min", "30 min"]
+    static var kResult = 0
+    static var kResultString: String {
+        get {
+            return "\(AppResourceIdentifiers.kResult) recipes found"
+        }
+    }
     
     
     //#MARK: - Assets
