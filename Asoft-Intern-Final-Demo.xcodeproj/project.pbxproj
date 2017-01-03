@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		441643371E1B3DAA00DC45DB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441643361E1B3DAA00DC45DB /* CategoryViewController.swift */; };
+		441643391E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441643381E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift */; };
 		443A87741E0E5315006FCAE0 /* CombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A87731E0E5315006FCAE0 /* CombineView.swift */; };
 		443A87781E0E5392006FCAE0 /* CombineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 443A87771E0E5392006FCAE0 /* CombineView.xib */; };
 		444F039C1E0F7C6A00EFCD8B /* MenuCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F039A1E0F7C6A00EFCD8B /* MenuCollectionCell.swift */; };
@@ -72,6 +73,7 @@
 		1984D11ABC874C5BB0D977D0 /* Pods-Asoft-Intern-Final-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asoft-Intern-Final-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asoft-Intern-Final-Demo/Pods-Asoft-Intern-Final-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		2F864419A79625887E909D3C /* Pods-Asoft-Intern-Final-DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asoft-Intern-Final-DemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asoft-Intern-Final-DemoUITests/Pods-Asoft-Intern-Final-DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		441643361E1B3DAA00DC45DB /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = View/CategoryViewController.swift; sourceTree = "<group>"; };
+		441643381E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryDetailCollectionViewCell.swift; path = View/CategoryDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		443A87731E0E5315006FCAE0 /* CombineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombineView.swift; path = View/CustomViews/CombineView/CombineView.swift; sourceTree = "<group>"; };
 		443A87771E0E5392006FCAE0 /* CombineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CombineView.xib; path = View/CustomViews/CombineView/CombineView.xib; sourceTree = "<group>"; };
 		444F039A1E0F7C6A00EFCD8B /* MenuCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCollectionCell.swift; path = View/CustomViews/CombineView/MenuCell/MenuCollectionCell.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				44C040BA1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift */,
 				44F0B2DE1E1A9ABA00398AA4 /* SearchViewController.swift */,
 				441643361E1B3DAA00DC45DB /* CategoryViewController.swift */,
+				441643381E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				44C040BB1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift in Sources */,
 				44B1C3081E13ABB00098EEBE /* CommunityView.swift in Sources */,
 				44AE3E001E15F62B0016BAFA /* ChefQuoteCollectionViewCell.swift in Sources */,
+				441643391E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift in Sources */,
 				445605F51E1120D2009E6149 /* AppResourceIdentifiers.swift in Sources */,
 				44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */,
 				443A87741E0E5315006FCAE0 /* CombineView.swift in Sources */,
