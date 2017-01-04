@@ -13,6 +13,9 @@ class RecipeChoosenCollectionViewCell: UICollectionViewCell {
     //#MARK: - Outlet
     @IBOutlet weak var mainTableView: UITableView!
     
+    //#MARK: - Define properties
+    var haveButton = false
+    
     //#MARK: - Set up
     override func awakeFromNib() {
         super.awakeFromNib()

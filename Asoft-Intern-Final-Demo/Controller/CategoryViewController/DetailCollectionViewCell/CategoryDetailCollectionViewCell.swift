@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PushViewController {
+    func pushViewControlerWithIdentifierSegue(identifier: String)
+}
+
 class CategoryDetailCollectionViewCell: UICollectionViewCell {
     
     //#MARK: - Outlet
@@ -15,7 +19,7 @@ class CategoryDetailCollectionViewCell: UICollectionViewCell {
     
     //#MARK: - Define properties
     lazy internal var myContentOffsetY: CGFloat = 0.0
-    var animationDelegate: ScrollDetailCollectionViewDelegate?
+    var pushDelegate: PushViewController?
     
     //#MARK: - Set up
     override func awakeFromNib() {
@@ -38,6 +42,7 @@ extension CategoryDetailCollectionViewCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierCategoryCustomDetailTableViewCell, for: indexPath)
     
+        cell.selectionStyle = .none
         cell.viewWithTag(1)?.clipsToBounds = true
         cell.viewWithTag(1)?.layer.cornerRadius = 4
         cell.layer.shadowColor = UIColor.black.cgColor
@@ -60,6 +65,12 @@ extension CategoryDetailCollectionViewCell: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let pushDelegate = self.pushDelegate {
+            pushDelegate.pushViewControlerWithIdentifierSegue(identifier: AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen)
+        }
     }
     
 }

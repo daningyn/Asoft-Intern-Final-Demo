@@ -1263,13 +1263,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aef-Ue-A04" userLabel="BotView">
                                 <rect key="frame" x="0.0" y="222.5" width="375" height="444.5"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N7S-Jl-Xnh">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="N7S-Jl-Xnh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cKN-q7-A2s"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0uD-TU-i0F">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0uD-TU-i0F">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1284,10 +1284,10 @@
                                             <constraint firstAttribute="height" constant="3" id="wpS-MX-lTf"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v5x-Xg-So9">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v5x-Xg-So9">
                                         <rect key="frame" x="0.0" y="50" width="375" height="394.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e3Z-KU-Syd">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="e3Z-KU-Syd">
                                             <size key="itemSize" width="375" height="396"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1295,7 +1295,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeChoosenCollectionViewCell" id="WSc-m9-x0N" customClass="RecipeChoosenCollectionViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
+                                                <rect key="frame" x="0.0" y="-1" width="375" height="396"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
@@ -1481,7 +1481,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-9D-qWZ">
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X9e-9D-qWZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <prototypes>
@@ -1643,7 +1643,7 @@
                         <outlet property="footerView" destination="G1i-ot-9mU" id="0Ht-eQ-93N"/>
                         <outlet property="mainView" destination="MJK-AK-zRy" id="EEw-ot-NNj"/>
                         <outlet property="menuCollectionView" destination="VQC-3z-otz" id="9it-3u-3Uh"/>
-                        <segue destination="aMi-rw-EEg" kind="show" id="4EA-nI-oOB"/>
+                        <segue destination="aMi-rw-EEg" kind="show" identifier="CategoryToRecipeChoosen" id="4EA-nI-oOB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRP-lu-Z0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>

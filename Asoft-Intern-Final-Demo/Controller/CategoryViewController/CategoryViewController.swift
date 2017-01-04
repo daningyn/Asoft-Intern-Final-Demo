@@ -101,6 +101,8 @@ extension CategoryViewController: UICollectionViewDataSource {
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCategoryDetailCollectionViewCell, for: indexPath) as! CategoryDetailCollectionViewCell
             
+            cell.pushDelegate = self
+            
             return cell
         }
     }
@@ -196,6 +198,12 @@ extension CategoryViewController: UITableViewDelegate {
 }
 
 
+//#MARK: - PushViewController Delegate
+extension CategoryViewController: PushViewController {
+    func pushViewControlerWithIdentifierSegue(identifier: String) {
+        self.performSegue(withIdentifier: identifier, sender: nil)
+    }
+}
 
 
 

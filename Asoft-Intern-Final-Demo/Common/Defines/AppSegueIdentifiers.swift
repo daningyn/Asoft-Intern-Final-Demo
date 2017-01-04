@@ -24,4 +24,7 @@ class AppSegueIdentifiers {
     static let kIdentifierSegueMarcoToChefVideo = "MarcoToChefVideo"
     static let kIdentifierSegueWolfgangToChefVideo = "WolfgangToChefVideo"
     
+    //#MARK: - Segue in CategoryViewController
+    static let kIdentifierSegueCategoryToRecipeChoosen = "CategoryToRecipeChoosen"
+    
 }

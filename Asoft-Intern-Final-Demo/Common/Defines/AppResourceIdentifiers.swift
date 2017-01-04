@@ -58,6 +58,9 @@ class AppResourceIdentifiers {
     static let kCategoryFilterArray = ["", "Pork", "Beef", "Veal", "Chiken", "", "Gluten free", "Sugar free", "Salt Free", "Healthy", "Diet"]
     static var kCategoryFilterCheckArray = [false, false, true, false, true, false, false, false, true, false, false]
     
+    //#MARK: - RecipeChoosen ViewController
+    static let kRecipeChoosenMenuArray = ["INGRIDIENTS", "DIRECITONS"]
+    
     
     //#MARK: - Assets
     static let kIdentifierIconNext = "icon_next"
