@@ -16,7 +16,8 @@ class RecipeChoosenButtonTableViewCell: UITableViewCell {
     //#MARK: - Set up
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.btnWatchVideo.clipsToBounds = true
+        self.btnWatchVideo.layer.cornerRadius = 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

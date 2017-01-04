@@ -35,8 +35,6 @@ class RecipeChoosenViewController: UIViewController {
         self.detailCollectionView.dataSource = self
         self.detailCollectionView.delegate = self
         
-        self.footerView.translatesAutoresizingMaskIntoConstraints = true
-        
         if let bannerImage = self.bannerImage {
             self.bannerImageView.image = UIImage(named: bannerImage)
         }
@@ -49,6 +47,11 @@ class RecipeChoosenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.footerView.translatesAutoresizingMaskIntoConstraints = true
     }
 
     override func didReceiveMemoryWarning() {
