@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PushViewController {
-    func pushViewControlerWithIdentifierSegue(identifier: String)
+    func pushViewControlerWithIdentifierSegue(identifier: String, imageString: String, name: String)
 }
 
 class CategoryDetailCollectionViewCell: UICollectionViewCell {
@@ -69,7 +69,7 @@ extension CategoryDetailCollectionViewCell: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let pushDelegate = self.pushDelegate {
-            pushDelegate.pushViewControlerWithIdentifierSegue(identifier: AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen)
+            pushDelegate.pushViewControlerWithIdentifierSegue(identifier: AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen, imageString: AppResourceIdentifiers.kCategoryImageArray[indexPath.row % 3], name: AppResourceIdentifiers.kCategoryNameArray[indexPath.row % 3])
         }
     }
     

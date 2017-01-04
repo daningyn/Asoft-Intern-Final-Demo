@@ -21,6 +21,8 @@ class CategoryViewController: UIViewController {
     var btnBarFilter = UIBarButtonItem()
     var selectedCell = 0
     var isOnFilter = false
+    lazy var imagePrepareSegue = ""
+    lazy var namePrepareSegue = ""
     
     //#MARK: - Set up
     override func viewDidLoad() {
@@ -46,6 +48,11 @@ class CategoryViewController: UIViewController {
         
         self.filterTableView.dataSource = self
         self.filterTableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +80,17 @@ class CategoryViewController: UIViewController {
     //#MARK: - Action Button
     @IBAction func didTouchUpInsideFilterCheck(_ sender: Any) {
         
+    }
+    
+    //#MARK: - Prepare Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen {
+                let recipeChoosenVC = segue.destination as! RecipeChoosenViewController
+                recipeChoosenVC.bannerImage = self.imagePrepareSegue
+                recipeChoosenVC.navigationTitle = self.namePrepareSegue
+            }
+        }
     }
 
 }
@@ -200,7 +218,9 @@ extension CategoryViewController: UITableViewDelegate {
 
 //#MARK: - PushViewController Delegate
 extension CategoryViewController: PushViewController {
-    func pushViewControlerWithIdentifierSegue(identifier: String) {
+    func pushViewControlerWithIdentifierSegue(identifier: String, imageString: String, name: String) {
+        self.imagePrepareSegue = imageString
+        self.namePrepareSegue = name
         self.performSegue(withIdentifier: identifier, sender: nil)
     }
 }

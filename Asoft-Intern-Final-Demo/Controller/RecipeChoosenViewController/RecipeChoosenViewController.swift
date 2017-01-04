@@ -11,9 +11,9 @@ import UIKit
 class RecipeChoosenViewController: UIViewController {
 
     //#MARK: - Outlet
-    @IBOutlet weak var bannerImageView: UIImageView!
+    @IBOutlet private weak var bannerImageView: UIImageView!
     @IBOutlet weak var viewAboveBanner: UIView!
-    @IBOutlet weak var navigationTitleLabel: UILabel!
+    @IBOutlet private weak var navigationTitleLabel: UILabel!
     @IBOutlet weak var botView: UIView!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var footerView: UIView!
@@ -21,6 +21,8 @@ class RecipeChoosenViewController: UIViewController {
     
     //#MARK: - Define properties
     var selectedCell = 0
+    var bannerImage: String?
+    var navigationTitle: String?
     
     //#MARK: - Set up
     override func viewDidLoad() {
@@ -35,6 +37,18 @@ class RecipeChoosenViewController: UIViewController {
         
         self.footerView.translatesAutoresizingMaskIntoConstraints = true
         
+        if let bannerImage = self.bannerImage {
+            self.bannerImageView.image = UIImage(named: bannerImage)
+        }
+        if let navigationTitle = self.navigationTitle {
+            self.navigationTitleLabel.text = navigationTitle
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
