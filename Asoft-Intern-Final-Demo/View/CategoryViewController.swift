@@ -37,6 +37,7 @@ class CategoryViewController: UIViewController {
         
         self.menuCollectionView.dataSource = self
         self.menuCollectionView.delegate = self
+        self.menuCollectionView.register(UINib(nibName: "MenuCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierCombineMenuViewCell)
         
         self.detailCollectionView.dataSource = self
         self.detailCollectionView.delegate = self
@@ -68,13 +69,13 @@ extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case self.menuCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCategoryMenuCollectionViewCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCombineMenuViewCell, for: indexPath) as! MenuCollectionCell
             
-            (cell.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kCategoryMenuArray[indexPath.row]
+            cell.textLabel.text = AppResourceIdentifiers.kCategoryMenuArray[indexPath.row]
             if indexPath.row == self.selectedCell {
-                (cell.viewWithTag(1) as! UILabel).textColor = UIColor.black
+                cell.textLabel.textColor = UIColor.black
             } else {
-                (cell.viewWithTag(1) as! UILabel).textColor = UIColor.untCoralPink
+                cell.textLabel.textColor = UIColor.untCoralPink
             }
             
             return cell
