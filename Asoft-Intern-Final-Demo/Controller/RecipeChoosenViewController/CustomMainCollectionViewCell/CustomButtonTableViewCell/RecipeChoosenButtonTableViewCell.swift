@@ -10,6 +10,10 @@ import UIKit
 
 class RecipeChoosenButtonTableViewCell: UITableViewCell {
 
+    //#MARK: - Outlet
+    @IBOutlet weak var btnWatchVideo: UIButton!
+    
+    //#MARK: - Set up
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,10 @@ class RecipeChoosenButtonTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    //#MARK: - Button Clicked
+    @IBAction func didTouchUpInsideButton(_ sender: Any) {
     }
 
 }

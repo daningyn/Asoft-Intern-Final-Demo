@@ -1238,6 +1238,9 @@
                                             <constraint firstAttribute="width" secondItem="ioK-YX-B5o" secondAttribute="height" id="Mnv-TR-6T5"/>
                                         </constraints>
                                         <state key="normal" image="icon_back_white"/>
+                                        <connections>
+                                            <action selector="didTouchUpInsideBackButton:" destination="aMi-rw-EEg" eventType="touchUpInside" id="hGY-4z-95Y"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gH-gN-G5S">
                                         <rect key="frame" x="166" y="28" width="43" height="28"/>
@@ -1308,7 +1311,23 @@
                                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="luz-p1-aV5" id="GgL-Ti-cRZ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08B-K1-uob">
+                                                                                <rect key="frame" x="38" y="31" width="309" height="21"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="08B-K1-uob" firstAttribute="leading" secondItem="GgL-Ti-cRZ" secondAttribute="leadingMargin" constant="30" id="6KG-6j-7b0"/>
+                                                                            <constraint firstItem="08B-K1-uob" firstAttribute="centerY" secondItem="GgL-Ti-cRZ" secondAttribute="centerY" id="90Z-IU-RYO"/>
+                                                                            <constraint firstAttribute="trailingMargin" secondItem="08B-K1-uob" secondAttribute="trailing" constant="20" id="pbz-cQ-CcX"/>
+                                                                        </constraints>
                                                                     </tableViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="label" destination="08B-K1-uob" id="S75-n0-hg0"/>
+                                                                    </connections>
                                                                 </tableViewCell>
                                                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeChoosenButtonTableViewCell" id="xcv-dp-NP4" customClass="RecipeChoosenButtonTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="113" width="375" height="85"/>
@@ -1316,7 +1335,26 @@
                                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcv-dp-NP4" id="qz3-tb-ipd">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYC-qp-vwu">
+                                                                                <rect key="frame" x="10" y="5" width="355" height="74.5"/>
+                                                                                <color key="backgroundColor" red="1" green="0.3294117647" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <state key="normal" title="    Watch the Video" image="icon_camera"/>
+                                                                                <connections>
+                                                                                    <action selector="didTouchUpInsideButton:" destination="xcv-dp-NP4" eventType="touchUpInside" id="10G-Xd-fwD"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="yYC-qp-vwu" firstAttribute="top" secondItem="qz3-tb-ipd" secondAttribute="top" constant="5" id="Xev-eA-lb9"/>
+                                                                            <constraint firstItem="yYC-qp-vwu" firstAttribute="leading" secondItem="qz3-tb-ipd" secondAttribute="leading" constant="10" id="b4S-ck-p2D"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="yYC-qp-vwu" secondAttribute="trailing" constant="10" id="dBG-gR-hZi"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="yYC-qp-vwu" secondAttribute="bottom" constant="5" id="ydF-Gg-qJ1"/>
+                                                                        </constraints>
                                                                     </tableViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="btnWatchVideo" destination="yYC-qp-vwu" id="Erd-sX-KS8"/>
+                                                                    </connections>
                                                                 </tableViewCell>
                                                             </prototypes>
                                                         </tableView>
@@ -1328,6 +1366,9 @@
                                                     <constraint firstAttribute="trailing" secondItem="h5x-KA-fbz" secondAttribute="trailing" id="o79-Cn-6Vf"/>
                                                     <constraint firstAttribute="bottom" secondItem="h5x-KA-fbz" secondAttribute="bottom" id="yWq-2O-GRe"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="mainTableView" destination="h5x-KA-fbz" id="dws-7g-Sju"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -1366,6 +1407,15 @@
                             <constraint firstAttribute="trailing" secondItem="1Il-eM-gE4" secondAttribute="trailing" id="zHy-iA-VrI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bannerImageView" destination="Nw7-3j-fj0" id="orO-h2-UgQ"/>
+                        <outlet property="botView" destination="aef-Ue-A04" id="g6h-le-kRw"/>
+                        <outlet property="detailCollectionView" destination="v5x-Xg-So9" id="q6Z-7s-c5q"/>
+                        <outlet property="footerView" destination="xIv-V2-ZFb" id="fvj-91-NEf"/>
+                        <outlet property="menuCollectionView" destination="N7S-Jl-Xnh" id="S2e-fr-b8E"/>
+                        <outlet property="navigationTitleLabel" destination="2gH-gN-G5S" id="3pA-yd-e0x"/>
+                        <outlet property="viewAboveBanner" destination="PQa-Oz-Da3" id="lA7-UY-0os"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSR-To-KmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1707,6 +1757,7 @@
         <image name="dot-black" width="16" height="16"/>
         <image name="icon-flower" width="40" height="43"/>
         <image name="icon_back_white" width="15" height="24"/>
+        <image name="icon_camera" width="54" height="36"/>
         <image name="icon_forward" width="35" height="24"/>
         <image name="icon_heart" width="40" height="37"/>
         <image name="icon_pause" width="80" height="80"/>

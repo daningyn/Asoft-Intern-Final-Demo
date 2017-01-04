@@ -11,6 +11,7 @@ import UIKit
 class RecipeChoosenCollectionViewCell: UICollectionViewCell {
     
     //#MARK: - Outlet
+    @IBOutlet weak var mainTableView: UITableView!
     
     //#MARK: - Set up
     override func awakeFromNib() {

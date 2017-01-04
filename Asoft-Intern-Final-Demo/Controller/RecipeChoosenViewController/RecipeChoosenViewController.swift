@@ -10,15 +10,29 @@ import UIKit
 
 class RecipeChoosenViewController: UIViewController {
 
+    //#MARK: - Outlet
+    @IBOutlet weak var bannerImageView: UIImageView!
+    @IBOutlet weak var viewAboveBanner: UIView!
+    @IBOutlet weak var navigationTitleLabel: UILabel!
+    @IBOutlet weak var botView: UIView!
+    @IBOutlet weak var menuCollectionView: UICollectionView!
+    @IBOutlet weak var footerView: UIView!
+    @IBOutlet weak var detailCollectionView: UICollectionView!
+    
+    //#MARK: - Set up
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //#MARK: - Button Clicked
+    @IBAction func didTouchUpInsideBackButton(_ sender: Any) {
+        
     }
 
 }

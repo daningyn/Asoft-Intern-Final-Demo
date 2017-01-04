@@ -10,6 +10,10 @@ import UIKit
 
 class RecipeChoosenTextTableViewCell: UITableViewCell {
 
+    //#MARK: - Outlet
+    @IBOutlet weak var label: UILabel!
+    
+    //#MARK: - Set up
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
