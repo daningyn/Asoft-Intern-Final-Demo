@@ -56,6 +56,7 @@ class AppResourceIdentifiers {
     static let kCategoryNameArray = ["Grilled Spicy Brisket", "Steak with Cranberry Sauce", "Grilled Pork & Potatos"]
     static let kCategoryTimeArray = ["25 min", "10 min", "30 min"]
     static let kCategoryFilterArray = ["", "Pork", "Beef", "Veal", "Chiken", "", "Gluten free", "Sugar free", "Salt Free", "Healthy", "Diet"]
+    static var kCategoryFilterCheckArray = [false, false, true, false, true, false, false, false, true, false, false]
     
     
     //#MARK: - Assets

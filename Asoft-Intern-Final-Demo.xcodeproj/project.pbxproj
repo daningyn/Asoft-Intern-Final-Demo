@@ -210,15 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				44D9250E1E0AEA8E0064FC3E /* Model */,
-				44D925101E0AEA9C0064FC3E /* Controller */,
 				44D9250F1E0AEA980064FC3E /* View */,
-				44D925111E0AEC210064FC3E /* Services */,
-				44D925141E0AEC610064FC3E /* Resources */,
-				44D925121E0AEC3C0064FC3E /* Defines */,
-				44D925131E0AEC430064FC3E /* Extensions */,
-				44D925151E0AEC6D0064FC3E /* Info */,
-				44D925161E0AEC8C0064FC3E /* Storyboards */,
-				449371561E0AE39700B68046 /* AppDelegate.swift */,
+				44D925101E0AEA9C0064FC3E /* Controller */,
+				44DEAD971E1C9B3400B90EDA /* Common */,
 			);
 			path = "Asoft-Intern-Final-Demo";
 			sourceTree = "<group>";
@@ -278,18 +272,6 @@
 			children = (
 				449E3FF91E166E7C00C3651E /* CustomFlowLayout */,
 				44926E2A1E0BB6CE0030DA00 /* CustomViews */,
-				44D925191E0AF49F0064FC3E /* MarketingViewController.swift */,
-				44C051741E0CCE5F00381976 /* HomeRootViewController.swift */,
-				44FE7C0B1E134C1500FC762D /* CombineResultViewController.swift */,
-				44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */,
-				44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */,
-				44AE3DFF1E15F62B0016BAFA /* ChefQuoteCollectionViewCell.swift */,
-				44AE3E011E1613490016BAFA /* SettingViewController.swift */,
-				44AE3E031E164F710016BAFA /* ChallengeViewController.swift */,
-				44C040BA1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift */,
-				44F0B2DE1E1A9ABA00398AA4 /* SearchViewController.swift */,
-				441643361E1B3DAA00DC45DB /* CategoryViewController.swift */,
-				441643381E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -297,6 +279,15 @@
 		44D925101E0AEA9C0064FC3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				44DEADA21E1CB1B900B90EDA /* CategoryViewController */,
+				44DEADA01E1CB19200B90EDA /* SearchViewController */,
+				44DEAD9F1E1CB18700B90EDA /* ChallengeViewController */,
+				44DEAD9E1E1CB17D00B90EDA /* SettingViewController */,
+				44DEAD9C1E1CB14500B90EDA /* ChefVideoViewController */,
+				44DEAD9B1E1CB13500B90EDA /* ChefsViewController */,
+				44DEAD9A1E1CB12500B90EDA /* CombineResultViewController */,
+				44DEAD991E1CB11500B90EDA /* MarketingViewController */,
+				44DEAD981E1CB10600B90EDA /* HomeRootViewController */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -351,6 +342,119 @@
 				44C051721E0CC50D00381976 /* Main.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		44DEAD971E1C9B3400B90EDA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				449371561E0AE39700B68046 /* AppDelegate.swift */,
+				44D925111E0AEC210064FC3E /* Services */,
+				44D925121E0AEC3C0064FC3E /* Defines */,
+				44D925141E0AEC610064FC3E /* Resources */,
+				44D925151E0AEC6D0064FC3E /* Info */,
+				44D925161E0AEC8C0064FC3E /* Storyboards */,
+				44D925131E0AEC430064FC3E /* Extensions */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		44DEAD981E1CB10600B90EDA /* HomeRootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44C051741E0CCE5F00381976 /* HomeRootViewController.swift */,
+			);
+			name = HomeRootViewController;
+			sourceTree = "<group>";
+		};
+		44DEAD991E1CB11500B90EDA /* MarketingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44D925191E0AF49F0064FC3E /* MarketingViewController.swift */,
+			);
+			name = MarketingViewController;
+			sourceTree = "<group>";
+		};
+		44DEAD9A1E1CB12500B90EDA /* CombineResultViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44FE7C0B1E134C1500FC762D /* CombineResultViewController.swift */,
+			);
+			name = CombineResultViewController;
+			sourceTree = "<group>";
+		};
+		44DEAD9B1E1CB13500B90EDA /* ChefsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */,
+			);
+			name = ChefsViewController;
+			sourceTree = "<group>";
+		};
+		44DEAD9C1E1CB14500B90EDA /* ChefVideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */,
+				44DEAD9D1E1CB16B00B90EDA /* ChefQuoteCollectionViewCell */,
+			);
+			name = ChefVideoViewController;
+			sourceTree = "<group>";
+		};
+		44DEAD9D1E1CB16B00B90EDA /* ChefQuoteCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				44AE3DFF1E15F62B0016BAFA /* ChefQuoteCollectionViewCell.swift */,
+			);
+			name = ChefQuoteCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		44DEAD9E1E1CB17D00B90EDA /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44AE3E011E1613490016BAFA /* SettingViewController.swift */,
+			);
+			name = SettingViewController;
+			sourceTree = "<group>";
+		};
+		44DEAD9F1E1CB18700B90EDA /* ChallengeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44AE3E031E164F710016BAFA /* ChallengeViewController.swift */,
+				44DEADA11E1CB1A300B90EDA /* DetailCollectionViewCell */,
+			);
+			name = ChallengeViewController;
+			sourceTree = "<group>";
+		};
+		44DEADA01E1CB19200B90EDA /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44F0B2DE1E1A9ABA00398AA4 /* SearchViewController.swift */,
+			);
+			name = SearchViewController;
+			sourceTree = "<group>";
+		};
+		44DEADA11E1CB1A300B90EDA /* DetailCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				44C040BA1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift */,
+			);
+			name = DetailCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		44DEADA21E1CB1B900B90EDA /* CategoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				441643361E1B3DAA00DC45DB /* CategoryViewController.swift */,
+				44DEADA31E1CB1C800B90EDA /* DetailCollectionViewCell */,
+			);
+			name = CategoryViewController;
+			sourceTree = "<group>";
+		};
+		44DEADA31E1CB1C800B90EDA /* DetailCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				441643381E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift */,
+			);
+			name = DetailCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		44E2BEAD1E10A75E003ABFBB /* ImagesCell */ = {

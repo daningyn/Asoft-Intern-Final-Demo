@@ -15,10 +15,12 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var detailCollectionView: UICollectionView!
     @IBOutlet weak var filterTableView: UITableView!
+    @IBOutlet weak var mainView: UIView!
     
     //#MARK: - Define properties
     var btnBarFilter = UIBarButtonItem()
     var selectedCell = 0
+    var isOnFilter = false
     
     //#MARK: - Set up
     override func viewDidLoad() {
@@ -53,6 +55,23 @@ class CategoryViewController: UIViewController {
     
     //#MARK: - Define function bar button
     func didTouchUpButtonFilter() {
+        
+        if self.isOnFilter == false {
+            self.isOnFilter = true
+            UIView.animate(withDuration: 0.3) {
+                self.mainView.frame.origin.x -= self.filterTableView.frame.size.width
+            }
+        } else {
+            self.isOnFilter = false
+            UIView.animate(withDuration: 0.3) {
+                self.mainView.frame.origin.x = 0
+            }
+        }
+        
+    }
+    
+    //#MARK: - Action Button
+    @IBAction func didTouchUpInsideFilterCheck(_ sender: Any) {
         
     }
 
@@ -137,8 +156,19 @@ extension CategoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierCategoryFilterTableViewCell, for: indexPath)
-        
-        (cell.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kCategoryFilterArray[indexPath.row]
+        cell.selectionStyle = .none
+        switch indexPath.row {
+        case 0,5:
+            (cell.viewWithTag(1) as! UILabel).text = ""
+            (cell.viewWithTag(2) as! UIButton).setImage(nil, for: .normal)
+        default:
+            (cell.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kCategoryFilterArray[indexPath.row]
+            if AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row] {
+                (cell.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconCheck), for: .normal)
+            } else {
+                (cell.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconNotCheck), for: .normal)
+            }
+        }
         
         return cell
     }
@@ -150,11 +180,16 @@ extension CategoryViewController: UITableViewDataSource {
 extension CategoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0,5:
-            return 50
-        default:
-            return 30
+        return tableView.bounds.height / 12
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row] = !AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath)
+        if AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row] {
+            (cell?.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconCheck), for: .normal)
+        } else {
+            (cell?.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconNotCheck), for: .normal)
         }
     }
     
