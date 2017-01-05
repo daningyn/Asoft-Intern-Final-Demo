@@ -32,6 +32,8 @@ class MarketingViewController: UIViewController {
     
     var oneCheck = true
     
+    var lineFrame: CGRect = CGRect()
+    
     //#MARK: - Set up ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,9 @@ class MarketingViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if self.oneCheck {
+            self.lineFrame = self.lineView.frame
+            self.lineView.translatesAutoresizingMaskIntoConstraints = true
+            
             self.oneCheck = false
             self.btnSignIn = UIButton(type: .custom)
             self.view.addSubview(self.btnSignIn)
@@ -137,6 +142,8 @@ class MarketingViewController: UIViewController {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if Int(scrollView.contentOffset.x / self.view.bounds.width) == 3 {
+            self.imageCollectionView.isScrollEnabled = false
+            self.labelCollectionView.isScrollEnabled = false
             if self.isInSignUpView {
                 self.btnSignIn.isHidden = false
                 self.btnSignUp.isHidden = true
@@ -159,6 +166,8 @@ class MarketingViewController: UIViewController {
             self.labelCollectionView.contentOffset.x = 0
             self.imageCollectionView.contentOffset.x = 0
         } else if scrollView.contentOffset.x >= self.imageCollectionView.bounds.width*3 {
+            self.imageCollectionView.isScrollEnabled = false
+            self.labelCollectionView.isScrollEnabled = false
             scrollView.contentOffset.x = self.imageCollectionView.bounds.width*3
             self.labelCollectionView.contentOffset.x = self.imageCollectionView.bounds.width*3
             self.imageCollectionView.contentOffset.x = self.imageCollectionView.bounds.width*3
@@ -179,9 +188,9 @@ class MarketingViewController: UIViewController {
             
             if CGFloat(scrollView.contentOffset.x / self.imageCollectionView.bounds.width) > 2.5 {
                 self.pageControl.numberOfPages = 0
-                self.lineView.isHidden = true
+//                self.lineView.isHidden = true
             } else {
-                self.lineView.isHidden = false
+//                self.lineView.isHidden = false
                 self.pageControl.numberOfPages = 4
                 self.pageControl.currentPage = Int(scrollView.contentOffset.x / self.imageCollectionView.bounds.width)
             }
@@ -212,9 +221,11 @@ class MarketingViewController: UIViewController {
             let temp = scrollView.contentOffset.x - self.imageCollectionView.bounds.width*2
             self.btnSignIn.frame.origin.x = self.imageCollectionView.bounds.width - temp
             self.btnSignUp.frame.origin.x = self.btnSignIn.frame.origin.x
+            self.lineView.frame.origin.x = self.lineFrame.origin.x - temp
         } else {
             self.btnSignIn.frame.origin.x = self.imageCollectionView.bounds.width
             self.btnSignUp.frame.origin.x = self.btnSignIn.frame.origin.x
+            self.lineView.frame = self.lineFrame
         }
         
     }
