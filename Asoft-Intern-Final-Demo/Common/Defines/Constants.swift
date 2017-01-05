@@ -55,7 +55,8 @@ class Constants {
     static let kIdentifierCategoryFilterTableViewCell = "CategoryFilterTableViewCell"
     
     //#MARK: - RecipeChoosen ViewController 
-    static let kIdentifierRecipeChoosenCollectionViewCell = "RecipeChoosenCollectionViewCell"
+    static let kIdentifierRecipeChoosenFirstCollectionViewCell = "RecipeChoosenCollectionViewCell1"
+    static let kIdentifierRecipeChoosenSecondCollectionViewCell = "RecipeChoosenCollectionViewCell2"
     static let kIdentifierRecipeChoosenTextTableViewCell = "RecipeChoosenTextTableViewCell"
     static let kIdentifierRecipeChoosenButtonTableViewCell = "RecipeChoosenButtonTableViewCell"
     

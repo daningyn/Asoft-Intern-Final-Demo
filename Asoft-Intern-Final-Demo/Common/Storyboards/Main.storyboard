@@ -617,7 +617,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iso-AL-8tm" id="hLG-4T-2xE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="STk-MQ-HtW">
@@ -647,11 +647,11 @@
                                         <rect key="frame" x="0.0" y="114" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NG1-va-iPH" id="6wk-nb-Jlt">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ppn-fT-Qw3">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="85"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="85.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -769,7 +769,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailChallengeCollectionViewCell" id="VGY-bo-Ha8" customClass="DetailChallengeCollectionViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-3" width="375" height="155"/>
+                                                <rect key="frame" x="0.0" y="-2.5" width="375" height="155"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
@@ -957,7 +957,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChefVideoMenuCollectionCell" id="sTr-bV-sI4">
-                                        <rect key="frame" x="0.0" y="-1" width="188" height="51"/>
+                                        <rect key="frame" x="0.0" y="-0.5" width="188" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="188" height="51"/>
@@ -1294,8 +1294,58 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeChoosenCollectionViewCell" id="WSc-m9-x0N" customClass="RecipeChoosenCollectionViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeChoosenCollectionViewCell1" id="i73-nf-sku" customClass="RecipeChoosenCollectionViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="-1" width="375" height="396"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c22-pk-QSy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <prototypes>
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeChoosenTextTableViewCell" rowHeight="85" id="05n-2e-5x9" customClass="RecipeChoosenTextTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="28" width="375" height="85"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05n-2e-5x9" id="hWx-4d-F3j">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny1-Yn-Pgy">
+                                                                                <rect key="frame" x="38" y="5" width="309" height="74.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailingMargin" secondItem="Ny1-Yn-Pgy" secondAttribute="trailing" constant="20" id="0aL-0O-sYL"/>
+                                                                            <constraint firstItem="Ny1-Yn-Pgy" firstAttribute="top" secondItem="hWx-4d-F3j" secondAttribute="top" constant="5" id="FAP-sZ-ogh"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Ny1-Yn-Pgy" secondAttribute="bottom" constant="5" id="Fuj-1j-Hng"/>
+                                                                            <constraint firstItem="Ny1-Yn-Pgy" firstAttribute="leading" secondItem="hWx-4d-F3j" secondAttribute="leadingMargin" constant="30" id="oVx-00-jb3"/>
+                                                                        </constraints>
+                                                                    </tableViewCellContentView>
+                                                                    <connections>
+                                                                        <outlet property="label" destination="Ny1-Yn-Pgy" id="WBf-iy-DKA"/>
+                                                                    </connections>
+                                                                </tableViewCell>
+                                                            </prototypes>
+                                                        </tableView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="c22-pk-QSy" secondAttribute="trailing" id="cmj-7U-oIb"/>
+                                                    <constraint firstItem="c22-pk-QSy" firstAttribute="top" secondItem="i73-nf-sku" secondAttribute="top" id="fzW-di-y7I"/>
+                                                    <constraint firstItem="c22-pk-QSy" firstAttribute="leading" secondItem="i73-nf-sku" secondAttribute="leading" id="gst-Ip-k6f"/>
+                                                    <constraint firstAttribute="bottom" secondItem="c22-pk-QSy" secondAttribute="bottom" id="oX7-LO-Oaa"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="mainTableView" destination="c22-pk-QSy" id="Zig-DE-tVk"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeChoosenCollectionViewCell2" id="WSc-m9-x0N" customClass="RecipeChoosenCollectionViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
+                                                <rect key="frame" x="375" y="-1" width="375" height="396"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
@@ -1330,18 +1380,18 @@
                                                                         <outlet property="label" destination="08B-K1-uob" id="S75-n0-hg0"/>
                                                                     </connections>
                                                                 </tableViewCell>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeChoosenButtonTableViewCell" id="xcv-dp-NP4" customClass="RecipeChoosenButtonTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="113" width="375" height="85"/>
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeChoosenButtonTableViewCell" rowHeight="60" id="xcv-dp-NP4" customClass="RecipeChoosenButtonTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="113" width="375" height="60"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xcv-dp-NP4" id="qz3-tb-ipd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
                                                                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYC-qp-vwu">
-                                                                                <rect key="frame" x="10" y="5" width="355" height="36"/>
+                                                                                <rect key="frame" x="10" y="5" width="355" height="50"/>
                                                                                 <color key="backgroundColor" red="1" green="0.3294117647" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="50" id="aBS-9J-JAb"/>
+                                                                                    <constraint firstAttribute="height" constant="50" id="gYQ-IO-d8l"/>
                                                                                 </constraints>
                                                                                 <state key="normal" title="    Watch the Video" image="icon_camera"/>
                                                                                 <connections>

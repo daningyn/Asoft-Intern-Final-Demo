@@ -23,7 +23,7 @@ class RecipeChoosenViewController: UIViewController {
     var selectedCell = 0
     var bannerImage: String?
     var navigationTitle: String?
-//    var ratioAlpha: CGFloat = 0
+    var ratioAlpha: CGFloat = 0
     
     //#MARK: - Set up
     override func viewDidLoad() {
@@ -52,12 +52,12 @@ class RecipeChoosenViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.footerView.translatesAutoresizingMaskIntoConstraints = true
-//        self.viewAboveBanner.translatesAutoresizingMaskIntoConstraints = true
-//        self.botView.translatesAutoresizingMaskIntoConstraints = true
-//        self.detailCollectionView.translatesAutoresizingMaskIntoConstraints = true
+        self.footerView.translatesAutoresizingMaskIntoConstraints = true
+        self.viewAboveBanner.translatesAutoresizingMaskIntoConstraints = true
+        self.botView.translatesAutoresizingMaskIntoConstraints = true
+        self.detailCollectionView.translatesAutoresizingMaskIntoConstraints = true
         
-//        self.ratioAlpha = CGFloat(0.8 / (self.viewAboveBanner.bounds.height - 64))
+        self.ratioAlpha = CGFloat(0.8 / (self.viewAboveBanner.bounds.height - 64))
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,16 +94,21 @@ extension RecipeChoosenViewController: UICollectionViewDataSource {
             
             return cell
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierRecipeChoosenCollectionViewCell, for: indexPath) as! RecipeChoosenCollectionViewCell
             
             if indexPath.row == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierRecipeChoosenFirstCollectionViewCell, for: indexPath) as! RecipeChoosenCollectionViewCell
                 cell.haveButton = false
+                cell.animationDelegate = self
+                
+                return cell
             } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierRecipeChoosenSecondCollectionViewCell, for: indexPath) as! RecipeChoosenCollectionViewCell
                 cell.haveButton = true
+                cell.animationDelegate = self
+                
+                return cell
             }
-//            cell.animationDelegate = self
             
-            return cell
         }
     }
     
@@ -152,60 +157,62 @@ extension RecipeChoosenViewController {
 
 
 //#MARK: - ScrollDetailCollectionViewDelegate
-//extension RecipeChoosenViewController: ScrollDetailCollectionViewDelegate {
-//    
-//    func getContentOffsetYCombineTopView() -> CGFloat {
-//        return self.viewAboveBanner.frame.origin.y
-//    }
-//    
-//    func getHeightCombineTopView() -> CGFloat {
-//        return self.viewAboveBanner.bounds.height
-//    }
-//    
-//    func subtractionView(value: CGFloat) {
-//        self.viewAboveBanner.frame.origin.y -= value
-//        self.botView.frame.origin.y -= value
-//        self.viewAboveBanner.alpha += value*self.ratioAlpha
-//    }
-//    
-//    func plusHeightForBotView(value: CGFloat) {
-//        self.botView.frame.size.height += value
-//    }
-//    
-//    func setHeightForDetailCollectionView() {
-//        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
-//        self.footerView.frame.origin.x = CGFloat(CGFloat(selectedCell)*(self.menuCollectionView.bounds.width/2))
-//        self.detailCollectionView.reloadData()
-//    }
-//    func setContentOffsetYToTopForBotView() {
-//        self.viewAboveBanner.frame.origin.y = 65 - self.viewAboveBanner.frame.size.height
-//        self.botView.frame.origin.y = self.viewAboveBanner.frame.origin.y + self.viewAboveBanner.frame.size.height
-//        self.botView.frame.size.height = self.view.frame.size.height - 65
-//        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
-//        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
-//        self.detailCollectionView.reloadData()
-//    }
-//    
-//    func setContentOffsetYToTopForTopView() {
-//        self.viewAboveBanner.frame.origin.y = 64
-//        self.botView.frame.origin.y = self.viewAboveBanner.frame.origin.y + self.viewAboveBanner.frame.size.height
-//        self.botView.frame.size.height = self.view.frame.size.height - self.viewAboveBanner.frame.size.height - 64
-//        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
-//        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
-//        self.detailCollectionView.reloadData()
-//    }
-//    
-//    func plusContentForView(value: CGFloat) {
-//        self.viewAboveBanner.frame.origin.y += value
-//        self.botView.frame.origin.y += value
-//        self.viewAboveBanner.alpha -= value*ratioAlpha
-//    }
-//    
-//    func reloadCollectionViewData() {
-//        self.detailCollectionView.reloadData()
-//    }
-//    
-//}
+extension RecipeChoosenViewController: ScrollDetailCollectionViewDelegate {
+    
+    func getContentOffsetYCombineTopView() -> CGFloat {
+        return self.viewAboveBanner.frame.origin.y
+    }
+    
+    func getHeightCombineTopView() -> CGFloat {
+        return self.viewAboveBanner.bounds.height
+    }
+    
+    func subtractionView(value: CGFloat) {
+        self.viewAboveBanner.frame.origin.y -= value
+        self.botView.frame.origin.y -= value
+        self.viewAboveBanner.alpha += value*self.ratioAlpha
+    }
+    
+    func plusHeightForBotView(value: CGFloat) {
+        self.botView.frame.size.height += value
+    }
+    
+    func setHeightForDetailCollectionView() {
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.footerView.frame.origin.x = CGFloat(CGFloat(selectedCell)*(self.menuCollectionView.bounds.width/2))
+        self.detailCollectionView.reloadData()
+    }
+    func setContentOffsetYToTopForBotView() {
+        self.viewAboveBanner.frame.origin.y = 65 - self.viewAboveBanner.frame.size.height
+        self.botView.frame.origin.y = self.viewAboveBanner.frame.origin.y + self.viewAboveBanner.frame.size.height
+        self.botView.frame.size.height = self.view.frame.size.height - 65
+        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.viewAboveBanner.alpha = 0.8
+        self.detailCollectionView.reloadData()
+    }
+    
+    func setContentOffsetYToTopForTopView() {
+        self.viewAboveBanner.frame.origin.y = 0
+        self.botView.frame.origin.y = self.viewAboveBanner.frame.origin.y + self.viewAboveBanner.frame.size.height
+        self.botView.frame.size.height = self.view.frame.size.height - self.viewAboveBanner.frame.size.height
+        self.detailCollectionView.frame.origin.y = self.menuCollectionView.frame.origin.y + 50
+        self.detailCollectionView.frame.size.height = self.botView.frame.size.height - 50
+        self.viewAboveBanner.alpha = 0
+        self.detailCollectionView.reloadData()
+    }
+    
+    func plusContentForView(value: CGFloat) {
+        self.viewAboveBanner.frame.origin.y += value
+        self.botView.frame.origin.y += value
+        self.viewAboveBanner.alpha -= value*ratioAlpha
+    }
+    
+    func reloadCollectionViewData() {
+        self.detailCollectionView.reloadData()
+    }
+    
+}
 
 
 
