@@ -279,6 +279,7 @@
 				44CE9FA71E1DE1CB00ED6F58 /* FavoriteViewController.swift */,
 			);
 			name = FavoriteViewController;
+			path = FavoriteViewController;
 			sourceTree = "<group>";
 		};
 		44CE9FA91E1DE72700ED6F58 /* FavoriteTableViewCell */ = {
@@ -287,6 +288,7 @@
 				44CE9FAA1E1DE74B00ED6F58 /* FavoriteTableViewCell.swift */,
 			);
 			name = FavoriteTableViewCell;
+			path = FavoriteTableViewCell;
 			sourceTree = "<group>";
 		};
 		44D9250E1E0AEA8E0064FC3E /* Model */ = {
@@ -308,12 +310,12 @@
 		44D925101E0AEA9C0064FC3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				44CE9FA61E1DE04B00ED6F58 /* FavoriteViewController */,
 				44DEADA21E1CB1B900B90EDA /* CategoryViewController */,
 				44DEAD9F1E1CB18700B90EDA /* ChallengeViewController */,
 				44DEAD9C1E1CB14500B90EDA /* ChefVideoViewController */,
 				44DEAD9B1E1CB13500B90EDA /* ChefsViewController */,
 				44DEAD9A1E1CB12500B90EDA /* CombineResultViewController */,
+				44CE9FA61E1DE04B00ED6F58 /* FavoriteViewController */,
 				44DEAD981E1CB10600B90EDA /* HomeRootViewController */,
 				44DEAD991E1CB11500B90EDA /* MarketingViewController */,
 				44DEADA41E1CD2FD00B90EDA /* RecipeChoosenViewController */,
