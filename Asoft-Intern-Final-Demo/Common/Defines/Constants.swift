@@ -60,6 +60,9 @@ class Constants {
     static let kIdentifierRecipeChoosenTextTableViewCell = "RecipeChoosenTextTableViewCell"
     static let kIdentifierRecipeChoosenButtonTableViewCell = "RecipeChoosenButtonTableViewCell"
     
+    //#MARK: - Favorite ViewController
+    static let kIdentifierFavoriteTableViewCell = "FavoriteTableViewCell"
+    
     //#MARK: - Main Home StoryBoard
     static let kIdentifierHomeNavigationController = "HomeNavigationController"
     static let kIdentifierHomeTableViewCell = "HomeTableViewCell"

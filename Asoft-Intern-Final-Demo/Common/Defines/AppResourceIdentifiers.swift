@@ -65,6 +65,11 @@ class AppResourceIdentifiers {
     static let kRecipeChoosenButtonTableViewHeaderArray = ["Step 1", "Step 2"]
     static let kRecipeChoosenButtonTableViewCellArray = [["Mix together all the spices in a bowl. Liberally rub the entire brisket with the spices, wrap tightly in plastic wrap and refrigerate for at least 4 hours and up to 24 hours. Mix together all the spices in a bowl. Liberally rub the entire brisket with the spices, wrap tightly in plastic wrap and refrigerate for at least 4 hours and up to 24 hours. Mix together all the spices in a bowl. Liberally rub the entire brisket with the spices, wrap tightly in plastic wrap and refrigerate for at least 4 hours and up to 24 hours. Mix together all the spices in a bowl. Liberally rub the entire brisket with the spices, wrap tightly in plastic wrap and refrigerate for at least 4 hours and up to 24 hours. "], ["Get your smoker running at 225 degrees F with hardwood charcoal and a few handfuls of soaked wood chips. This temperature should be maintained throughout the entire smoke. Get your smoker running at 225 degrees F with hardwood charcoal and a few handfuls of soaked wood chips. This temperature should be maintained throughout the entire smoke. Get your smoker running at 225 degrees F with hardwood charcoal and a few handfuls of soaked wood chips. This temperature should be maintained throughout the entire smoke. Get your smoker running at 225 degrees F with hardwood charcoal and a few handfuls of soaked wood chips. This temperature should be maintained throughout the entire smoke. Get your smoker running at 225 degrees F with hardwood charcoal and a few handfuls of soaked wood chips. This temperature should be maintained throughout the entire smoke. "]]
     
+    //#MARK: - Favorite ViewController
+    static var kFavoriteImageArray: [String] = ["category-food-1"]
+    static var kFavoriteNameArray: [String] = ["Grilled Spicy Brisket"]
+    static var kFavoriteTimeArray: [String] = ["15 min"]
+    
     
     //#MARK: - Assets
     static let kIdentifierIconNext = "icon_next"

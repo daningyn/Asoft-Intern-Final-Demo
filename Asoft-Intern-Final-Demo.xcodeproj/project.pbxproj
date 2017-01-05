@@ -34,6 +34,7 @@
 		44C051751E0CCE5F00381976 /* HomeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C051741E0CCE5F00381976 /* HomeRootViewController.swift */; };
 		44C051771E0CDEAC00381976 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C051761E0CDEAC00381976 /* Extensions.swift */; };
 		44CE9FA81E1DE1CB00ED6F58 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE9FA71E1DE1CB00ED6F58 /* FavoriteViewController.swift */; };
+		44CE9FAB1E1DE74B00ED6F58 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE9FAA1E1DE74B00ED6F58 /* FavoriteTableViewCell.swift */; };
 		44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D925191E0AF49F0064FC3E /* MarketingViewController.swift */; };
 		44D9251C1E0AF5BF0064FC3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9251B1E0AF5BF0064FC3E /* Constants.swift */; };
 		44DEADA61E1CD35A00B90EDA /* RecipeChoosenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DEADA51E1CD35A00B90EDA /* RecipeChoosenViewController.swift */; };
@@ -110,6 +111,7 @@
 		44C051741E0CCE5F00381976 /* HomeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRootViewController.swift; sourceTree = "<group>"; };
 		44C051761E0CDEAC00381976 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		44CE9FA71E1DE1CB00ED6F58 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		44CE9FAA1E1DE74B00ED6F58 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		44D925191E0AF49F0064FC3E /* MarketingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketingViewController.swift; sourceTree = "<group>"; };
 		44D9251B1E0AF5BF0064FC3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44DEADA51E1CD35A00B90EDA /* RecipeChoosenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeChoosenViewController.swift; sourceTree = "<group>"; };
@@ -273,9 +275,18 @@
 		44CE9FA61E1DE04B00ED6F58 /* FavoriteViewController */ = {
 			isa = PBXGroup;
 			children = (
+				44CE9FA91E1DE72700ED6F58 /* FavoriteTableViewCell */,
 				44CE9FA71E1DE1CB00ED6F58 /* FavoriteViewController.swift */,
 			);
 			name = FavoriteViewController;
+			sourceTree = "<group>";
+		};
+		44CE9FA91E1DE72700ED6F58 /* FavoriteTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				44CE9FAA1E1DE74B00ED6F58 /* FavoriteTableViewCell.swift */,
+			);
+			name = FavoriteTableViewCell;
 			sourceTree = "<group>";
 		};
 		44D9250E1E0AEA8E0064FC3E /* Model */ = {
@@ -869,6 +880,7 @@
 				44F0B2DF1E1A9ABA00398AA4 /* SearchViewController.swift in Sources */,
 				44C040BB1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift in Sources */,
 				44CE9FA81E1DE1CB00ED6F58 /* FavoriteViewController.swift in Sources */,
+				44CE9FAB1E1DE74B00ED6F58 /* FavoriteTableViewCell.swift in Sources */,
 				44B1C3081E13ABB00098EEBE /* CommunityView.swift in Sources */,
 				44AE3E001E15F62B0016BAFA /* ChefQuoteCollectionViewCell.swift in Sources */,
 				441643391E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift in Sources */,
