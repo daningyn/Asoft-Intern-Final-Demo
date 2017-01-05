@@ -21,5 +21,6 @@ class AppNavigationTitle {
     static let kSearchNavigationTitle = "Search"
     static let kCategoryFilterNavigationTitle = "Filter"
     static var kCategoryNavigationTitle = ""
+    static let kFavoriteNavigationTitle = "Favorite"
     
 }

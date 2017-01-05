@@ -33,6 +33,7 @@
 		44C051731E0CC50D00381976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44C051721E0CC50D00381976 /* Main.storyboard */; };
 		44C051751E0CCE5F00381976 /* HomeRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C051741E0CCE5F00381976 /* HomeRootViewController.swift */; };
 		44C051771E0CDEAC00381976 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C051761E0CDEAC00381976 /* Extensions.swift */; };
+		44CE9FA81E1DE1CB00ED6F58 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CE9FA71E1DE1CB00ED6F58 /* FavoriteViewController.swift */; };
 		44D9251A1E0AF49F0064FC3E /* MarketingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D925191E0AF49F0064FC3E /* MarketingViewController.swift */; };
 		44D9251C1E0AF5BF0064FC3E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9251B1E0AF5BF0064FC3E /* Constants.swift */; };
 		44DEADA61E1CD35A00B90EDA /* RecipeChoosenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DEADA51E1CD35A00B90EDA /* RecipeChoosenViewController.swift */; };
@@ -108,9 +109,10 @@
 		44C051721E0CC50D00381976 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		44C051741E0CCE5F00381976 /* HomeRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRootViewController.swift; sourceTree = "<group>"; };
 		44C051761E0CDEAC00381976 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		44CE9FA71E1DE1CB00ED6F58 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		44D925191E0AF49F0064FC3E /* MarketingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketingViewController.swift; sourceTree = "<group>"; };
 		44D9251B1E0AF5BF0064FC3E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		44DEADA51E1CD35A00B90EDA /* RecipeChoosenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipeChoosenViewController.swift; path = RecipeChoosenViewController.swift; sourceTree = "<group>"; };
+		44DEADA51E1CD35A00B90EDA /* RecipeChoosenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeChoosenViewController.swift; sourceTree = "<group>"; };
 		44DEADA81E1CD43100B90EDA /* RecipeChoosenCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeChoosenCollectionViewCell.swift; sourceTree = "<group>"; };
 		44DEADAB1E1CD4F500B90EDA /* RecipeChoosenTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeChoosenTextTableViewCell.swift; sourceTree = "<group>"; };
 		44DEADAE1E1CD59300B90EDA /* RecipeChoosenButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeChoosenButtonTableViewCell.swift; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
+		44CE9FA61E1DE04B00ED6F58 /* FavoriteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44CE9FA71E1DE1CB00ED6F58 /* FavoriteViewController.swift */,
+			);
+			name = FavoriteViewController;
+			sourceTree = "<group>";
+		};
 		44D9250E1E0AEA8E0064FC3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +297,7 @@
 		44D925101E0AEA9C0064FC3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				44CE9FA61E1DE04B00ED6F58 /* FavoriteViewController */,
 				44DEADA21E1CB1B900B90EDA /* CategoryViewController */,
 				44DEAD9F1E1CB18700B90EDA /* ChallengeViewController */,
 				44DEAD9C1E1CB14500B90EDA /* ChefVideoViewController */,
@@ -472,7 +483,6 @@
 				44DEADA71E1CD3E100B90EDA /* CustomMainCollectionViewCell */,
 				44DEADA51E1CD35A00B90EDA /* RecipeChoosenViewController.swift */,
 			);
-			name = RecipeChoosenViewController;
 			path = RecipeChoosenViewController;
 			sourceTree = "<group>";
 		};
@@ -483,7 +493,6 @@
 				44DEADAA1E1CD4CC00B90EDA /* CustomTextTableViewCell */,
 				44DEADA81E1CD43100B90EDA /* RecipeChoosenCollectionViewCell.swift */,
 			);
-			name = CustomMainCollectionViewCell;
 			path = CustomMainCollectionViewCell;
 			sourceTree = "<group>";
 		};
@@ -492,7 +501,6 @@
 			children = (
 				44DEADAB1E1CD4F500B90EDA /* RecipeChoosenTextTableViewCell.swift */,
 			);
-			name = CustomTextTableViewCell;
 			path = CustomTextTableViewCell;
 			sourceTree = "<group>";
 		};
@@ -501,7 +509,6 @@
 			children = (
 				44DEADAE1E1CD59300B90EDA /* RecipeChoosenButtonTableViewCell.swift */,
 			);
-			name = CustomButtonTableViewCell;
 			path = CustomButtonTableViewCell;
 			sourceTree = "<group>";
 		};
@@ -861,6 +868,7 @@
 				44FE7C0C1E134C1500FC762D /* CombineResultViewController.swift in Sources */,
 				44F0B2DF1E1A9ABA00398AA4 /* SearchViewController.swift in Sources */,
 				44C040BB1E1A3E14000DF728 /* DetailChallengeCollectionViewCell.swift in Sources */,
+				44CE9FA81E1DE1CB00ED6F58 /* FavoriteViewController.swift in Sources */,
 				44B1C3081E13ABB00098EEBE /* CommunityView.swift in Sources */,
 				44AE3E001E15F62B0016BAFA /* ChefQuoteCollectionViewCell.swift in Sources */,
 				441643391E1B5D4200DC45DB /* CategoryDetailCollectionViewCell.swift in Sources */,

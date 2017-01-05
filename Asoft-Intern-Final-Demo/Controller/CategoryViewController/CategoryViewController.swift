@@ -68,11 +68,13 @@ class CategoryViewController: UIViewController {
             UIView.animate(withDuration: 0.3) {
                 self.mainView.frame.origin.x -= self.filterTableView.frame.size.width
             }
+            self.navigationItem.title = AppNavigationTitle.kCategoryFilterNavigationTitle
         } else {
             self.isOnFilter = false
             UIView.animate(withDuration: 0.3) {
                 self.mainView.frame.origin.x = 0
             }
+            self.navigationItem.title = AppNavigationTitle.kCategoryNavigationTitle
         }
         
     }

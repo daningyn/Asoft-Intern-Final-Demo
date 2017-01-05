@@ -380,7 +380,8 @@ extension HomeRootViewController: UITableViewDelegate {
                     self.mainView.frame.origin.x = -self.tblMenuView.bounds.width - 6
                 })
             case 1:
-                break
+                self.notInHome = true
+                self.performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToFavoriteVC, sender: nil)
             case 2:
                 self.tableView.isHidden = true
                 self.combineView.isHidden = false

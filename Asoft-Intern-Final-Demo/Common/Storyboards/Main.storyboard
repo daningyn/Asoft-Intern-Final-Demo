@@ -164,11 +164,12 @@
                         <segue destination="RWC-Mm-Heb" kind="show" identifier="HomeToChallengeViewController" id="g6y-68-xLL"/>
                         <segue destination="2ma-21-hyP" kind="show" identifier="HomeToSearchViewController" id="bzt-Mg-k8G"/>
                         <segue destination="u01-58-tPc" kind="show" identifier="HomeToCategoryViewController" id="M0n-9b-NVC"/>
+                        <segue destination="O8K-8a-SYL" kind="show" identifier="HomeToFavoriteViewController" id="PEh-p6-XhV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ip-24-RsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="-133"/>
+            <point key="canvasLocation" x="700" y="-133"/>
         </scene>
         <!--Chefs View Controller-->
         <scene sceneID="JVs-6H-AEg">
@@ -595,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj3-Vt-PMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="602"/>
+            <point key="canvasLocation" x="1540" y="1978"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="EAm-U3-vna">
@@ -679,6 +680,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6l-6M-nTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1936.8" y="602.24887556221893"/>
+        </scene>
+        <!--Favorite View Controller-->
+        <scene sceneID="EVG-Vp-IfZ">
+            <objects>
+                <viewController id="O8K-8a-SYL" customClass="FavoriteViewController" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="95R-Zf-FNj"/>
+                        <viewControllerLayoutGuide type="bottom" id="3wp-jB-MJt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ok3-l9-KWv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BP-PE-R4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="1095"/>
         </scene>
         <!--Challenge View Controller-->
         <scene sceneID="tXj-ir-5JV">
