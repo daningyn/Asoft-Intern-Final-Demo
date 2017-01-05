@@ -131,7 +131,16 @@ extension CategoryViewController: UICollectionViewDataSource {
 //#MARK: - UICollectionView Delegate
 extension CategoryViewController: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case self.menuCollectionView:
+            self.selectedCell = indexPath.row
+            self.detailCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.menuCollectionView.reloadData()
+        default:
+            break
+        }
+    }
     
 }
 

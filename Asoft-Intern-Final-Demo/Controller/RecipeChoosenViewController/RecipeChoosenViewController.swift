@@ -118,7 +118,16 @@ extension RecipeChoosenViewController: UICollectionViewDataSource {
 //#MARK: - UICollectionView Delegate
 extension RecipeChoosenViewController: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case self.menuCollectionView:
+            self.detailCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.selectedCell = indexPath.row
+            self.menuCollectionView.reloadData()
+        default:
+            break
+        }
+    }
     
 }
 
