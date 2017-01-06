@@ -502,7 +502,7 @@
                                         <rect key="frame" x="0.0" y="106.5" width="375" height="426.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="193" id="p1p-na-nxD">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="193" id="p1p-na-nxD" customClass="SearchTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="193"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p1p-na-nxD" id="IGl-Ml-Jnl">
@@ -566,6 +566,12 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="containerView" destination="gTV-9G-Hhe" id="0G5-os-9Fg"/>
+                                                    <outlet property="detailImageView" destination="RpX-0Z-ASB" id="5Va-jg-UmJ"/>
+                                                    <outlet property="nameLabel" destination="Ns7-l4-qWU" id="HQM-WW-ZsB"/>
+                                                    <outlet property="timeLabel" destination="FET-hQ-Lqt" id="Qot-Yr-N1c"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

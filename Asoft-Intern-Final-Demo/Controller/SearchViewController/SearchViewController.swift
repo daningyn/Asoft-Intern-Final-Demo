@@ -106,22 +106,22 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierSearchTableViewCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierSearchTableViewCell, for: indexPath) as! SearchTableViewCell
         
-        cell.viewWithTag(1)?.clipsToBounds = true
-        cell.viewWithTag(1)?.layer.cornerRadius = 4
+        cell.containerView.clipsToBounds = true
+        cell.containerView.layer.cornerRadius = 4
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.3
         cell.layer.shadowOffset = CGSize.zero
         cell.layer.shadowRadius = 1
         if self.didSearch {
-            (cell.viewWithTag(2) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kIdentifierDidSearchImageArray[indexPath.row % 3])
-            (cell.viewWithTag(3) as! UILabel).text = AppResourceIdentifiers.kIdentifierDidSearchNameArray[indexPath.row % 3]
-            (cell.viewWithTag(4) as! UILabel).text = AppResourceIdentifiers.kDidSearchTimeArray[indexPath.row % 3]
+            cell.detailImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierDidSearchImageArray[indexPath.row % 3])
+            cell.nameLabel.text = AppResourceIdentifiers.kIdentifierDidSearchNameArray[indexPath.row % 3]
+            cell.timeLabel.text = AppResourceIdentifiers.kDidSearchTimeArray[indexPath.row % 3]
         } else {
-            (cell.viewWithTag(2) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kIdentifierSearchImageArray[indexPath.row % 5])
-            (cell.viewWithTag(3) as! UILabel).text = AppResourceIdentifiers.kIdentifierSearchNameArray[indexPath.row % 5]
-            (cell.viewWithTag(4) as! UILabel).text = AppResourceIdentifiers.kSearchTimeArray[indexPath.row % 5]
+            cell.detailImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierSearchImageArray[indexPath.row % 5])
+            cell.nameLabel.text = AppResourceIdentifiers.kIdentifierSearchNameArray[indexPath.row % 5]
+            cell.timeLabel.text = AppResourceIdentifiers.kSearchTimeArray[indexPath.row % 5]
         }
         
         return cell
