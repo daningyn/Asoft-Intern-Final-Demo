@@ -19,7 +19,7 @@ class HomeRootViewController: UIViewController {
     
     //#MARK: - Define properties
     let listFoodArray = ["Meat", "Fish", "Garnishes", "Salads", "Soups", "Bakery", "Deserts"]
-    let listNumberFoodArray = ["79", "118", "417", "51", "352", "49", "291"]
+    var detailFoodArray: [[Food]] = [[]]
     let menuArray = ["Home", "Favorites", "Combine", "Challenge", "Profile", "Community", "Settings"]
     var navigationTitle = "Recipes"
     var checkInit = true
@@ -42,6 +42,21 @@ class HomeRootViewController: UIViewController {
         AppDelegate.shared.searchBarButtonItem = self.navigationItem.rightBarButtonItem
         AppDelegate.shared.nextBarButtonItem = UIBarButtonItem(image: UIImage(named: AppResourceIdentifiers.kIdentifierIconNext), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.didTouchNextButtonBarItem))
         AppDelegate.shared.nextBarButtonItem?.tintColor = UIColor.black
+        
+        self.initialization()
+        
+    }
+    
+    func initialization() {
+        
+        for i in 0..<self.listFoodArray.count {
+            let amount = arc4random_uniform(100)
+            self.detailFoodArray.append([])
+            for j in 0..<amount {
+                let food = Food(id: NSUUID().uuidString, name: AppResourceIdentifiers.kCategoryNameArray[Int(j % 3)], image: AppResourceIdentifiers.kCategoryImageArray[Int(j % 3)], timeToPerform: Int(arc4random_uniform(30)), type: self.listFoodArray[i], cookingType: ["Beef", "Veal"], videoLink: "", favorite: false, ingridientHeader: AppResourceIdentifiers.kRecipeChoosenTextTableViewHeaderArray, ingridientDetail: AppResourceIdentifiers.kRecipeChoosenTextTableViewCellArray, directionHeader: AppResourceIdentifiers.kRecipeChoosenButtonTableViewHeaderArray, directionDetail: AppResourceIdentifiers.kRecipeChoosenButtonTableViewCellArray)
+                self.detailFoodArray[i].append(food)
+            }
+        }
         
     }
 
@@ -297,7 +312,7 @@ extension HomeRootViewController: UITableViewDataSource {
             
             cell.nameLabel.text = listFoodArray[indexPath.row]
             cell.nameLabel.font = UIFont.systemFont(ofSize: cell.bounds.height/2 + 10)
-            cell.numberLabel.text = listNumberFoodArray[indexPath.row]
+            cell.numberLabel.text = "\(self.detailFoodArray[indexPath.row].count)"
             cell.numberLabel.font = UIFont.systemFont(ofSize: cell.bounds.height/4)
             
             return cell
