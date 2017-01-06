@@ -15,7 +15,7 @@ class Challenge {
     var imageLink: String
     var requires: [String]
     
-    init(id: String, name: Stirng, imageLink: String, requires: [String]) {
+    init(id: String, name: String, imageLink: String, requires: [String]) {
         self.id = id
         self.name = name
         self.imageLink = imageLink
