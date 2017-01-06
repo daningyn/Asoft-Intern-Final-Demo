@@ -293,19 +293,19 @@ extension HomeRootViewController: UITableViewDataSource {
         
         switch tableView {
         case self.tableView:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierHomeTableViewCell, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierHomeTableViewCell, for: indexPath) as! RecipeMenuTableViewCell
             
-            (cell.viewWithTag(1) as! UILabel).text = listFoodArray[indexPath.row]
-            (cell.viewWithTag(1) as! UILabel).font = UIFont.systemFont(ofSize: cell.bounds.height/2 + 10)
-            (cell.viewWithTag(2) as! UILabel).text = listNumberFoodArray[indexPath.row]
-            (cell.viewWithTag(2) as! UILabel).font = UIFont.systemFont(ofSize: cell.bounds.height/4)
+            cell.nameLabel.text = listFoodArray[indexPath.row]
+            cell.nameLabel.font = UIFont.systemFont(ofSize: cell.bounds.height/2 + 10)
+            cell.numberLabel.text = listNumberFoodArray[indexPath.row]
+            cell.numberLabel.font = UIFont.systemFont(ofSize: cell.bounds.height/4)
             
             return cell
         case self.tblMenuView:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierMenuTableViewCell, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierMenuTableViewCell, for: indexPath) as! HomeMenuTableViewCell
             
-            (cell.viewWithTag(1) as! UILabel).text = self.menuArray[indexPath.row]
-            (cell.viewWithTag(1) as! UILabel).font = UIFont.systemFont(ofSize: cell.bounds.height/2 + 10)
+            cell.nameLabel.text = self.menuArray[indexPath.row]
+            cell.nameLabel.font = UIFont.systemFont(ofSize: cell.bounds.height/2 + 10)
             
             return cell
         default:
