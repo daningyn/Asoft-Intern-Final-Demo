@@ -336,29 +336,29 @@ extension HomeRootViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case self.tableView:
-            let cell = tableView.cellForRow(at: indexPath)
-            let tag2Color = (cell?.viewWithTag(2) as! UILabel).textColor
-            (cell?.viewWithTag(1) as! UILabel).textColor = UIColor.darkGray
-            (cell?.viewWithTag(2) as! UILabel).textColor = UIColor.darkGray
+            let cell = tableView.cellForRow(at: indexPath) as? RecipeMenuTableViewCell
+            let tag2Color = cell?.numberLabel.textColor
+            cell?.nameLabel.textColor = UIColor.darkGray
+            cell?.numberLabel.textColor = UIColor.darkGray
             _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (_) in
                 if let color = AppDelegate.shared.mainColor {
-                    (cell?.viewWithTag(1) as! UILabel).textColor = color
+                    cell?.nameLabel.textColor = color
                 }
-                (cell?.viewWithTag(2) as! UILabel).textColor = tag2Color
+                cell?.numberLabel.textColor = tag2Color
             })
             tableView.deselectRow(at: indexPath, animated: true)
             
-            AppNavigationTitle.kCategoryNavigationTitle = (cell?.viewWithTag(1) as! UILabel).text!
+            AppNavigationTitle.kCategoryNavigationTitle = (cell?.nameLabel.text!)!
             self.performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToCategoryVC, sender: nil)
             
         case self.tblMenuView:
             
             
-            let cell = tableView.cellForRow(at: indexPath)
-            (cell?.viewWithTag(1) as! UILabel).textColor = UIColor.darkGray
+            let cell = tableView.cellForRow(at: indexPath) as? HomeMenuTableViewCell
+            cell?.nameLabel.textColor = UIColor.darkGray
             _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false, block: { (_) in
                 if let color = AppDelegate.shared.mainColor {
-                    (cell?.viewWithTag(1) as! UILabel).textColor = color
+                    cell?.nameLabel.textColor = color
                 }
             })
             tableView.deselectRow(at: indexPath, animated: true)
