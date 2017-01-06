@@ -39,6 +39,7 @@ class ChefVideoViewController: UIViewController {
         
         self.menuCollectionView.delegate = self
         self.menuCollectionView.dataSource = self
+        self.menuCollectionView.register(UINib(nibName: "MenuCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierCombineMenuViewCell)
         
         self.detailCollectionView.delegate = self
         self.detailCollectionView.dataSource = self
@@ -58,25 +59,25 @@ class ChefVideoViewController: UIViewController {
         super.viewDidAppear(animated)
         if self.initializer {
             self.initializer = false
-            let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0))!
-            let trackRect = (cell.viewWithTag(2) as! UISlider).trackRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds)
-            let thumbRect =  (cell.viewWithTag(2) as! UISlider).thumbRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds, trackRect: trackRect, value: (cell.viewWithTag(2) as! UISlider).value)
-            (cell.viewWithTag(3)! as UIView).addSubview(self.valueThumbLabel)
-            self.valueThumbLabel.frame.origin.x = thumbRect.origin.x + (cell.viewWithTag(2) as! UISlider).frame.origin.x + 2
-            self.valueThumbLabel.frame.origin.y = (cell.viewWithTag(4) as! UILabel).frame.origin.y
-            self.valueThumbLabel.text = "\(Double((cell.viewWithTag(2) as! UISlider).value).roundTo(places: 2))"
+            let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? ChefVideoControlCollectionViewCell
+            let trackRect = cell?.timeSlider.trackRect(forBounds: (cell?.timeSlider.bounds)!)
+            let thumbRect =  cell?.timeSlider.thumbRect(forBounds: (cell?.timeSlider.bounds)!, trackRect: trackRect!, value: (cell?.timeSlider.value)!)
+            cell?.botView.addSubview(self.valueThumbLabel)
+            self.valueThumbLabel.frame.origin.x = (thumbRect?.origin.x)! + (cell?.timeSlider.frame.origin.x)! + 2
+            self.valueThumbLabel.frame.origin.y = (cell?.totalTimeLabel.frame.origin.y)!
+            self.valueThumbLabel.text = "\(Double((cell?.timeSlider.value)!).roundTo(places: 2))"
             self.menuCollectionView.reloadData()
         }
     }
     
     //#MARK: - UISlider ValueChanged
     func valueChangedSlider() {
-        let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0))!
-        let trackRect = (cell.viewWithTag(2) as! UISlider).trackRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds)
-        let thumbRect =  (cell.viewWithTag(2) as! UISlider).thumbRect(forBounds: (cell.viewWithTag(2) as! UISlider).bounds, trackRect: trackRect, value: (cell.viewWithTag(2) as! UISlider).value)
-        self.valueThumbLabel.frame.origin.x = thumbRect.origin.x + (cell.viewWithTag(2) as! UISlider).frame.origin.x + 2
-        self.valueThumbLabel.frame.origin.y = (cell.viewWithTag(4) as! UILabel).frame.origin.y
-        self.valueThumbLabel.text = "\(Double((cell.viewWithTag(2) as! UISlider).value).roundTo(places: 2))"
+        let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? ChefVideoControlCollectionViewCell
+        let trackRect = cell?.timeSlider.trackRect(forBounds: (cell?.timeSlider.bounds)!)
+        let thumbRect =  cell?.timeSlider.thumbRect(forBounds: (cell?.timeSlider.bounds)!, trackRect: trackRect!, value: (cell?.timeSlider.value)!)
+        self.valueThumbLabel.frame.origin.x = (thumbRect?.origin.x)! + (cell?.timeSlider.frame.origin.x)! + 2
+        self.valueThumbLabel.frame.origin.y = (cell?.totalTimeLabel.frame.origin.y)!
+        self.valueThumbLabel.text = "\(Double((cell?.timeSlider.value)!).roundTo(places: 2))"
         
     }
     
@@ -87,24 +88,24 @@ class ChefVideoViewController: UIViewController {
     }
     
     @IBAction func didTouchUpPause(_ sender: Any) {
-        let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0))!
+        let cell = self.detailCollectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? ChefVideoControlCollectionViewCell
         if self.isPlay {
             UIView.animate(withDuration: 0.2, animations: {
-                (cell.viewWithTag(5) as! UIButton).layer.opacity = 0.1
+                cell?.pauseButton.layer.opacity = 0.1
             }, completion: {(_) in
-                (cell.viewWithTag(5) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconPlay), for: .normal)
+                cell?.pauseButton.setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconPlay), for: .normal)
                 UIView.animate(withDuration: 0.2, animations: { 
-                    (cell.viewWithTag(5) as! UIButton).layer.opacity = 1
+                    cell?.pauseButton.layer.opacity = 1
                 })
             })
             self.isPlay = !self.isPlay
         } else {
             UIView.animate(withDuration: 0.2, animations: {
-                (cell.viewWithTag(5) as! UIButton).layer.opacity = 0.1
+                cell?.pauseButton.layer.opacity = 0.1
             }, completion: {(_) in
-                (cell.viewWithTag(5) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconPause), for: .normal)
+                cell?.pauseButton.setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconPause), for: .normal)
                 UIView.animate(withDuration: 0.2, animations: {
-                    (cell.viewWithTag(5) as! UIButton).layer.opacity = 1
+                    cell?.pauseButton.layer.opacity = 1
                 })
             })
             self.isPlay = !self.isPlay
@@ -139,13 +140,14 @@ extension ChefVideoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case self.menuCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChefVideoMenuCollectionCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCombineMenuViewCell, for: indexPath) as! MenuCollectionCell
             
-            (cell.viewWithTag(1) as! UILabel).text = self.menuArray[indexPath.row]
+            cell.backgroundColor = UIColor.untDarkGreyBackground
+            cell.textLabel.text = self.menuArray[indexPath.row]
             if self.selectedCell == indexPath.row {
-                (cell.viewWithTag(1) as! UILabel).textColor = UIColor.white
+                cell.textLabel.textColor = UIColor.white
             } else {
-                (cell.viewWithTag(1) as! UILabel).textColor = AppDelegate.shared.mainColor
+                cell.textLabel.textColor = AppDelegate.shared.mainColor
             }
             
             return cell
@@ -154,10 +156,10 @@ extension ChefVideoViewController: UICollectionViewDataSource {
             
             switch indexPath.row{
             case 0:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChefVideoControlDetailCollectionCell, for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChefVideoControlDetailCollectionCell, for: indexPath) as! ChefVideoControlCollectionViewCell
                 
-                (cell.viewWithTag(1) as! UIButton).imageView?.contentMode = .scaleAspectFill
-                (cell.viewWithTag(1) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kChefVideoImageChefArray[self.currentChefs]), for: .normal)
+                cell.mainButton.imageView?.contentMode = .scaleAspectFill
+                cell.mainButton.setImage(UIImage(named: AppResourceIdentifiers.kChefVideoImageChefArray[self.currentChefs]), for: .normal)
                 
                 if self.oneCheck {
                     self.oneCheck = false
@@ -165,7 +167,7 @@ extension ChefVideoViewController: UICollectionViewDataSource {
                     self.valueThumbLabel.font = UIFont(name: self.valueThumbLabel.font.fontName, size: 12)
                     self.valueThumbLabel.textColor = UIColor.init(netHex: 0x9B9B9B)
                     
-                    (cell.viewWithTag(2) as! UISlider).addTarget(self, action: #selector(self.valueChangedSlider), for: .valueChanged)
+                    cell.timeSlider.addTarget(self, action: #selector(self.valueChangedSlider), for: .valueChanged)
                 }
                 
                 return cell

@@ -52,6 +52,7 @@
 		44E4A87A1E1F2B5700747BCC /* HomeMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A8791E1F2B5700747BCC /* HomeMenuTableViewCell.swift */; };
 		44E4A87D1E1F2EB800747BCC /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A87C1E1F2EB800747BCC /* FilterTableViewCell.swift */; };
 		44E4A8801E1F330700747BCC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A87F1E1F330700747BCC /* SearchTableViewCell.swift */; };
+		44E4A8831E1F361A00747BCC /* ChefVideoControlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A8821E1F361A00747BCC /* ChefVideoControlCollectionViewCell.swift */; };
 		44EB21E71E149ECD00E2AAC1 /* AppSegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21E61E149ECD00E2AAC1 /* AppSegueIdentifiers.swift */; };
 		44EB21E91E14A3BB00E2AAC1 /* ChefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */; };
 		44EB21EB1E14C38900E2AAC1 /* ChefVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */; };
@@ -134,6 +135,7 @@
 		44E4A8791E1F2B5700747BCC /* HomeMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuTableViewCell.swift; sourceTree = "<group>"; };
 		44E4A87C1E1F2EB800747BCC /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		44E4A87F1E1F330700747BCC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		44E4A8821E1F361A00747BCC /* ChefVideoControlCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefVideoControlCollectionViewCell.swift; sourceTree = "<group>"; };
 		44EB21E61E149ECD00E2AAC1 /* AppSegueIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSegueIdentifiers.swift; sourceTree = "<group>"; };
 		44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefsViewController.swift; sourceTree = "<group>"; };
 		44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefVideoViewController.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				44DEAD9D1E1CB16B00B90EDA /* ChefQuoteCollectionViewCell */,
+				44E4A8811E1F35FA00747BCC /* ChefVideoControlCollectionViewCell */,
 				44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */,
 			);
 			path = ChefVideoViewController;
@@ -588,8 +591,16 @@
 			children = (
 				44E4A87F1E1F330700747BCC /* SearchTableViewCell.swift */,
 			);
-			name = SearchTableViewCell;
 			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		44E4A8811E1F35FA00747BCC /* ChefVideoControlCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				44E4A8821E1F361A00747BCC /* ChefVideoControlCollectionViewCell.swift */,
+			);
+			name = ChefVideoControlCollectionViewCell;
+			path = ChefVideoControlCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		4E81F7471A320764F3B87376 /* Pods */ = {
@@ -921,6 +932,7 @@
 				44C051751E0CCE5F00381976 /* HomeRootViewController.swift in Sources */,
 				44AE3E041E164F710016BAFA /* ChallengeViewController.swift in Sources */,
 				44E4A87A1E1F2B5700747BCC /* HomeMenuTableViewCell.swift in Sources */,
+				44E4A8831E1F361A00747BCC /* ChefVideoControlCollectionViewCell.swift in Sources */,
 				441643371E1B3DAA00DC45DB /* CategoryViewController.swift in Sources */,
 				44DEADAC1E1CD4F500B90EDA /* RecipeChoosenTextTableViewCell.swift in Sources */,
 				44B55B181E126AC300A8B3A4 /* AppNavigationTitle.swift in Sources */,
