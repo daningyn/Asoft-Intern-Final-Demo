@@ -15,6 +15,7 @@ class Food {
     var image: String
     var timeToPerform: Int
     var type: String
+    var cookingType: [String]
     var videoLink: String
     var favorite: Bool
     var ingridientHeader: [String]
