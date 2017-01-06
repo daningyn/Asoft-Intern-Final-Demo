@@ -17,7 +17,7 @@ class Comment {
     var feels: [String]
     var numberOfLike: String
     
-    init(id: String, idChef: String, comment: String, feels: String, numberOfLike: String) {
+    init(id: String, idChef: String, comment: String, feels: [String], numberOfLike: String) {
         self.id = id
         self.idChef = idChef
         self.comment = comment
