@@ -50,6 +50,7 @@
 		44E4A8741E1F266900747BCC /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A8731E1F266900747BCC /* Food.swift */; };
 		44E4A8771E1F2A9600747BCC /* RecipeMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A8761E1F2A9600747BCC /* RecipeMenuTableViewCell.swift */; };
 		44E4A87A1E1F2B5700747BCC /* HomeMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A8791E1F2B5700747BCC /* HomeMenuTableViewCell.swift */; };
+		44E4A87D1E1F2EB800747BCC /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A87C1E1F2EB800747BCC /* FilterTableViewCell.swift */; };
 		44EB21E71E149ECD00E2AAC1 /* AppSegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21E61E149ECD00E2AAC1 /* AppSegueIdentifiers.swift */; };
 		44EB21E91E14A3BB00E2AAC1 /* ChefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */; };
 		44EB21EB1E14C38900E2AAC1 /* ChefVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */; };
@@ -130,6 +131,7 @@
 		44E4A8731E1F266900747BCC /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		44E4A8761E1F2A9600747BCC /* RecipeMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeMenuTableViewCell.swift; sourceTree = "<group>"; };
 		44E4A8791E1F2B5700747BCC /* HomeMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuTableViewCell.swift; sourceTree = "<group>"; };
+		44E4A87C1E1F2EB800747BCC /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		44EB21E61E149ECD00E2AAC1 /* AppSegueIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSegueIdentifiers.swift; sourceTree = "<group>"; };
 		44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefsViewController.swift; sourceTree = "<group>"; };
 		44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefVideoViewController.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				44DEADA31E1CB1C800B90EDA /* DetailCollectionViewCell */,
+				44E4A87B1E1F2E9900747BCC /* FilterTableViewCell */,
 				441643361E1B3DAA00DC45DB /* CategoryViewController.swift */,
 			);
 			path = CategoryViewController;
@@ -558,7 +561,6 @@
 			children = (
 				44E4A8761E1F2A9600747BCC /* RecipeMenuTableViewCell.swift */,
 			);
-			name = RecipeMenu;
 			path = RecipeMenu;
 			sourceTree = "<group>";
 		};
@@ -567,8 +569,16 @@
 			children = (
 				44E4A8791E1F2B5700747BCC /* HomeMenuTableViewCell.swift */,
 			);
-			name = HomeMenu;
 			path = HomeMenu;
+			sourceTree = "<group>";
+		};
+		44E4A87B1E1F2E9900747BCC /* FilterTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				44E4A87C1E1F2EB800747BCC /* FilterTableViewCell.swift */,
+			);
+			name = FilterTableViewCell;
+			path = FilterTableViewCell;
 			sourceTree = "<group>";
 		};
 		4E81F7471A320764F3B87376 /* Pods */ = {
@@ -919,6 +929,7 @@
 				44DEADA61E1CD35A00B90EDA /* RecipeChoosenViewController.swift in Sources */,
 				443A87741E0E5315006FCAE0 /* CombineView.swift in Sources */,
 				44D9251C1E0AF5BF0064FC3E /* Constants.swift in Sources */,
+				44E4A87D1E1F2EB800747BCC /* FilterTableViewCell.swift in Sources */,
 				44C051771E0CDEAC00381976 /* Extensions.swift in Sources */,
 				44E2BEB51E10A882003ABFBB /* NameCollectionCell.swift in Sources */,
 			);

@@ -186,18 +186,18 @@ extension CategoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierCategoryFilterTableViewCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierCategoryFilterTableViewCell, for: indexPath) as! FilterTableViewCell
         cell.selectionStyle = .none
         switch indexPath.row {
         case 0,5:
-            (cell.viewWithTag(1) as! UILabel).text = ""
-            (cell.viewWithTag(2) as! UIButton).setImage(nil, for: .normal)
+            cell.nameLabel.text = ""
+            cell.checkImageView.image = UIImage(named: "")
         default:
-            (cell.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kCategoryFilterArray[indexPath.row]
+            cell.nameLabel.text = AppResourceIdentifiers.kCategoryFilterArray[indexPath.row]
             if AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row] {
-                (cell.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconCheck), for: .normal)
+                cell.checkImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierIconCheck)
             } else {
-                (cell.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconNotCheck), for: .normal)
+                cell.checkImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierIconNotCheck)
             }
         }
         
@@ -216,11 +216,11 @@ extension CategoryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row] = !AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row]
-        let cell = tableView.cellForRow(at: indexPath)
+        let cell = tableView.cellForRow(at: indexPath) as? FilterTableViewCell
         if AppResourceIdentifiers.kCategoryFilterCheckArray[indexPath.row] {
-            (cell?.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconCheck), for: .normal)
+            cell?.checkImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierIconCheck)
         } else {
-            (cell?.viewWithTag(2) as! UIButton).setImage(UIImage(named: AppResourceIdentifiers.kIdentifierIconNotCheck), for: .normal)
+            cell?.checkImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierIconNotCheck)
         }
     }
     

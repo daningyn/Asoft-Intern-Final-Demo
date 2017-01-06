@@ -1737,7 +1737,7 @@
                                         <rect key="frame" x="375" y="0.0" width="250" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryFilterTableViewCell" rowHeight="88" id="Zt5-qc-Wo9">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryFilterTableViewCell" rowHeight="88" id="Zt5-qc-Wo9" customClass="FilterTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="250" height="88"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zt5-qc-Wo9" id="4G8-v3-e7Q">
@@ -1750,26 +1750,27 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zt-Qn-YeP">
-                                                            <rect key="frame" x="197" y="31.5" width="25" height="25"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XIk-Lv-xsH">
+                                                            <rect key="frame" x="205" y="31.5" width="25" height="25"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="4Dj-OR-jgS"/>
-                                                                <constraint firstAttribute="width" secondItem="1Zt-Qn-YeP" secondAttribute="height" id="VdV-7i-jDL"/>
+                                                                <constraint firstAttribute="width" secondItem="XIk-Lv-xsH" secondAttribute="height" id="cqp-ir-yww"/>
+                                                                <constraint firstAttribute="width" constant="25" id="ove-s8-Bo9"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <action selector="didTouchUpInsideFilterCheck:" destination="u01-58-tPc" eventType="touchUpInside" id="IhA-uK-JN2"/>
-                                                            </connections>
-                                                        </button>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="1Zt-Qn-YeP" firstAttribute="centerY" secondItem="Axt-gq-gBR" secondAttribute="centerY" id="aP8-nL-gFv"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="1Zt-Qn-YeP" secondAttribute="trailing" constant="20" id="f8s-2s-rcE"/>
+                                                        <constraint firstItem="Axt-gq-gBR" firstAttribute="centerY" secondItem="XIk-Lv-xsH" secondAttribute="centerY" id="kUQ-1h-g91"/>
                                                         <constraint firstItem="Axt-gq-gBR" firstAttribute="leading" secondItem="4G8-v3-e7Q" secondAttribute="leading" constant="30" id="rza-TQ-80J"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XIk-Lv-xsH" secondAttribute="trailing" constant="20" id="xRw-6t-zas"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <constraints>
                                                     <constraint firstItem="Axt-gq-gBR" firstAttribute="centerY" secondItem="Zt5-qc-Wo9" secondAttribute="centerY" id="N33-aV-Zdn"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="checkImageView" destination="XIk-Lv-xsH" id="fTW-LR-x54"/>
+                                                    <outlet property="nameLabel" destination="Axt-gq-gBR" id="sP5-le-aCR"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
