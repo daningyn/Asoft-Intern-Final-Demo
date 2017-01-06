@@ -57,6 +57,7 @@
 		44E4A88C1E1F4E4500747BCC /* SettingHaveSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A88B1E1F4E4500747BCC /* SettingHaveSwitchTableViewCell.swift */; };
 		44E4A88E1E1F770800747BCC /* Chef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A88D1E1F770800747BCC /* Chef.swift */; };
 		44E4A8901E1F84A400747BCC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A88F1E1F84A400747BCC /* Comment.swift */; };
+		44E4A8921E1F86F800747BCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4A8911E1F86F800747BCC /* User.swift */; };
 		44EB21E71E149ECD00E2AAC1 /* AppSegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21E61E149ECD00E2AAC1 /* AppSegueIdentifiers.swift */; };
 		44EB21E91E14A3BB00E2AAC1 /* ChefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */; };
 		44EB21EB1E14C38900E2AAC1 /* ChefVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */; };
@@ -144,6 +145,7 @@
 		44E4A88B1E1F4E4500747BCC /* SettingHaveSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingHaveSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		44E4A88D1E1F770800747BCC /* Chef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chef.swift; sourceTree = "<group>"; };
 		44E4A88F1E1F84A400747BCC /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		44E4A8911E1F86F800747BCC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		44EB21E61E149ECD00E2AAC1 /* AppSegueIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSegueIdentifiers.swift; sourceTree = "<group>"; };
 		44EB21E81E14A3BB00E2AAC1 /* ChefsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefsViewController.swift; sourceTree = "<group>"; };
 		44EB21EA1E14C38900E2AAC1 /* ChefVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefVideoViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				44E4A8731E1F266900747BCC /* Food.swift */,
 				44E4A88D1E1F770800747BCC /* Chef.swift */,
 				44E4A88F1E1F84A400747BCC /* Comment.swift */,
+				44E4A8911E1F86F800747BCC /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -965,6 +968,7 @@
 				44DEADAC1E1CD4F500B90EDA /* RecipeChoosenTextTableViewCell.swift in Sources */,
 				44B55B181E126AC300A8B3A4 /* AppNavigationTitle.swift in Sources */,
 				44E4A88C1E1F4E4500747BCC /* SettingHaveSwitchTableViewCell.swift in Sources */,
+				44E4A8921E1F86F800747BCC /* User.swift in Sources */,
 				44E2BEB01E10A792003ABFBB /* ImageCollectionCell.swift in Sources */,
 				449E3FFB1E166EE000C3651E /* ChallengeCustomFlowLayout.swift in Sources */,
 				44E4A8741E1F266900747BCC /* Food.swift in Sources */,
