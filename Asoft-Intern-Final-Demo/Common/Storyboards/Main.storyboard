@@ -1676,7 +1676,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <prototypes>
-                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomDetailTableViewCell" rowHeight="180" id="M5I-fr-wZu">
+                                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomDetailTableViewCell" rowHeight="180" id="M5I-fr-wZu" customClass="CategoryDetailTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M5I-fr-wZu" id="YH3-dA-gwH">
@@ -1739,6 +1739,12 @@
                                                                         </constraints>
                                                                     </tableViewCellContentView>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    <connections>
+                                                                        <outlet property="containerView" destination="u9w-jQ-4oT" id="GHn-Jq-CZf"/>
+                                                                        <outlet property="mainImageView" destination="dfG-2L-CwR" id="bNI-VC-FBr"/>
+                                                                        <outlet property="nameLabel" destination="D28-ed-FwF" id="6NA-rT-L6Q"/>
+                                                                        <outlet property="timeLabel" destination="v8n-Yy-CLA" id="Uaz-pE-HO2"/>
+                                                                    </connections>
                                                                 </tableViewCell>
                                                             </prototypes>
                                                         </tableView>

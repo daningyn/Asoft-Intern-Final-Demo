@@ -21,9 +21,8 @@ class RecipeChoosenViewController: UIViewController {
     
     //#MARK: - Define properties
     var selectedCell = 0
-    var bannerImage: String?
-    var navigationTitle: String?
     var ratioAlpha: CGFloat = 0
+    var currentFood: Food?
     
     //#MARK: - Set up
     override func viewDidLoad() {
@@ -36,11 +35,9 @@ class RecipeChoosenViewController: UIViewController {
         self.detailCollectionView.dataSource = self
         self.detailCollectionView.delegate = self
         
-        if let bannerImage = self.bannerImage {
-            self.bannerImageView.image = UIImage(named: bannerImage)
-        }
-        if let navigationTitle = self.navigationTitle {
-            self.navigationTitleLabel.text = navigationTitle
+        if let currentFood = self.currentFood {
+            self.bannerImageView.image = UIImage(named: currentFood.image)
+            self.navigationTitleLabel.text = currentFood.name
         }
         
     }
@@ -99,12 +96,18 @@ extension RecipeChoosenViewController: UICollectionViewDataSource {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierRecipeChoosenFirstCollectionViewCell, for: indexPath) as! RecipeChoosenCollectionViewCell
                 cell.haveButton = false
                 cell.animationDelegate = self
+                if let currentFood = self.currentFood {
+                    cell.currentFood = currentFood
+                }
                 
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierRecipeChoosenSecondCollectionViewCell, for: indexPath) as! RecipeChoosenCollectionViewCell
                 cell.haveButton = true
                 cell.animationDelegate = self
+                if let currentFood = self.currentFood {
+                    cell.currentFood = currentFood
+                }
                 
                 return cell
             }

@@ -21,8 +21,7 @@ class CategoryViewController: UIViewController {
     var btnBarFilter = UIBarButtonItem()
     var selectedCell = 0
     var isOnFilter = false
-    lazy var imagePrepareSegue = ""
-    lazy var namePrepareSegue = ""
+    var foods: [Food] = []
     
     //#MARK: - Set up
     override func viewDidLoad() {
@@ -89,8 +88,7 @@ class CategoryViewController: UIViewController {
         if let identifier = segue.identifier {
             if identifier == AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen {
                 let recipeChoosenVC = segue.destination as! RecipeChoosenViewController
-                recipeChoosenVC.bannerImage = self.imagePrepareSegue
-                recipeChoosenVC.navigationTitle = self.namePrepareSegue
+                recipeChoosenVC.currentFood = sender as! Food
             }
         }
     }
@@ -122,6 +120,7 @@ extension CategoryViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierCategoryDetailCollectionViewCell, for: indexPath) as! CategoryDetailCollectionViewCell
             
             cell.pushDelegate = self
+            cell.foods = self.foods
             
             return cell
         }
@@ -229,10 +228,8 @@ extension CategoryViewController: UITableViewDelegate {
 
 //#MARK: - PushViewController Delegate
 extension CategoryViewController: PushViewController {
-    func pushViewControlerWithIdentifierSegue(identifier: String, imageString: String, name: String) {
-        self.imagePrepareSegue = imageString
-        self.namePrepareSegue = name
-        self.performSegue(withIdentifier: identifier, sender: nil)
+    func pushViewControlerWithIdentifierSegue(identifier: String, food: Food) {
+        self.performSegue(withIdentifier: identifier, sender: food)
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PushViewController {
-    func pushViewControlerWithIdentifierSegue(identifier: String, imageString: String, name: String)
+    func pushViewControlerWithIdentifierSegue(identifier: String, food: Food)
 }
 
 class CategoryDetailCollectionViewCell: UICollectionViewCell {
@@ -20,6 +20,7 @@ class CategoryDetailCollectionViewCell: UICollectionViewCell {
     //#MARK: - Define properties
     lazy internal var myContentOffsetY: CGFloat = 0.0
     var pushDelegate: PushViewController?
+    var foods: [Food] = []
     
     //#MARK: - Set up
     override func awakeFromNib() {
@@ -36,23 +37,23 @@ class CategoryDetailCollectionViewCell: UICollectionViewCell {
 extension CategoryDetailCollectionViewCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.foods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierCategoryCustomDetailTableViewCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierCategoryCustomDetailTableViewCell, for: indexPath) as! CategoryDetailTableViewCell
     
         cell.selectionStyle = .none
-        cell.viewWithTag(1)?.clipsToBounds = true
-        cell.viewWithTag(1)?.layer.cornerRadius = 4
+        cell.containerView.clipsToBounds = true
+        cell.containerView.layer.cornerRadius = 4
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOpacity = 0.3
         cell.layer.shadowOffset = CGSize.zero
         cell.layer.shadowRadius = 1
         
-        (cell.viewWithTag(2) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kCategoryImageArray[indexPath.row % 3])
-        (cell.viewWithTag(3) as! UILabel).text = AppResourceIdentifiers.kCategoryNameArray[indexPath.row % 3]
-        (cell.viewWithTag(4) as! UILabel).text = AppResourceIdentifiers.kCategoryTimeArray[indexPath.row % 3]
+        cell.mainImageView.image = UIImage(named: self.foods[indexPath.row].image)
+        cell.nameLabel.text = self.foods[indexPath.row].name
+        cell.timeLabel.text = "\(self.foods[indexPath.row].timeToPerform) min"
         
         return cell
     }
@@ -69,7 +70,7 @@ extension CategoryDetailCollectionViewCell: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let pushDelegate = self.pushDelegate {
-            pushDelegate.pushViewControlerWithIdentifierSegue(identifier: AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen, imageString: AppResourceIdentifiers.kCategoryImageArray[indexPath.row % 3], name: AppResourceIdentifiers.kCategoryNameArray[indexPath.row % 3])
+            pushDelegate.pushViewControlerWithIdentifierSegue(identifier: AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen, food: self.foods[indexPath.row])
         }
     }
     

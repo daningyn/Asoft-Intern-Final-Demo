@@ -364,7 +364,7 @@ extension HomeRootViewController: UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
             
             AppNavigationTitle.kCategoryNavigationTitle = (cell?.nameLabel.text!)!
-            self.performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToCategoryVC, sender: nil)
+            self.performSegue(withIdentifier: AppSegueIdentifiers.kIdentifierSegueHomeToCategoryVC, sender: indexPath.row)
             
         case self.tblMenuView:
             
@@ -459,10 +459,16 @@ extension HomeRootViewController: UITableViewDelegate {
 }
 
 
-//#MARK: - Scroll View Delegate
+//#MARK: - Prepare Segue
 extension HomeRootViewController {
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == AppSegueIdentifiers.kIdentifierSegueHomeToCategoryVC {
+                (segue.destination as! CategoryViewController).foods = self.detailFoodArray[sender as! Int]
+            }
+        }
+    }
     
 }
 

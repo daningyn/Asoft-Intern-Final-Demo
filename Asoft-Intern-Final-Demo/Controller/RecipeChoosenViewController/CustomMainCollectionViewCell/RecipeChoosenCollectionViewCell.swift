@@ -17,6 +17,7 @@ class RecipeChoosenCollectionViewCell: UICollectionViewCell {
     var haveButton = false
     var animationDelegate: ScrollDetailCollectionViewDelegate?
     var myContentOffsetY: CGFloat = 0
+    var currentFood: Food?
     
     //#MARK: - Set up
     override func awakeFromNib() {
@@ -38,9 +39,17 @@ extension RecipeChoosenCollectionViewCell: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if self.haveButton {
-            return AppResourceIdentifiers.kRecipeChoosenButtonTableViewHeaderArray.count + 1
+            if let currentFood = self.currentFood {
+                return currentFood.directionHeader.count + 1
+            } else {
+                return 0
+            }
         } else {
-            return AppResourceIdentifiers.kRecipeChoosenTextTableViewHeaderArray.count
+            if let currentFood = self.currentFood {
+                return currentFood.ingridientHeader.count
+            } else {
+                return 0
+            }
         }
     }
     
@@ -49,10 +58,10 @@ extension RecipeChoosenCollectionViewCell: UITableViewDataSource {
             if section == 0 {
                 return 1
             } else {
-                return AppResourceIdentifiers.kRecipeChoosenButtonTableViewCellArray[section-1].count
+                return self.currentFood!.directionDetail[section-1].count
             }
         } else {
-            return AppResourceIdentifiers.kRecipeChoosenTextTableViewCellArray[section].count
+            return self.currentFood!.ingridientDetail[section].count
         }
     }
     
@@ -64,14 +73,14 @@ extension RecipeChoosenCollectionViewCell: UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierRecipeChoosenTextTableViewCell, for: indexPath) as! RecipeChoosenTextTableViewCell
-                cell.label.text = AppResourceIdentifiers.kRecipeChoosenButtonTableViewCellArray[indexPath.section-1][indexPath.row]
+                cell.label.text = self.currentFood!.directionDetail[indexPath.section-1][indexPath.row]
                 return cell
             }
             
         } else {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierRecipeChoosenTextTableViewCell, for: indexPath) as! RecipeChoosenTextTableViewCell
-            cell.label.text = AppResourceIdentifiers.kRecipeChoosenTextTableViewCellArray[indexPath.section][indexPath.row]
+            cell.label.text = self.currentFood!.ingridientDetail[indexPath.section][indexPath.row]
             return cell
             
         }
@@ -90,10 +99,10 @@ extension RecipeChoosenCollectionViewCell: UITableViewDelegate {
             case 0:
                 return nil
             default:
-                return AppResourceIdentifiers.kRecipeChoosenButtonTableViewHeaderArray[section - 1]
+                return self.currentFood!.directionHeader[section-1]
             }
         } else {
-            return AppResourceIdentifiers.kRecipeChoosenTextTableViewHeaderArray[section]
+            return self.currentFood!.ingridientHeader[section]
         }
     }
     
