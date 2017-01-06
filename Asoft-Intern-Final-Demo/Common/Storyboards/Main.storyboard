@@ -627,7 +627,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCellHaveSwitch" rowHeight="86" id="Iso-AL-8tm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCellHaveSwitch" rowHeight="86" id="Iso-AL-8tm" customClass="SettingHaveSwitchTableViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iso-AL-8tm" id="hLG-4T-2xE">
@@ -656,6 +656,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="optionTextLabel" destination="STk-MQ-HtW" id="mER-kI-6Fb"/>
+                                            <outlet property="switchControl" destination="UKO-Dt-aKg" id="wUn-BY-wo2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingTableViewCellBasic" textLabel="Ppn-fT-Qw3" style="IBUITableViewCellStyleDefault" id="NG1-va-iPH">
                                         <rect key="frame" x="0.0" y="114" width="375" height="86"/>

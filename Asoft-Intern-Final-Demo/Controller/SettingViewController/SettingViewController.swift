@@ -47,16 +47,16 @@ extension SettingViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0, 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierSettingTableViewCellHaveSwitch, for: indexPath)
-            (cell.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kSettingOptionArray[indexPath.row]
-            (cell.viewWithTag(2) as! UISwitch).onTintColor = UIColor.untGreyishBrownSwitch
-            (cell.viewWithTag(2) as! UISwitch).tintColor = UIColor.untWatermelon
-            (cell.viewWithTag(2) as! UISwitch).layer.cornerRadius = 16
-            (cell.viewWithTag(2) as! UISwitch).backgroundColor = UIColor.untWatermelon
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kIdentifierSettingTableViewCellHaveSwitch, for: indexPath) as! SettingHaveSwitchTableViewCell
+            cell.optionTextLabel.text = AppResourceIdentifiers.kSettingOptionArray[indexPath.row]
+            cell.switchControl.onTintColor = UIColor.untGreyishBrownSwitch
+            cell.switchControl.tintColor = UIColor.untWatermelon
+            cell.switchControl.layer.cornerRadius = 16
+            cell.switchControl.backgroundColor = UIColor.untWatermelon
             if indexPath.row == 0 {
-                (cell.viewWithTag(2) as! UISwitch).isOn = true
+                cell.switchControl.isOn = true
             } else {
-                (cell.viewWithTag(2) as! UISwitch).isOn = false
+                cell.switchControl.isOn = false
             }
             cell.selectionStyle = .none
             return cell
@@ -81,8 +81,8 @@ extension SettingViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0, 1:
-            let cell = tableView.cellForRow(at: indexPath)
-            (cell?.viewWithTag(2) as! UISwitch).isOn = !(cell?.viewWithTag(2) as! UISwitch).isOn
+            let cell = tableView.cellForRow(at: indexPath) as! SettingHaveSwitchTableViewCell
+            cell.switchControl.setOn(!cell.switchControl.isOn, animated: true)
         default:
             break
         }
