@@ -845,7 +845,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChallengeCollectionViewCell" id="ybX-17-stC">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChallengeCollectionViewCell" id="ybX-17-stC" customClass="SlideCollectionViewCell" customModule="Asoft_Intern_Final_Demo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="242" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -871,6 +871,10 @@
                                             <constraint firstAttribute="trailing" secondItem="pAH-Sv-UaB" secondAttribute="trailing" constant="10" id="Ue6-y6-bvO"/>
                                             <constraint firstItem="OuK-Fr-1tH" firstAttribute="top" secondItem="ybX-17-stC" secondAttribute="top" id="WBt-8Q-XqN"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="mainImageView" destination="OuK-Fr-1tH" id="Wjg-45-LYL"/>
+                                            <outlet property="timeLabel" destination="pAH-Sv-UaB" id="joc-9q-kF4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

@@ -57,13 +57,13 @@ extension ChallengeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case self.slideCollectionView:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChallengeCollectionViewCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierChallengeCollectionViewCell, for: indexPath) as! SlideCollectionViewCell
             
-            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kCombineImageCellArray[indexPath.row % 3])
-            (cell.viewWithTag(1) as! UIImageView).clipsToBounds = true
-            (cell.viewWithTag(1) as! UIImageView).layer.cornerRadius = 5
-            (cell.viewWithTag(1) as! UIImageView).layer.borderWidth = 0.2
-            (cell.viewWithTag(1) as! UIImageView).layer.borderColor = UIColor.untCoralPink.cgColor
+            cell.mainImageView.image = UIImage(named: AppResourceIdentifiers.kCombineImageCellArray[indexPath.row % 3])
+            cell.mainImageView.clipsToBounds = true
+            cell.mainImageView.layer.cornerRadius = 5
+            cell.mainImageView.layer.borderWidth = 0.2
+            cell.mainImageView.layer.borderColor = UIColor.untCoralPink.cgColor
             
             return cell
         default:
