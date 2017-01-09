@@ -18,15 +18,49 @@ class CombineView: UIView {
     
     var selectedCell: Int = 0
     var menu = ["IMAGES", "NAMES"]
+    var combines: [Combine] = []
+    var headerArray: [String] = []
+    var detailCombines: [[Combine]] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+    }
+    
+    func initialization() {
+        self.getHeader(with: self.combines)
+        self.getAll()
+    }
+    
+    func getHeader(with combines: [Combine]) {
+        var tempSet: Set<String> = Set<String>()
+        for i in 0..<self.combines.count {
+            tempSet.insert(self.combines[i].type)
+        }
+        self.headerArray = Array(tempSet)
+    }
+    
+    func getIndex(with temp: String) -> Int {
+        for i in 0..<self.headerArray.count {
+            if temp == self.headerArray[i] {
+                return i
+            }
+        }
+        return 0
+    }
+    
+    func getAll() {
+        for _ in 0..<self.headerArray.count {
+            self.detailCombines.append([])
+        }
+        for i in 0..<self.combines.count {
+            self.detailCombines[getIndex(with: self.combines[i].type)].append(self.combines[i])
+        }
     }
 
 }
@@ -119,12 +153,16 @@ extension CombineView: UICollectionViewDataSource {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierImageCollectionViewCell, for: indexPath) as! ImageCollectionCell
                 
                 cell.animationDelegate = self
+                cell.headerArray = self.headerArray
+                cell.detailCombines = self.detailCombines
                 
                 return cell
             default:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierNameCollectionViewCell, for: indexPath) as! NameCollectionCell
                 
                 cell.animationDelegate = self
+                cell.headerArray = self.headerArray
+                cell.detailCombines = self.detailCombines
                 
                 return cell
             }

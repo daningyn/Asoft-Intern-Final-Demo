@@ -27,6 +27,8 @@ class ImageCollectionCell: UICollectionViewCell {
     var animationDelegate: ScrollDetailCollectionViewDelegate?
     
     lazy internal var myContentOffsetY: CGFloat = 0.0
+    var headerArray: [String] = []
+    var detailCombines: [[Combine]] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,17 +45,17 @@ class ImageCollectionCell: UICollectionViewCell {
 extension ImageCollectionCell: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return self.headerArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return AppResourceIdentifiers.kCombineNumberRowInSection[section]
+        return self.detailCombines[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.kIdentifierDetailImageCell, for: indexPath)
         
-        (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: AppResourceIdentifiers.kCombineImageCellArray[indexPath.row % 3])
+        (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: self.detailCombines[indexPath.section][indexPath.row].image)
         (cell.viewWithTag(1) as! UIImageView).layer.borderWidth = 0.2
         (cell.viewWithTag(1) as! UIImageView).layer.borderColor = UIColor.untCoralPink.cgColor
         (cell.viewWithTag(1) as! UIImageView).layer.cornerRadius = 5.0
@@ -65,8 +67,8 @@ extension ImageCollectionCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = self.mainCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.kIdentifierHeaderImageCombineCell, for: indexPath)
         
-        (headerView.viewWithTag(1) as! UILabel).text = AppResourceIdentifiers.kCombineHeaderInSection[indexPath.section]
-        (headerView.viewWithTag(2) as! UILabel).text = "\(AppResourceIdentifiers.kCombineNumberRowInSection[indexPath.section])"
+        (headerView.viewWithTag(1) as! UILabel).text = self.headerArray[indexPath.section]
+        (headerView.viewWithTag(2) as! UILabel).text = "\(self.detailCombines[indexPath.section].count)"
         
         return headerView
     }

@@ -148,6 +148,13 @@ class HomeRootViewController: UIViewController {
     //#MARK: - Define Custom View
     func defineCombineView() {
         self.combineView = self.loadCombineViewFromNib(nibName: "CombineView", frame: self.tblMenuView.bounds)
+        var combines: [Combine] = []
+        for i in 0..<44 {
+            let combine = Combine(id: NSUUID().uuidString, image: AppResourceIdentifiers.kCombineImageCellArray[i%3], type: AppResourceIdentifiers.kCombineHeaderInSection[Int(arc4random_uniform(50)%3)], detailName: AppResourceIdentifiers.kCombineDetailNamesCellArray[i%3], name: AppResourceIdentifiers.kCombineTitlteNamesCellArray[i%3])
+            combines.append(combine)
+        }
+        self.combineView.combines = combines
+        self.combineView.initialization()
         self.combineView.menuCollectionView.register(UINib(nibName: "MenuCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierCombineMenuViewCell)
         self.combineView.detailCollectionView.register(UINib(nibName: "ImageCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierImageCollectionViewCell)
         self.combineView.detailCollectionView.register(UINib(nibName: "NameCollectionCell", bundle: nil), forCellWithReuseIdentifier: Constants.kIdentifierNameCollectionViewCell)
