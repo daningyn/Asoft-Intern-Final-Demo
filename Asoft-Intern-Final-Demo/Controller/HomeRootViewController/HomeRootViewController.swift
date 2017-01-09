@@ -157,7 +157,7 @@ class HomeRootViewController: UIViewController {
         self.combineView.detailCollectionView.delegate = self.combineView
         self.mainView.addSubview(self.combineView)
         self.combineView.isHidden = true
-        self.combineView.frame.origin.x = UIScreen.main.bounds.width + 3
+        self.combineView.frame.origin.x = UIScreen.main.bounds.width + 6
         self.combineView.frame.origin.y = 64
         self.combineView.frame.size.width = UIScreen.main.bounds.width
         self.combineView.frame.size.height = UIScreen.main.bounds.height - 64
@@ -174,7 +174,7 @@ class HomeRootViewController: UIViewController {
         self.profileView = self.loadViewFromNib(nibName: "ProfileView", frame: self.tblMenuView.bounds)
         self.mainView.addSubview(self.profileView)
         self.profileView.isHidden = true
-        self.profileView.frame.origin.x = UIScreen.main.bounds.width + 3
+        self.profileView.frame.origin.x = UIScreen.main.bounds.width + 6
         self.profileView.frame.origin.y = 64
         self.profileView.frame.size.width = UIScreen.main.bounds.width
         self.profileView.frame.size.height = UIScreen.main.bounds.height - 64
@@ -184,7 +184,7 @@ class HomeRootViewController: UIViewController {
         self.communityView = self.loadViewFromNib(nibName: "CommunityView", frame: self.tblMenuView.bounds) as! CommunityView
         self.mainView.addSubview(self.communityView)
         self.communityView.isHidden = true
-        self.communityView.frame.origin.x = UIScreen.main.bounds.width + 3
+        self.communityView.frame.origin.x = UIScreen.main.bounds.width + 6
         self.communityView.frame.origin.y = 64
         self.communityView.frame.size.width = UIScreen.main.bounds.width
         self.communityView.frame.size.height = UIScreen.main.bounds.height - 64
