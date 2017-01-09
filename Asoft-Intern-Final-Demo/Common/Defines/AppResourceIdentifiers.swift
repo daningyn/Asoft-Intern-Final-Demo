@@ -39,16 +39,10 @@ class AppResourceIdentifiers {
     //#MARK: - Search ViewController
     static let kIdentifierSearchImageArray = ["search-1", "search-2", "pizza-1", "pizza-2", "pizza-3"]
     static let kIdentifierSearchNameArray = ["Steak with Cranberry Sauce", "Steak with Cranberry Sauce", "Suprim", "Marinara", "Margaritta"]
-    static let kSearchTimeArray = ["15 min", "20 min", "25 min", "10 min", "30 min"]
+    static let kSearchTimeArray = [15, 20, 25, 10, 30]
     static let kIdentifierDidSearchImageArray = ["pizza-1", "pizza-2", "pizza-3"]
     static let kIdentifierDidSearchNameArray = ["Suprim", "Marinara", "Margaritta"]
-    static let kDidSearchTimeArray = ["25 min", "10 min", "30 min"]
-    static var kResult = 0
-    static var kResultString: String {
-        get {
-            return "\(AppResourceIdentifiers.kResult) recipes found"
-        }
-    }
+    static let kDidSearchTimeArray = [25, 10, 30]
     
     //#MARK: - Category ViewController
     static let kCategoryMenuArray = ["GRILL", "FRY", "BOIL", "BAKE"]

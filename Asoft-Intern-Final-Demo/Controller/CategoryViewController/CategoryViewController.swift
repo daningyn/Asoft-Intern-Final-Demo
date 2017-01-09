@@ -88,7 +88,7 @@ class CategoryViewController: UIViewController {
         if let identifier = segue.identifier {
             if identifier == AppSegueIdentifiers.kIdentifierSegueCategoryToRecipeChoosen {
                 let recipeChoosenVC = segue.destination as! RecipeChoosenViewController
-                recipeChoosenVC.currentFood = sender as! Food
+                recipeChoosenVC.currentFood = sender as? Food
             }
         }
     }

@@ -18,10 +18,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     //#MARK: - Define properties
     var didSearch = false
+    var foods: [Food] = []
+    var results: [Food] = []
     
     //#MARK: - Set up
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initialization()
         
         AppDelegate.shared.homeNavigation.navigationItem.rightBarButtonItem = nil
         AppDelegate.shared.homeNavigation.navigationItem.hidesBackButton = true
@@ -36,6 +40,13 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         self.txtfldSearch.delegate = self
         
+    }
+    
+    func initialization() {
+        for i in 0..<10 {
+            let food = Food(id: NSUUID().uuidString, name: AppResourceIdentifiers.kIdentifierSearchNameArray[Int(i%5)], image: AppResourceIdentifiers.kIdentifierSearchImageArray[Int(i%5)], timeToPerform: AppResourceIdentifiers.kSearchTimeArray[Int(i%5)], type: "Pizza", cookingType: ["Beef", "Veal"], videoLink: "", favorite: false, ingridientHeader: AppResourceIdentifiers.kRecipeChoosenTextTableViewHeaderArray, ingridientDetail: AppResourceIdentifiers.kRecipeChoosenTextTableViewCellArray, directionHeader: AppResourceIdentifiers.kRecipeChoosenButtonTableViewHeaderArray, directionDetail: AppResourceIdentifiers.kRecipeChoosenButtonTableViewCellArray)
+            self.foods.append(food)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +64,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if textField.text != "" {
             self.txtfldSearch.resignFirstResponder()
             self.didSearch = true
-            AppResourceIdentifiers.kResult = Int(arc4random_uniform(50))
+            for i in 0..<Int(arc4random_uniform(50)) {
+                let food = Food(id: NSUUID().uuidString, name: AppResourceIdentifiers.kIdentifierDidSearchNameArray[Int(i%3)], image: AppResourceIdentifiers.kIdentifierDidSearchImageArray[Int(i%3)], timeToPerform: AppResourceIdentifiers.kDidSearchTimeArray[Int(i%3)], type: "Pizza", cookingType: ["Beef", "Veal"], videoLink: "", favorite: false, ingridientHeader: AppResourceIdentifiers.kRecipeChoosenTextTableViewHeaderArray, ingridientDetail: AppResourceIdentifiers.kRecipeChoosenTextTableViewCellArray, directionHeader: AppResourceIdentifiers.kRecipeChoosenButtonTableViewHeaderArray, directionDetail: AppResourceIdentifiers.kRecipeChoosenButtonTableViewCellArray)
+                self.results.append(food)
+            }
             if self.topView.frame.origin.y < 0 {
                 
             } else {
@@ -67,11 +81,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.listTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .middle, animated: true)
             }
-            self.lblResult.text = AppResourceIdentifiers.kResultString
+            self.lblResult.text = "\(self.results.count) recipes found"
             self.listTableView.reloadData()
         } else {
             self.txtfldSearch.resignFirstResponder()
             self.didSearch = false
+            self.results = []
             UIView.animate(withDuration: 0.5, animations: {
                 self.topView.frame.origin.y = 0
                 self.listTableView.frame.origin.y = self.topView.bounds.height
@@ -99,7 +114,7 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.didSearch {
-            return AppResourceIdentifiers.kResult
+            return self.results.count
         } else {
             return 10
         }
@@ -115,13 +130,13 @@ extension SearchViewController: UITableViewDataSource {
         cell.layer.shadowOffset = CGSize.zero
         cell.layer.shadowRadius = 1
         if self.didSearch {
-            cell.detailImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierDidSearchImageArray[indexPath.row % 3])
-            cell.nameLabel.text = AppResourceIdentifiers.kIdentifierDidSearchNameArray[indexPath.row % 3]
-            cell.timeLabel.text = AppResourceIdentifiers.kDidSearchTimeArray[indexPath.row % 3]
+            cell.detailImageView.image = UIImage(named: self.results[indexPath.row].image)
+            cell.nameLabel.text = self.results[indexPath.row].name
+            cell.timeLabel.text = "\(self.results[indexPath.row].timeToPerform) min"
         } else {
-            cell.detailImageView.image = UIImage(named: AppResourceIdentifiers.kIdentifierSearchImageArray[indexPath.row % 5])
-            cell.nameLabel.text = AppResourceIdentifiers.kIdentifierSearchNameArray[indexPath.row % 5]
-            cell.timeLabel.text = AppResourceIdentifiers.kSearchTimeArray[indexPath.row % 5]
+            cell.detailImageView.image = UIImage(named: self.foods[indexPath.row].image)
+            cell.nameLabel.text = self.foods[indexPath.row].name
+            cell.timeLabel.text = "\(self.foods[indexPath.row].timeToPerform) min "
         }
         
         return cell
